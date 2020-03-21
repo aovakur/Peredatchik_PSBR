@@ -341,5 +341,10 @@ namespace WindowsFormsApp2
             Form3 newForm3 = new Form3();
             newForm3.Show();
         }
+
+        private void ручнойВводToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

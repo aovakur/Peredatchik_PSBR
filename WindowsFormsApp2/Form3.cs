@@ -13,7 +13,7 @@ namespace WindowsFormsApp2
    
     public partial class Form3 : Form
     {
-        int find_pp;
+        //int find_pp;
 
         public Form3()
         {
@@ -33,6 +33,11 @@ namespace WindowsFormsApp2
         {
 
          
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

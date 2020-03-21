@@ -45,40 +45,10 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.createppBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ps_bankrussiaDataSet = new WindowsFormsApp2.ps_bankrussiaDataSet();
-            this.create_ppTableAdapter = new WindowsFormsApp2.ps_bankrussiaDataSetTableAdapters.create_ppTableAdapter();
-            this.ps_bankrussiaDataSet1 = new WindowsFormsApp2.ps_bankrussiaDataSet1();
-            this.receiptppBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.receipt_ppTableAdapter = new WindowsFormsApp2.ps_bankrussiaDataSet1TableAdapters.receipt_ppTableAdapter();
-            this.ps_bankrussiaDataSet2 = new WindowsFormsApp2.ps_bankrussiaDataSet2();
-            this.receiptppBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.receipt_ppTableAdapter1 = new WindowsFormsApp2.ps_bankrussiaDataSet2TableAdapters.receipt_ppTableAdapter();
-            this.ps_bankrussiaDataSet3 = new WindowsFormsApp2.ps_bankrussiaDataSet3();
-            this.createpp2BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.create_pp2TableAdapter = new WindowsFormsApp2.ps_bankrussiaDataSet3TableAdapters.create_pp2TableAdapter();
-            this.ps_bankrussiaDataSet4 = new WindowsFormsApp2.ps_bankrussiaDataSet4();
-            this.createpp2BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.create_pp2TableAdapter1 = new WindowsFormsApp2.ps_bankrussiaDataSet4TableAdapters.create_pp2TableAdapter();
-            this.ps_bankrussiaDataSet5 = new WindowsFormsApp2.ps_bankrussiaDataSet5();
-            this.receiptpp2BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.receipt_pp2TableAdapter = new WindowsFormsApp2.ps_bankrussiaDataSet5TableAdapters.receipt_pp2TableAdapter();
             this.button2 = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.createppBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ps_bankrussiaDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ps_bankrussiaDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.receiptppBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ps_bankrussiaDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.receiptppBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ps_bankrussiaDataSet3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.createpp2BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ps_bankrussiaDataSet4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.createpp2BindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ps_bankrussiaDataSet5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.receiptpp2BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -155,13 +125,14 @@
             // ручнойВводToolStripMenuItem
             // 
             this.ручнойВводToolStripMenuItem.Name = "ручнойВводToolStripMenuItem";
-            this.ручнойВводToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.ручнойВводToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ручнойВводToolStripMenuItem.Text = "Ручной ввод";
+            this.ручнойВводToolStripMenuItem.Click += new System.EventHandler(this.ручнойВводToolStripMenuItem_Click);
             // 
             // автоматическийToolStripMenuItem
             // 
             this.автоматическийToolStripMenuItem.Name = "автоматическийToolStripMenuItem";
-            this.автоматическийToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.автоматическийToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.автоматическийToolStripMenuItem.Text = "Автоматический";
             // 
             // помощьToolStripMenuItem
@@ -211,90 +182,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // createppBindingSource
-            // 
-            this.createppBindingSource.DataMember = "create_pp";
-            this.createppBindingSource.DataSource = this.ps_bankrussiaDataSet;
-            // 
-            // ps_bankrussiaDataSet
-            // 
-            this.ps_bankrussiaDataSet.DataSetName = "ps_bankrussiaDataSet";
-            this.ps_bankrussiaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // create_ppTableAdapter
-            // 
-            this.create_ppTableAdapter.ClearBeforeFill = true;
-            // 
-            // ps_bankrussiaDataSet1
-            // 
-            this.ps_bankrussiaDataSet1.DataSetName = "ps_bankrussiaDataSet1";
-            this.ps_bankrussiaDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // receiptppBindingSource
-            // 
-            this.receiptppBindingSource.DataMember = "receipt_pp";
-            this.receiptppBindingSource.DataSource = this.ps_bankrussiaDataSet1;
-            // 
-            // receipt_ppTableAdapter
-            // 
-            this.receipt_ppTableAdapter.ClearBeforeFill = true;
-            // 
-            // ps_bankrussiaDataSet2
-            // 
-            this.ps_bankrussiaDataSet2.DataSetName = "ps_bankrussiaDataSet2";
-            this.ps_bankrussiaDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // receiptppBindingSource1
-            // 
-            this.receiptppBindingSource1.DataMember = "receipt_pp";
-            this.receiptppBindingSource1.DataSource = this.ps_bankrussiaDataSet2;
-            // 
-            // receipt_ppTableAdapter1
-            // 
-            this.receipt_ppTableAdapter1.ClearBeforeFill = true;
-            // 
-            // ps_bankrussiaDataSet3
-            // 
-            this.ps_bankrussiaDataSet3.DataSetName = "ps_bankrussiaDataSet3";
-            this.ps_bankrussiaDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // createpp2BindingSource
-            // 
-            this.createpp2BindingSource.DataMember = "create_pp2";
-            this.createpp2BindingSource.DataSource = this.ps_bankrussiaDataSet3;
-            // 
-            // create_pp2TableAdapter
-            // 
-            this.create_pp2TableAdapter.ClearBeforeFill = true;
-            // 
-            // ps_bankrussiaDataSet4
-            // 
-            this.ps_bankrussiaDataSet4.DataSetName = "ps_bankrussiaDataSet4";
-            this.ps_bankrussiaDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // createpp2BindingSource1
-            // 
-            this.createpp2BindingSource1.DataMember = "create_pp2";
-            this.createpp2BindingSource1.DataSource = this.ps_bankrussiaDataSet4;
-            // 
-            // create_pp2TableAdapter1
-            // 
-            this.create_pp2TableAdapter1.ClearBeforeFill = true;
-            // 
-            // ps_bankrussiaDataSet5
-            // 
-            this.ps_bankrussiaDataSet5.DataSetName = "ps_bankrussiaDataSet5";
-            this.ps_bankrussiaDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // receiptpp2BindingSource
-            // 
-            this.receiptpp2BindingSource.DataMember = "receipt_pp2";
-            this.receiptpp2BindingSource.DataSource = this.ps_bankrussiaDataSet5;
-            // 
-            // receipt_pp2TableAdapter
-            // 
-            this.receipt_pp2TableAdapter.ClearBeforeFill = true;
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(404, 34);
@@ -324,18 +211,6 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.createppBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ps_bankrussiaDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ps_bankrussiaDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.receiptppBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ps_bankrussiaDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.receiptppBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ps_bankrussiaDataSet3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.createpp2BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ps_bankrussiaDataSet4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.createpp2BindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ps_bankrussiaDataSet5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.receiptpp2BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -359,24 +234,8 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button1;
-        private ps_bankrussiaDataSet ps_bankrussiaDataSet;
-        private System.Windows.Forms.BindingSource createppBindingSource;
-        private ps_bankrussiaDataSetTableAdapters.create_ppTableAdapter create_ppTableAdapter;
-        private ps_bankrussiaDataSet1 ps_bankrussiaDataSet1;
-        private System.Windows.Forms.BindingSource receiptppBindingSource;
-        private ps_bankrussiaDataSet1TableAdapters.receipt_ppTableAdapter receipt_ppTableAdapter;
-        private ps_bankrussiaDataSet2 ps_bankrussiaDataSet2;
-        private System.Windows.Forms.BindingSource receiptppBindingSource1;
-        private ps_bankrussiaDataSet2TableAdapters.receipt_ppTableAdapter receipt_ppTableAdapter1;
-        private ps_bankrussiaDataSet3 ps_bankrussiaDataSet3;
-        private System.Windows.Forms.BindingSource createpp2BindingSource;
-        private ps_bankrussiaDataSet3TableAdapters.create_pp2TableAdapter create_pp2TableAdapter;
-        private ps_bankrussiaDataSet4 ps_bankrussiaDataSet4;
-        private System.Windows.Forms.BindingSource createpp2BindingSource1;
-        private ps_bankrussiaDataSet4TableAdapters.create_pp2TableAdapter create_pp2TableAdapter1;
-        private ps_bankrussiaDataSet5 ps_bankrussiaDataSet5;
-        private System.Windows.Forms.BindingSource receiptpp2BindingSource;
-        private ps_bankrussiaDataSet5TableAdapters.receipt_pp2TableAdapter receipt_pp2TableAdapter;
+       
+      
         private System.Windows.Forms.Button button2;
     }
 }
