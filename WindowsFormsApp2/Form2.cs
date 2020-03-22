@@ -47,6 +47,7 @@ namespace WindowsFormsApp2
             textBox17.ReadOnly = true;
             textBox18.ReadOnly = true;
             textBox19.ReadOnly = true;
+            
            
         }
 
@@ -134,7 +135,7 @@ namespace WindowsFormsApp2
             createPP.P0 = Convert.ToString(textBox10.Text);
             createPP.P4 = Convert.ToString(textBox2.Text);
             //  MessageBox.Show("Платежное поручение сохранено");
-            createPP.pdf(createPP.P0, createPP.P4);
+            createPP.pdf(createPP.P0, createPP.P4, createPP.P6, createPP.P7, createPP.P8);
 
         }
 
@@ -332,6 +333,8 @@ namespace WindowsFormsApp2
         {
           
         }
+
+        
     }
 
  

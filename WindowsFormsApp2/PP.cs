@@ -262,16 +262,19 @@ namespace WindowsFormsApp2
         }
 
 
-        public string pdf(string p0, string p4)
+        public string pdf(string p0, string p4, string p6, int p7, string p8)
         {
             string b;
-            BaseFont baseFont = BaseFont.CreateFont(@"C:\Windows\Fonts\Arial.ttf", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
-            PdfReader template = new PdfReader("C:\\PeredatchikPSBR\\Template_4.pdf");
-            PdfStamper stamper = new PdfStamper(template, new FileStream("C:\\PeredatchikPSBR\\New_1.pdf", FileMode.Create));
+            BaseFont baseFont = BaseFont.CreateFont(@"C:\PeredatchikPSBR\Template\Tahoma.ttf", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
+            PdfReader template = new PdfReader("C:\\PeredatchikPSBR\\Template\\Template_7.pdf");
+            PdfStamper stamper = new PdfStamper(template, new FileStream("C:\\PeredatchikPSBR\\pdf\\pdf_new.pdf", FileMode.Create));
             AcroFields fields = stamper.AcroFields;
             fields.AddSubstitutionFont(baseFont);
             fields.SetField("p4", p4);
             fields.SetField("p3", p0);
+            fields.SetField("p6", p6);
+            fields.SetField("p7", p7.ToString());
+            fields.SetField("p8", p8);
             stamper.FormFlattening = false;
             stamper.Close();
 

@@ -32,7 +32,11 @@
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.записатьВБДToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сформироватьED101ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сформироватьSwiftСообщениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сформироватьEd501ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.печатьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.помощьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
@@ -80,14 +84,12 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.сформироватьED101ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
-            this.сформироватьSwiftСообщениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.textBox11 = new System.Windows.Forms.TextBox();
@@ -100,14 +102,12 @@
             this.textBox17 = new System.Windows.Forms.TextBox();
             this.textBox18 = new System.Windows.Forms.TextBox();
             this.textBox19 = new System.Windows.Forms.TextBox();
-            this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox20 = new System.Windows.Forms.TextBox();
             this.textBox21 = new System.Windows.Forms.TextBox();
             this.textBox22 = new System.Windows.Forms.TextBox();
             this.textBox23 = new System.Windows.Forms.TextBox();
             this.textBox24 = new System.Windows.Forms.TextBox();
             this.textBox25 = new System.Windows.Forms.TextBox();
-            this.печатьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -151,12 +151,40 @@
             this.записатьВБДToolStripMenuItem.Text = "Записать в БД";
             this.записатьВБДToolStripMenuItem.Click += new System.EventHandler(this.записатьВБДToolStripMenuItem_Click);
             // 
+            // сформироватьED101ToolStripMenuItem
+            // 
+            this.сформироватьED101ToolStripMenuItem.Name = "сформироватьED101ToolStripMenuItem";
+            this.сформироватьED101ToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
+            this.сформироватьED101ToolStripMenuItem.Text = "Сформировать ED101";
+            this.сформироватьED101ToolStripMenuItem.Click += new System.EventHandler(this.сформироватьED101ToolStripMenuItem_Click);
+            // 
+            // сформироватьSwiftСообщениеToolStripMenuItem
+            // 
+            this.сформироватьSwiftСообщениеToolStripMenuItem.Name = "сформироватьSwiftСообщениеToolStripMenuItem";
+            this.сформироватьSwiftСообщениеToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
+            this.сформироватьSwiftСообщениеToolStripMenuItem.Text = "Сформировать MT101 (Swift)";
+            this.сформироватьSwiftСообщениеToolStripMenuItem.Click += new System.EventHandler(this.сформироватьSwiftСообщениеToolStripMenuItem_Click);
+            // 
             // сформироватьEd501ToolStripMenuItem
             // 
             this.сформироватьEd501ToolStripMenuItem.Name = "сформироватьEd501ToolStripMenuItem";
             this.сформироватьEd501ToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
             this.сформироватьEd501ToolStripMenuItem.Text = "Сформировать ED501 (СПФС)";
             this.сформироватьEd501ToolStripMenuItem.Click += new System.EventHandler(this.сформироватьEd501ToolStripMenuItem_Click);
+            // 
+            // печатьToolStripMenuItem
+            // 
+            this.печатьToolStripMenuItem.Name = "печатьToolStripMenuItem";
+            this.печатьToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.печатьToolStripMenuItem.Text = "Печать";
+            this.печатьToolStripMenuItem.Click += new System.EventHandler(this.печатьToolStripMenuItem_Click);
+            // 
+            // настройкиToolStripMenuItem
+            // 
+            this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
+            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+            this.настройкиToolStripMenuItem.Text = "Настройки";
+            this.настройкиToolStripMenuItem.Click += new System.EventHandler(this.настройкиToolStripMenuItem_Click);
             // 
             // помощьToolStripMenuItem
             // 
@@ -577,13 +605,6 @@
             this.radioButton2.UseVisualStyleBackColor = true;
             this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged_1);
             // 
-            // сформироватьED101ToolStripMenuItem
-            // 
-            this.сформироватьED101ToolStripMenuItem.Name = "сформироватьED101ToolStripMenuItem";
-            this.сформироватьED101ToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
-            this.сформироватьED101ToolStripMenuItem.Text = "Сформировать ED101";
-            this.сформироватьED101ToolStripMenuItem.Click += new System.EventHandler(this.сформироватьED101ToolStripMenuItem_Click);
-            // 
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(76, 133);
@@ -630,13 +651,6 @@
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(100, 20);
             this.textBox9.TabIndex = 82;
-            // 
-            // сформироватьSwiftСообщениеToolStripMenuItem
-            // 
-            this.сформироватьSwiftСообщениеToolStripMenuItem.Name = "сформироватьSwiftСообщениеToolStripMenuItem";
-            this.сформироватьSwiftСообщениеToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
-            this.сформироватьSwiftСообщениеToolStripMenuItem.Text = "Сформировать MT101 (Swift)";
-            this.сформироватьSwiftСообщениеToolStripMenuItem.Click += new System.EventHandler(this.сформироватьSwiftСообщениеToolStripMenuItem_Click);
             // 
             // textBox10
             // 
@@ -731,13 +745,6 @@
             this.textBox19.Size = new System.Drawing.Size(75, 20);
             this.textBox19.TabIndex = 95;
             // 
-            // настройкиToolStripMenuItem
-            // 
-            this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
-            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
-            this.настройкиToolStripMenuItem.Text = "Настройки";
-            this.настройкиToolStripMenuItem.Click += new System.EventHandler(this.настройкиToolStripMenuItem_Click);
-            // 
             // textBox20
             // 
             this.textBox20.Location = new System.Drawing.Point(546, 546);
@@ -779,13 +786,6 @@
             this.textBox25.Name = "textBox25";
             this.textBox25.Size = new System.Drawing.Size(100, 20);
             this.textBox25.TabIndex = 102;
-            // 
-            // печатьToolStripMenuItem
-            // 
-            this.печатьToolStripMenuItem.Name = "печатьToolStripMenuItem";
-            this.печатьToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
-            this.печатьToolStripMenuItem.Text = "Печать";
-            this.печатьToolStripMenuItem.Click += new System.EventHandler(this.печатьToolStripMenuItem_Click);
             // 
             // Form2
             // 

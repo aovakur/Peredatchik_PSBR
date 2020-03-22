@@ -19,7 +19,7 @@ namespace WindowsFormsApp2
         {
             
             InitializeComponent();
-            int find_pp = Convert.ToInt32(textBox1.Text);
+           // int find_pp = Convert.ToInt32(textBox1.Text);
 
         }
 
