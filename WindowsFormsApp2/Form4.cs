@@ -14,21 +14,14 @@ namespace WindowsFormsApp2
     public partial class Form4 : Form
     {
 
-
         public string safepath;
         settings settings = new settings();
         FolderBrowserDialog FBD = new FolderBrowserDialog();
-
-
 
         public Form4()
         {
             InitializeComponent();
             textBox1.Text = Convert.ToString(safepath);
-
-
-
-
         }
 
         private void folderBrowserDialog1_HelpRequest(object sender, EventArgs e)
@@ -56,6 +49,8 @@ namespace WindowsFormsApp2
                 //MessageBox.Show(FBD.SelectedPath);
                 
             }
+
+            //Safepath settings()
         }
     }
 }

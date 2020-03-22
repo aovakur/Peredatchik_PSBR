@@ -29,15 +29,25 @@ namespace WindowsFormsApp2
             textBox3.ReadOnly = true;
             radioButton1.Checked = true;
             textBox4.Text = "Платежное поручение";
-            textBox1.Text = "040106";
+            textBox1.Text = "0401060";
             textBox2.Text = createPP.Date_pp();
-            textBox13.Visible = false;
-            textBox14.Visible = false;
-            textBox15.Visible = false;
-            textBox16.Visible = false;
-            textBox17.Visible = false;
-            textBox18.Visible = false;
-            textBox19.Visible = false;
+         
+            textBox23.ReadOnly = true;
+            textBox21.ReadOnly = true;
+            textBox25.ReadOnly = true;
+            createPP.P18 = "01";
+            textBox20.Text = createPP.P18;
+            textBox20.ReadOnly = true;
+            textBox22.ReadOnly = true;
+
+            textBox13.ReadOnly = true;
+            textBox14.ReadOnly = true;
+            textBox15.ReadOnly = true;
+            textBox16.ReadOnly = true;
+            textBox17.ReadOnly = true;
+            textBox18.ReadOnly = true;
+            textBox19.ReadOnly = true;
+           
         }
 
        
@@ -121,10 +131,10 @@ namespace WindowsFormsApp2
 
         public void сохранитьToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            createPP.P0 = Convert.ToInt32(textBox10.Text);
+            createPP.P0 = Convert.ToString(textBox10.Text);
             createPP.P4 = Convert.ToString(textBox2.Text);
-            MessageBox.Show("Платежное поручение сохранено");
-
+            //  MessageBox.Show("Платежное поручение сохранено");
+            createPP.pdf(createPP.P0, createPP.P4);
 
         }
 
@@ -261,7 +271,10 @@ namespace WindowsFormsApp2
 
         private void сформироватьEd501ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show("Платежное поручение в формате ED501 сохранено");
+            //передача даты
+            createPP.P4 = Convert.ToString(textBox2.Text);
+
+            //Передаем все параметры
             createPP.ed501(createPP.P4);
         }
 
@@ -274,23 +287,27 @@ namespace WindowsFormsApp2
         {
             if (checkBox1.Checked == true)
             {
-                textBox13.Visible = true;
-                textBox14.Visible = true;
-                textBox15.Visible = true;
-                textBox16.Visible = true;
-                textBox17.Visible = true;
-                textBox18.Visible = true;
-                textBox19.Visible = true;
+                
+
+                textBox13.ReadOnly = false;
+                textBox14.ReadOnly = false;
+                textBox15.ReadOnly = false;
+                textBox16.ReadOnly = false;
+                textBox17.ReadOnly = false;
+                textBox18.ReadOnly = false;
+                textBox19.ReadOnly = false;
+                textBox22.ReadOnly = false;
             }
             else
             {
-                textBox13.Visible = false;
-                textBox14.Visible = false;
-                textBox15.Visible = false;
-                textBox16.Visible = false;
-                textBox17.Visible = false;
-                textBox18.Visible = false;
-                textBox19.Visible = false;
+                textBox13.ReadOnly = true;
+                textBox14.ReadOnly = true;
+                textBox15.ReadOnly = true;
+                textBox16.ReadOnly = true;
+                textBox17.ReadOnly = true;
+                textBox18.ReadOnly = true;
+                textBox19.ReadOnly = true;
+                textBox22.ReadOnly = true;
             }
                
 
@@ -308,7 +325,12 @@ namespace WindowsFormsApp2
         private void button1_Click_1(object sender, EventArgs e)
         {
            // settings settings = new settings();
-            MessageBox.Show(Form2.safepath);
+         //   MessageBox.Show(Form2.safepath);
+        }
+
+        private void печатьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+          
         }
     }
 

@@ -13,7 +13,14 @@ using System.Data.OleDb;
 using System.IO;
 using System.Xml.Linq;
 using System.Xml;
-
+using iText;
+using System.Web;
+using iTextSharp.text.pdf.parser;
+using System.util.collections;
+using System.Net.Mail;
+using iTextSharp;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 
 namespace WindowsFormsApp2
@@ -21,7 +28,7 @@ namespace WindowsFormsApp2
     class pp
     {
         string p1;
-        int p0;
+        string p0;
         int p2;
         int p3;
         string p4;
@@ -29,14 +36,16 @@ namespace WindowsFormsApp2
         string p6;
         string p8;
         int p60;
+        string p18;
         int p102;
         int p101;
+        
 
         SqlConnection conn = DBUtils.GetDBConnection();
         SqlCommand command = new SqlCommand();
        
 
-        public int P0
+        public string P0
         {
             get { return p0; }
             set { p0 = value; }
@@ -100,6 +109,13 @@ namespace WindowsFormsApp2
             get { return p102; }
             set { p102 = value; }
         }
+
+        public string P18
+        {
+            get { return p18; }
+            set { p18 = value; }
+        }
+
 
         public int P101
         {
@@ -246,23 +262,34 @@ namespace WindowsFormsApp2
         }
 
 
+        public string pdf(string p0, string p4)
+        {
+            string b;
+            BaseFont baseFont = BaseFont.CreateFont(@"C:\Windows\Fonts\Arial.ttf", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
+            PdfReader template = new PdfReader("C:\\PeredatchikPSBR\\Template_4.pdf");
+            PdfStamper stamper = new PdfStamper(template, new FileStream("C:\\PeredatchikPSBR\\New_1.pdf", FileMode.Create));
+            AcroFields fields = stamper.AcroFields;
+            fields.AddSubstitutionFont(baseFont);
+            fields.SetField("p4", p4);
+            fields.SetField("p3", p0);
+            stamper.FormFlattening = false;
+            stamper.Close();
+
+            b = "Платежное поручение в pdf сохранено";
+            MessageBox.Show(b);
+            return b;
+        }
+        
+
+
         public string ed501(string p4)
         {
            string b;
-            ///string xml ="<Document xmlns=urn: iso: std: iso: 20022:tech: xsd: pain.001.001.06> " +
-            //   "</Document>";
-
-
-            //XElement xElement = XElement.Parse(xml);
-            // Console.WriteLine(xElement);
-
-            // xElement.Save("C:\\PeredatchikPSBR\\test.ed501");
-
                 XDocument doc = new XDocument(new XElement("Document",
                                                    new XElement("CstmrCdtTrfInitn",
                                                        new XElement("GrpHdr",
                                                             new XElement("MsgId", "other text"),
-                                                            new XElement("CreDtTm", "text"),
+                                                            new XElement("CreDtTm", p4),
                                                             new XElement("NbOfTxs", "other text"),
                                                                 new XElement("InitgPty",
                                                                   new XElement("Nm", "text"),
@@ -307,11 +334,26 @@ namespace WindowsFormsApp2
 
                                              )),
                                              new XElement("Ccy", "text")
+                                             ),
+                                              new XElement("DbtrAg",
+                                                                      new XElement("FinInstnId",
+                                                                        new XElement("ClrSysMmbId",
+                                                                             new XElement("ClrSysId",
+                                                                                 new XElement("Cd", "text")
+                                             ),    
+                                                                            new XElement("MmbId", "text")
 
-                                             )
-                                             
-                                             
-                                             ))));
+                                             ),
+                                                                              new XElement("PstlAdr",
+                                                                                 new XElement("Ctry", "text")
+                                             ))),
+                                             new XElement("DbtrAgtAcct",
+                                                        new XElement("Id",
+                                                            new XElement("Othr",
+                                                                                 new XElement("id", "text")
+
+
+                                             )))))));
 
                 doc.Save("C:\\PeredatchikPSBR\\test.ed501");
 

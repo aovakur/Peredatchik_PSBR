@@ -67,17 +67,11 @@
             this.label17 = new System.Windows.Forms.Label();
             this.listBox22 = new System.Windows.Forms.ListBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.listBox23 = new System.Windows.Forms.ListBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.listBox24 = new System.Windows.Forms.ListBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.listBox25 = new System.Windows.Forms.ListBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.listBox26 = new System.Windows.Forms.ListBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.listBox27 = new System.Windows.Forms.ListBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.listBox28 = new System.Windows.Forms.ListBox();
             this.label26 = new System.Windows.Forms.Label();
             this.listBox36 = new System.Windows.Forms.ListBox();
             this.label27 = new System.Windows.Forms.Label();
@@ -107,7 +101,13 @@
             this.textBox18 = new System.Windows.Forms.TextBox();
             this.textBox19 = new System.Windows.Forms.TextBox();
             this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
+            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.textBox24 = new System.Windows.Forms.TextBox();
+            this.textBox25 = new System.Windows.Forms.TextBox();
+            this.печатьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -115,6 +115,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.сохранитьToolStripMenuItem,
+            this.печатьToolStripMenuItem,
             this.настройкиToolStripMenuItem,
             this.помощьToolStripMenuItem,
             this.оПрограммеToolStripMenuItem});
@@ -140,7 +141,7 @@
             // 
             this.сохранитьToolStripMenuItem1.Name = "сохранитьToolStripMenuItem1";
             this.сохранитьToolStripMenuItem1.Size = new System.Drawing.Size(238, 22);
-            this.сохранитьToolStripMenuItem1.Text = "Сохранить";
+            this.сохранитьToolStripMenuItem1.Text = "Сохранить в PDF";
             this.сохранитьToolStripMenuItem1.Click += new System.EventHandler(this.сохранитьToolStripMenuItem1_Click);
             // 
             // записатьВБДToolStripMenuItem
@@ -456,14 +457,6 @@
             this.label20.TabIndex = 48;
             this.label20.Text = "Получатель";
             // 
-            // listBox23
-            // 
-            this.listBox23.FormattingEnabled = true;
-            this.listBox23.Location = new System.Drawing.Point(546, 579);
-            this.listBox23.Name = "listBox23";
-            this.listBox23.Size = new System.Drawing.Size(101, 17);
-            this.listBox23.TabIndex = 53;
-            // 
             // label21
             // 
             this.label21.AutoSize = true;
@@ -472,14 +465,6 @@
             this.label21.Size = new System.Drawing.Size(48, 13);
             this.label21.TabIndex = 52;
             this.label21.Text = "Назн.пл";
-            // 
-            // listBox24
-            // 
-            this.listBox24.FormattingEnabled = true;
-            this.listBox24.Location = new System.Drawing.Point(546, 546);
-            this.listBox24.Name = "listBox24";
-            this.listBox24.Size = new System.Drawing.Size(101, 17);
-            this.listBox24.TabIndex = 51;
             // 
             // label22
             // 
@@ -490,14 +475,6 @@
             this.label22.TabIndex = 50;
             this.label22.Text = "Вид оп.";
             // 
-            // listBox25
-            // 
-            this.listBox25.FormattingEnabled = true;
-            this.listBox25.Location = new System.Drawing.Point(752, 579);
-            this.listBox25.Name = "listBox25";
-            this.listBox25.Size = new System.Drawing.Size(101, 17);
-            this.listBox25.TabIndex = 57;
-            // 
             // label23
             // 
             this.label23.AutoSize = true;
@@ -506,14 +483,6 @@
             this.label23.Size = new System.Drawing.Size(58, 13);
             this.label23.TabIndex = 56;
             this.label23.Text = "Очер.плат";
-            // 
-            // listBox26
-            // 
-            this.listBox26.FormattingEnabled = true;
-            this.listBox26.Location = new System.Drawing.Point(752, 546);
-            this.listBox26.Name = "listBox26";
-            this.listBox26.Size = new System.Drawing.Size(101, 17);
-            this.listBox26.TabIndex = 55;
             // 
             // label24
             // 
@@ -524,14 +493,6 @@
             this.label24.TabIndex = 54;
             this.label24.Text = "Срок плат.";
             // 
-            // listBox27
-            // 
-            this.listBox27.FormattingEnabled = true;
-            this.listBox27.Location = new System.Drawing.Point(752, 614);
-            this.listBox27.Name = "listBox27";
-            this.listBox27.Size = new System.Drawing.Size(101, 17);
-            this.listBox27.TabIndex = 61;
-            // 
             // label25
             // 
             this.label25.AutoSize = true;
@@ -540,14 +501,6 @@
             this.label25.Size = new System.Drawing.Size(53, 13);
             this.label25.TabIndex = 60;
             this.label25.Text = "Рез.поле";
-            // 
-            // listBox28
-            // 
-            this.listBox28.FormattingEnabled = true;
-            this.listBox28.Location = new System.Drawing.Point(546, 614);
-            this.listBox28.Name = "listBox28";
-            this.listBox28.Size = new System.Drawing.Size(101, 17);
-            this.listBox28.TabIndex = 59;
             // 
             // label26
             // 
@@ -785,22 +738,66 @@
             this.настройкиToolStripMenuItem.Text = "Настройки";
             this.настройкиToolStripMenuItem.Click += new System.EventHandler(this.настройкиToolStripMenuItem_Click);
             // 
-            // button1
+            // textBox20
             // 
-            this.button1.Location = new System.Drawing.Point(725, 237);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 96;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.textBox20.Location = new System.Drawing.Point(546, 546);
+            this.textBox20.Name = "textBox20";
+            this.textBox20.Size = new System.Drawing.Size(100, 20);
+            this.textBox20.TabIndex = 97;
+            // 
+            // textBox21
+            // 
+            this.textBox21.Location = new System.Drawing.Point(546, 579);
+            this.textBox21.Name = "textBox21";
+            this.textBox21.Size = new System.Drawing.Size(100, 20);
+            this.textBox21.TabIndex = 98;
+            // 
+            // textBox22
+            // 
+            this.textBox22.Location = new System.Drawing.Point(546, 614);
+            this.textBox22.Name = "textBox22";
+            this.textBox22.Size = new System.Drawing.Size(100, 20);
+            this.textBox22.TabIndex = 99;
+            // 
+            // textBox23
+            // 
+            this.textBox23.Location = new System.Drawing.Point(764, 543);
+            this.textBox23.Name = "textBox23";
+            this.textBox23.Size = new System.Drawing.Size(100, 20);
+            this.textBox23.TabIndex = 100;
+            // 
+            // textBox24
+            // 
+            this.textBox24.Location = new System.Drawing.Point(764, 579);
+            this.textBox24.Name = "textBox24";
+            this.textBox24.Size = new System.Drawing.Size(100, 20);
+            this.textBox24.TabIndex = 101;
+            // 
+            // textBox25
+            // 
+            this.textBox25.Location = new System.Drawing.Point(764, 614);
+            this.textBox25.Name = "textBox25";
+            this.textBox25.Size = new System.Drawing.Size(100, 20);
+            this.textBox25.TabIndex = 102;
+            // 
+            // печатьToolStripMenuItem
+            // 
+            this.печатьToolStripMenuItem.Name = "печатьToolStripMenuItem";
+            this.печатьToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.печатьToolStripMenuItem.Text = "Печать";
+            this.печатьToolStripMenuItem.Click += new System.EventHandler(this.печатьToolStripMenuItem_Click);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(899, 750);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox25);
+            this.Controls.Add(this.textBox24);
+            this.Controls.Add(this.textBox23);
+            this.Controls.Add(this.textBox22);
+            this.Controls.Add(this.textBox21);
+            this.Controls.Add(this.textBox20);
             this.Controls.Add(this.textBox19);
             this.Controls.Add(this.textBox18);
             this.Controls.Add(this.textBox17);
@@ -826,17 +823,11 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label27);
             this.Controls.Add(this.listBox36);
-            this.Controls.Add(this.listBox27);
             this.Controls.Add(this.label25);
-            this.Controls.Add(this.listBox28);
             this.Controls.Add(this.label26);
-            this.Controls.Add(this.listBox25);
             this.Controls.Add(this.label23);
-            this.Controls.Add(this.listBox26);
             this.Controls.Add(this.label24);
-            this.Controls.Add(this.listBox23);
             this.Controls.Add(this.label21);
-            this.Controls.Add(this.listBox24);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.listBox22);
             this.Controls.Add(this.label20);
@@ -917,17 +908,11 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ListBox listBox22;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.ListBox listBox23;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.ListBox listBox24;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.ListBox listBox25;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.ListBox listBox26;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.ListBox listBox27;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.ListBox listBox28;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.ListBox listBox36;
         private System.Windows.Forms.Label label27;
@@ -962,6 +947,12 @@
         private System.Windows.Forms.TextBox textBox18;
         private System.Windows.Forms.TextBox textBox19;
         private System.Windows.Forms.ToolStripMenuItem настройкиToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.TextBox textBox21;
+        private System.Windows.Forms.TextBox textBox22;
+        private System.Windows.Forms.TextBox textBox23;
+        private System.Windows.Forms.TextBox textBox24;
+        private System.Windows.Forms.TextBox textBox25;
+        private System.Windows.Forms.ToolStripMenuItem печатьToolStripMenuItem;
     }
 }
