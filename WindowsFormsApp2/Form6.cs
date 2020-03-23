@@ -28,7 +28,8 @@ namespace WindowsFormsApp2
             DBUtils.Database1=Convert.ToString(textBox2.Text);
             DBUtils.Username1=Convert.ToString(textBox3.Text);
             DBUtils.Password1=Convert.ToString(textBox4.Text);
-    }
+            this.Close();
+        }
 
         private void Form6_Load(object sender, EventArgs e)
         {

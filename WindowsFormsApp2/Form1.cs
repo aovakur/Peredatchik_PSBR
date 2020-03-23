@@ -20,26 +20,17 @@ namespace WindowsFormsApp2
         public Form1()
         {
             InitializeComponent();
-        
+            dataGridView1.Visible = false;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-           
-
-            //dataGridView1.AutoSizeColumnsMode =
-            // DataGridViewAutoSizeColumnsMode.AllCells;
-            //  dataGridView1.AutoResizeColumns();
-
-            // dataGridView1.AutoSizeRowsMode =
-            //     DataGridViewAutoSizeRowsMode.AllCells;
-            //  dataGridView1.AutoResizeRows(
-            //     DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            dataGridView1.Visible = true;
             string selectedState = comboBox1.SelectedItem.ToString();
             button2.Visible =true;
 
@@ -211,10 +202,12 @@ namespace WindowsFormsApp2
 
         private void button1_Click(object sender, EventArgs e)
         {
+            dataGridView1.Visible = true;
             string selectedState = comboBox1.SelectedItem.ToString();
 
             if (selectedState == "Созданные")
             {
+                dataGridView1.Visible = true;
                 SqlConnection conn = DBUtils.GetDBConnection();
 
                 try
@@ -291,7 +284,7 @@ namespace WindowsFormsApp2
             }
             else if (selectedState == "Полученные")
             {
-
+                dataGridView1.Visible = true;
                 SqlConnection conn = DBUtils.GetDBConnection();
 
                 try
