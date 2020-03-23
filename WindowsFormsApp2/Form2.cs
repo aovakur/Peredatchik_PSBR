@@ -334,7 +334,11 @@ namespace WindowsFormsApp2
           
         }
 
-        
+        private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form5 newForm5 = new Form5();
+            newForm5.Show();
+        }
     }
 
  

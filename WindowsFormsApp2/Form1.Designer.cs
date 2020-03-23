@@ -47,6 +47,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.настройкиБазаДанныхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.подписаниеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -71,7 +73,9 @@
             this.статусыЭПДToolStripMenuItem,
             this.эПДToolStripMenuItem1,
             this.эСИСToolStripMenuItem,
+            this.подписаниеToolStripMenuItem,
             this.настройкиToolStripMenuItem,
+            this.настройкиБазаДанныхToolStripMenuItem,
             this.помощьToolStripMenuItem,
             this.оПрограммеToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -106,14 +110,14 @@
             // интеграцияС1СToolStripMenuItem
             // 
             this.интеграцияС1СToolStripMenuItem.Name = "интеграцияС1СToolStripMenuItem";
-            this.интеграцияС1СToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
-            this.интеграцияС1СToolStripMenuItem.Text = "Интеграция с 1С";
+            this.интеграцияС1СToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.интеграцияС1СToolStripMenuItem.Text = "Обработка формата 1С";
             // 
             // интеграцияСДругимиФорматамиToolStripMenuItem
             // 
             this.интеграцияСДругимиФорматамиToolStripMenuItem.Name = "интеграцияСДругимиФорматамиToolStripMenuItem";
-            this.интеграцияСДругимиФорматамиToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
-            this.интеграцияСДругимиФорматамиToolStripMenuItem.Text = "Интеграция с другими форматами";
+            this.интеграцияСДругимиФорматамиToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.интеграцияСДругимиФорматамиToolStripMenuItem.Text = "Обработка Swift";
             // 
             // эСИСToolStripMenuItem
             // 
@@ -199,8 +203,22 @@
             // настройкиToolStripMenuItem
             // 
             this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
-            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
-            this.настройкиToolStripMenuItem.Text = "Настройки";
+            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(146, 20);
+            this.настройкиToolStripMenuItem.Text = "Настройки сохранения";
+            this.настройкиToolStripMenuItem.Click += new System.EventHandler(this.настройкиToolStripMenuItem_Click);
+            // 
+            // настройкиБазаДанныхToolStripMenuItem
+            // 
+            this.настройкиБазаДанныхToolStripMenuItem.Name = "настройкиБазаДанныхToolStripMenuItem";
+            this.настройкиБазаДанныхToolStripMenuItem.Size = new System.Drawing.Size(149, 20);
+            this.настройкиБазаДанныхToolStripMenuItem.Text = "Настройки база данных";
+            this.настройкиБазаДанныхToolStripMenuItem.Click += new System.EventHandler(this.настройкиБазаДанныхToolStripMenuItem_Click);
+            // 
+            // подписаниеToolStripMenuItem
+            // 
+            this.подписаниеToolStripMenuItem.Name = "подписаниеToolStripMenuItem";
+            this.подписаниеToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
+            this.подписаниеToolStripMenuItem.Text = "Подписание";
             // 
             // Form1
             // 
@@ -247,6 +265,8 @@
       
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolStripMenuItem настройкиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem настройкиБазаДанныхToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem подписаниеToolStripMenuItem;
     }
 }
 

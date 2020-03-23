@@ -7,15 +7,50 @@ using System.Data.SqlClient;
 
 namespace WindowsFormsApp2
 {
-    class DBUtils
+    public static class DBUtils
     {
+        public static string datasource;
+        public static string database;
+        public static string username;
+        public static string password;
+
+        public static string Datasource1
+        {
+            get { return datasource; }
+            set { datasource = value; }
+        }
+
+        public static string Database1
+        {
+            get { return database; }
+            set { database = value; }
+        }
+
+        public static string Username1
+        {
+            get { return username; }
+            set { username = value; }
+        }
+
+
+        public static string Password1
+        {
+            get { return password; }
+            set { password = value; }
+        }
+
+
         public static SqlConnection GetDBConnection()
         {
-            string datasource = @"DESKTOP-9H4S4ED\SQLEXPRESS";
-            string database = "ps_bankrussia";
-            string username = "adminkbr";
-            string password = "aA12345678";
-            return DBSQLServerUtils.GetDBConnection(datasource, database, username, password);
+            string datasource12 = Convert.ToString(Datasource1);
+            string database12 = Convert.ToString(Database1);
+            string username12 = Convert.ToString(Username1);
+            string password12 = Convert.ToString(Password1);
+            //string datasource = @"DESKTOP-9H4S4ED\SQLEXPRESS";
+            //string database = "ps_bankrussia";
+            //string username = "adminkbr";
+            // string password = "aA12345678";
+            return DBSQLServerUtils.GetDBConnection(datasource12, database12, username12, password12);
         }
     }
 }

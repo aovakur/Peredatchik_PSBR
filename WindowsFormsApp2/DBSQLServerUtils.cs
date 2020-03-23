@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace WindowsFormsApp2
 {
-    class DBSQLServerUtils
+   public class DBSQLServerUtils
     {
 
         public static SqlConnection
