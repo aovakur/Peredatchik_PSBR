@@ -37,13 +37,18 @@ namespace WindowsFormsApp2
         string p8;
         string p60;
         string p61;
-
+        string p10;
+        string p11;
+        string p12;
+        string p13;
         string p18;
         int p102;
         int p103;
         int p101;
         string p24;
         string p16;
+        string p14;
+
         
 
         SqlConnection conn = DBUtils.GetDBConnection();
@@ -103,6 +108,18 @@ namespace WindowsFormsApp2
             set { p8 = value; }
         }
 
+        public string P11
+        {
+            get { return p11; }
+            set { p11 = value; }
+        }
+
+        public string P12
+        {
+            get { return p12; }
+            set { p12 = value; }
+        }
+
 
         public string P16
         {
@@ -110,6 +127,11 @@ namespace WindowsFormsApp2
             set { p16 = value; }
         }
 
+        public string P14
+        {
+            get { return p14; }
+            set { p14 = value; }
+        }
 
         public string P60
         {
@@ -152,6 +174,22 @@ namespace WindowsFormsApp2
         {
             get { return p24; }
             set { p24 = value; }
+        }
+
+        //Банк отправителя
+
+        public string P10
+        {
+            get { return p10; }
+            set { p10 = value; }
+        }
+
+        //Банк получателя 
+
+        public string P13
+        {
+            get { return p13; }
+            set { p13 = value; }
         }
 
 
@@ -319,6 +357,31 @@ namespace WindowsFormsApp2
 
         }
 
+        public string GetBIC(string bank)
+        {
+
+            //Генерация БИК
+            SqlConnection conn6 = DBUtils.GetDBConnection();
+            conn6.Open();
+            SqlCommand sqlCmd = new SqlCommand();
+            sqlCmd.Connection = conn6;
+            sqlCmd.CommandType = CommandType.StoredProcedure;
+            sqlCmd.CommandText = "GETBIK_1";
+            SqlParameter namecompany = new SqlParameter
+            {
+                ParameterName = "@companynameGETBIK",
+                Value = bank
+            };
+
+            sqlCmd.Parameters.Add(namecompany);
+            string BIC_orgatization = Convert.ToString(sqlCmd.ExecuteScalar());
+            conn6.Close(); //Закрываем соединение
+
+            return BIC_orgatization;
+
+        }
+
+      
 
         public string ed101(string p4)
         {

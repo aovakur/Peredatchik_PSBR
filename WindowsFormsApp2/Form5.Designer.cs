@@ -86,8 +86,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.kisspng_russian_ruble_ruble_sign_foreign_exchange_market_r_5ad076326cef51_8067054215236111864462;
-            this.pictureBox1.InitialImage = global::WindowsFormsApp2.Properties.Resources.kisspng_russian_ruble_ruble_sign_foreign_exchange_market_r_5ad076326cef511;
+            
             this.pictureBox1.Location = new System.Drawing.Point(53, 48);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(190, 124);

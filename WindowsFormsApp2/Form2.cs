@@ -17,11 +17,6 @@ namespace WindowsFormsApp2
     public partial class Form2 : Form
     {
         public int pp_summ;
-       ///public List<INN> pbook = new List<INN>();
-
-        //string INN = new List<string>();
-        //var KPP = new List<string>();
-
         pp createPP = new pp();
 
         settings settings = new settings();
@@ -30,6 +25,7 @@ namespace WindowsFormsApp2
         public Form2()
         {
             InitializeComponent();
+
             textBox3.ReadOnly = true;
             radioButton1.Checked = true;
             textBox4.Text = "Платежное поручение";
@@ -51,8 +47,6 @@ namespace WindowsFormsApp2
             textBox17.ReadOnly = true;
             textBox18.ReadOnly = true;
             textBox19.ReadOnly = true;
-
-            
         }
 
        
@@ -102,8 +96,20 @@ namespace WindowsFormsApp2
 
         }
 
-        private void listBox10_SelectedIndexChanged(object sender, EventArgs e)
+        public void listBox10_SelectedIndexChanged(object sender, EventArgs e)
         {
+            createPP.P10 = listBox10.SelectedItem.ToString();
+            //textBox33.Text = createPP.P10;
+
+
+            //формируется БИК 29 text box
+
+           createPP.P11 = Convert.ToString(createPP.GetBIC(createPP.P10));
+           textBox29.Text = Convert.ToString(createPP.P11);
+
+            //формируется кор счет 30 text box
+            //createPP.P12 = Convert.ToString(createPP.GetCOR(createPP.P10));
+           //textBox30.Text = Convert.ToString(createPP.P12);
 
         }
 
@@ -215,6 +221,7 @@ namespace WindowsFormsApp2
 
         public void listBox14_SelectedIndexChanged(object sender, EventArgs e)
         {
+            listBox10.Items.Clear();
             // Передаем название организации 
             createPP.P8 = listBox14.SelectedItem.ToString();
 
@@ -233,6 +240,30 @@ namespace WindowsFormsApp2
             createPP.P101 = Convert.ToInt32(createPP.Get101(createPP.P8));
             textBox8.Text = Convert.ToString(createPP.P101);
 
+            //Выбор банка плательщика 
+            SqlConnection conn3 = DBUtils.GetDBConnection();
+            conn3.Open();
+            SqlCommand sqlCmd = new SqlCommand();
+            sqlCmd.Connection = conn3;
+            sqlCmd.CommandType = CommandType.StoredProcedure;
+            sqlCmd.CommandText = "GETBANK";
+            SqlParameter namecompany = new SqlParameter
+            {
+                ParameterName = "@companynameGETBANK",
+                Value = createPP.P8
+            };
+            sqlCmd.Parameters.Add(namecompany);
+            SqlDataReader read = sqlCmd.ExecuteReader(); //Считываем и извлекаем данные
+            while (read.Read()) //Читаем пока есть данные
+            {
+                // MessageBox.Show(read.GetValue(0).ToString());
+                listBox10.Items.Add(read.GetValue(0).ToString());
+            }
+
+            conn3.Close(); //Закрываем соединение
+
+
+            
 
 
         }
@@ -264,6 +295,9 @@ namespace WindowsFormsApp2
 
         private void listBox22_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //Очищаем банк 
+            listBox18.Items.Clear();
+
             // передаем название организации
             createPP.P16 = listBox22.SelectedItem.ToString();
 
@@ -275,6 +309,31 @@ namespace WindowsFormsApp2
 
             createPP.P103 = Convert.ToInt32(createPP.GetKPP(createPP.P16));
             textBox28.Text = Convert.ToString(createPP.P103);
+
+            //Выбор банка получателя 
+
+            SqlConnection conn4 = DBUtils.GetDBConnection();
+            conn4.Open();
+            SqlCommand sqlCmd1 = new SqlCommand();
+            sqlCmd1.Connection = conn4;
+            sqlCmd1.CommandType = CommandType.StoredProcedure;
+            sqlCmd1.CommandText = "GETBANK";
+            SqlParameter namecompany1 = new SqlParameter
+            {
+                ParameterName = "@companynameGETBANK",
+                Value = createPP.P16
+            };
+            sqlCmd1.Parameters.Add(namecompany1);
+            SqlDataReader read1 = sqlCmd1.ExecuteReader(); //Считываем и извлекаем данные
+            while (read1.Read()) //Читаем пока есть данные
+            {
+                // MessageBox.Show(read.GetValue(0).ToString());
+                listBox18.Items.Add(read1.GetValue(0).ToString());
+            }
+
+            conn4.Close(); //Закрываем соединение
+
+
         }
 
         public void сформироватьED101ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -377,6 +436,22 @@ namespace WindowsFormsApp2
         private void textBox26_TextChanged(object sender, EventArgs e)
         {
             
+
+        }
+
+        public void listBox18_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            createPP.P13=listBox18.SelectedItem.ToString();
+
+            //формируется БИК 29 text box
+
+            createPP.P14 = Convert.ToString(createPP.GetBIC(createPP.P13));
+            textBox31.Text = Convert.ToString(createPP.P14);
+
+        }
+
+        private void textBox29_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

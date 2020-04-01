@@ -59,26 +59,5 @@ namespace WindowsFormsApp2.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap kisspng_russian_ruble_ruble_sign_foreign_exchange_market_r_5ad076326cef51_8067054215236111864462 {
-            get {
-                object obj = ResourceManager.GetObject("kisspng-russian-ruble-ruble-sign-foreign-exchange-market-r-5ad076326cef51.8067054" +
-                        "215236111864462", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap kisspng_russian_ruble_ruble_sign_foreign_exchange_market_r_5ad076326cef511 {
-            get {
-                object obj = ResourceManager.GetObject("kisspng-russian-ruble-ruble-sign-foreign-exchange-market-r-5ad076326cef511", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }
