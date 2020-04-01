@@ -35,10 +35,15 @@ namespace WindowsFormsApp2
         int p7;
         string p6;
         string p8;
-        int p60;
+        string p60;
+        string p61;
+
         string p18;
         int p102;
+        int p103;
         int p101;
+        string p24;
+        string p16;
         
 
         SqlConnection conn = DBUtils.GetDBConnection();
@@ -98,16 +103,37 @@ namespace WindowsFormsApp2
             set { p8 = value; }
         }
 
-        public int P60
+
+        public string P16
+        {
+            get { return p16; }
+            set { p16 = value; }
+        }
+
+
+        public string P60
         {
             get { return p60; }
             set { p60 = value; }
         }
 
+        public string P61
+        {
+            get { return p61; }
+            set { p61 = value; }
+        }
+
+
         public int P102
         {
             get { return p102; }
             set { p102 = value; }
+        }
+
+        public int P103
+        {
+            get { return p103; }
+            set { p103 = value; }
         }
 
         public string P18
@@ -116,11 +142,16 @@ namespace WindowsFormsApp2
             set { p18 = value; }
         }
 
-
         public int P101
         {
             get { return p101; }
             set { p101 = value; }
+        }
+
+        public string P24
+        {
+            get { return p24; }
+            set { p24 = value; }
         }
 
 
@@ -213,26 +244,78 @@ namespace WindowsFormsApp2
         }
 
 
-        public int GetINN(string companyname)
+        public string GetINN(string companyname)
         {
-            int INN = 10;
-            return INN;
+
+            //Генерация ИНН
+            SqlConnection conn1 = DBUtils.GetDBConnection();
+            conn1.Open();
+            SqlCommand sqlCmd = new SqlCommand();
+            sqlCmd.Connection = conn1;
+            sqlCmd.CommandType = CommandType.StoredProcedure;
+            sqlCmd.CommandText = "GETINN";
+            SqlParameter namecompany = new SqlParameter
+            {
+                ParameterName = "@companynameGETINN",
+                Value = companyname
+            };
+            sqlCmd.Parameters.Add(namecompany);
+            string INN_orgatization = Convert.ToString(sqlCmd.ExecuteScalar());
+           // textBox27.Text = Convert.ToString(INN_orgatization);
+
+            conn1.Close(); //Закрываем соединение
+
+            return INN_orgatization;
         }
 
 
         public int GetKPP(string companyname)
         {
-            int KPP = 10;
 
-            return KPP;
+            //Генерация ИНН
+            SqlConnection conn2 = DBUtils.GetDBConnection();
+            conn2.Open();
+            SqlCommand sqlCmd = new SqlCommand();
+            sqlCmd.Connection = conn2;
+            sqlCmd.CommandType = CommandType.StoredProcedure;
+            sqlCmd.CommandText = "GETKPP";
+            SqlParameter namecompany = new SqlParameter
+            {
+                ParameterName = "@companynameGETKPP",
+                Value = companyname
+            };
+            sqlCmd.Parameters.Add(namecompany);
+            int KPP_orgatization = Convert.ToInt32(sqlCmd.ExecuteScalar());
+            // textBox27.Text = Convert.ToString(INN_orgatization);
+
+            conn2.Close(); //Закрываем соединение
+
+            return KPP_orgatization;
+
+
 
         }
 
         public int Get101(string companyname)
         {
-            int Get101 = 10;
+            //Генерация ИНН
+            SqlConnection conn3 = DBUtils.GetDBConnection();
+            conn3.Open();
+            SqlCommand sqlCmd = new SqlCommand();
+            sqlCmd.Connection = conn3;
+            sqlCmd.CommandType = CommandType.StoredProcedure;
+            sqlCmd.CommandText = "GET101";
+            SqlParameter namecompany = new SqlParameter
+            {
+                ParameterName = "@companynameGET101",
+                Value = companyname
+            };
+            sqlCmd.Parameters.Add(namecompany);
+            Int16 KPP_orgatization = Convert.ToInt16(sqlCmd.ExecuteScalar());
 
-            return Get101;
+            conn3.Close(); //Закрываем соединение
+
+            return KPP_orgatization;
 
         }
 

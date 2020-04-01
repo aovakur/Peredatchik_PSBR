@@ -63,8 +63,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.listBox18 = new System.Windows.Forms.ListBox();
-            this.listBox20 = new System.Windows.Forms.ListBox();
-            this.listBox21 = new System.Windows.Forms.ListBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.listBox19 = new System.Windows.Forms.ListBox();
@@ -77,7 +75,6 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.listBox36 = new System.Windows.Forms.ListBox();
             this.label27 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -108,6 +105,9 @@
             this.textBox23 = new System.Windows.Forms.TextBox();
             this.textBox24 = new System.Windows.Forms.TextBox();
             this.textBox25 = new System.Windows.Forms.TextBox();
+            this.textBox26 = new System.Windows.Forms.TextBox();
+            this.textBox27 = new System.Windows.Forms.TextBox();
+            this.textBox28 = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -276,16 +276,16 @@
             // listBox10
             // 
             this.listBox10.FormattingEnabled = true;
-            this.listBox10.Location = new System.Drawing.Point(79, 345);
+            this.listBox10.Location = new System.Drawing.Point(77, 363);
             this.listBox10.Name = "listBox10";
-            this.listBox10.Size = new System.Drawing.Size(371, 56);
+            this.listBox10.Size = new System.Drawing.Size(371, 43);
             this.listBox10.TabIndex = 23;
             this.listBox10.SelectedIndexChanged += new System.EventHandler(this.listBox10_SelectedIndexChanged);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(76, 404);
+            this.label9.Location = new System.Drawing.Point(74, 409);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(103, 13);
             this.label9.TabIndex = 24;
@@ -333,7 +333,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(76, 323);
+            this.label12.Location = new System.Drawing.Point(76, 339);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(71, 13);
             this.label12.TabIndex = 31;
@@ -343,7 +343,7 @@
             // listBox14
             // 
             this.listBox14.FormattingEnabled = true;
-            this.listBox14.Location = new System.Drawing.Point(77, 264);
+            this.listBox14.Location = new System.Drawing.Point(77, 277);
             this.listBox14.Name = "listBox14";
             this.listBox14.Size = new System.Drawing.Size(373, 56);
             this.listBox14.TabIndex = 32;
@@ -403,7 +403,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(76, 501);
+            this.label16.Location = new System.Drawing.Point(78, 524);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(92, 13);
             this.label16.TabIndex = 36;
@@ -412,31 +412,15 @@
             // listBox18
             // 
             this.listBox18.FormattingEnabled = true;
-            this.listBox18.Location = new System.Drawing.Point(77, 442);
+            this.listBox18.Location = new System.Drawing.Point(79, 478);
             this.listBox18.Name = "listBox18";
-            this.listBox18.Size = new System.Drawing.Size(373, 56);
+            this.listBox18.Size = new System.Drawing.Size(373, 43);
             this.listBox18.TabIndex = 35;
-            // 
-            // listBox20
-            // 
-            this.listBox20.FormattingEnabled = true;
-            this.listBox20.Location = new System.Drawing.Point(342, 531);
-            this.listBox20.Name = "listBox20";
-            this.listBox20.Size = new System.Drawing.Size(108, 17);
-            this.listBox20.TabIndex = 45;
-            // 
-            // listBox21
-            // 
-            this.listBox21.FormattingEnabled = true;
-            this.listBox21.Location = new System.Drawing.Point(151, 531);
-            this.listBox21.Name = "listBox21";
-            this.listBox21.Size = new System.Drawing.Size(101, 17);
-            this.listBox21.TabIndex = 44;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(289, 535);
+            this.label18.Location = new System.Drawing.Point(289, 559);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(30, 13);
             this.label18.TabIndex = 42;
@@ -445,7 +429,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(76, 535);
+            this.label19.Location = new System.Drawing.Point(76, 559);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(31, 13);
             this.label19.TabIndex = 41;
@@ -471,9 +455,9 @@
             // listBox22
             // 
             this.listBox22.FormattingEnabled = true;
-            this.listBox22.Location = new System.Drawing.Point(76, 569);
+            this.listBox22.Location = new System.Drawing.Point(76, 582);
             this.listBox22.Name = "listBox22";
-            this.listBox22.Size = new System.Drawing.Size(374, 56);
+            this.listBox22.Size = new System.Drawing.Size(374, 43);
             this.listBox22.TabIndex = 49;
             this.listBox22.SelectedIndexChanged += new System.EventHandler(this.listBox22_SelectedIndexChanged);
             // 
@@ -539,14 +523,6 @@
             this.label26.Size = new System.Drawing.Size(26, 13);
             this.label26.TabIndex = 58;
             this.label26.Text = "Код";
-            // 
-            // listBox36
-            // 
-            this.listBox36.FormattingEnabled = true;
-            this.listBox36.Location = new System.Drawing.Point(76, 698);
-            this.listBox36.Name = "listBox36";
-            this.listBox36.Size = new System.Drawing.Size(777, 17);
-            this.listBox36.TabIndex = 69;
             // 
             // label27
             // 
@@ -634,6 +610,7 @@
             // 
             this.textBox7.Location = new System.Drawing.Point(135, 238);
             this.textBox7.Name = "textBox7";
+            this.textBox7.ReadOnly = true;
             this.textBox7.Size = new System.Drawing.Size(100, 20);
             this.textBox7.TabIndex = 80;
             this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
@@ -650,6 +627,7 @@
             // 
             this.textBox9.Location = new System.Drawing.Point(350, 237);
             this.textBox9.Name = "textBox9";
+            this.textBox9.ReadOnly = true;
             this.textBox9.Size = new System.Drawing.Size(100, 20);
             this.textBox9.TabIndex = 82;
             // 
@@ -788,11 +766,38 @@
             this.textBox25.Size = new System.Drawing.Size(100, 20);
             this.textBox25.TabIndex = 102;
             // 
+            // textBox26
+            // 
+            this.textBox26.Location = new System.Drawing.Point(77, 705);
+            this.textBox26.Name = "textBox26";
+            this.textBox26.Size = new System.Drawing.Size(776, 20);
+            this.textBox26.TabIndex = 103;
+            this.textBox26.TextChanged += new System.EventHandler(this.textBox26_TextChanged);
+            // 
+            // textBox27
+            // 
+            this.textBox27.Location = new System.Drawing.Point(135, 556);
+            this.textBox27.Name = "textBox27";
+            this.textBox27.ReadOnly = true;
+            this.textBox27.Size = new System.Drawing.Size(100, 20);
+            this.textBox27.TabIndex = 104;
+            // 
+            // textBox28
+            // 
+            this.textBox28.Location = new System.Drawing.Point(350, 556);
+            this.textBox28.Name = "textBox28";
+            this.textBox28.ReadOnly = true;
+            this.textBox28.Size = new System.Drawing.Size(100, 20);
+            this.textBox28.TabIndex = 105;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(899, 750);
+            this.Controls.Add(this.textBox28);
+            this.Controls.Add(this.textBox27);
+            this.Controls.Add(this.textBox26);
             this.Controls.Add(this.textBox25);
             this.Controls.Add(this.textBox24);
             this.Controls.Add(this.textBox23);
@@ -823,7 +828,6 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label27);
-            this.Controls.Add(this.listBox36);
             this.Controls.Add(this.label25);
             this.Controls.Add(this.label26);
             this.Controls.Add(this.label23);
@@ -834,8 +838,6 @@
             this.Controls.Add(this.label20);
             this.Controls.Add(this.listBox19);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.listBox20);
-            this.Controls.Add(this.listBox21);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.listBox16);
@@ -901,8 +903,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ListBox listBox18;
-        private System.Windows.Forms.ListBox listBox20;
-        private System.Windows.Forms.ListBox listBox21;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.ListBox listBox19;
@@ -915,7 +915,6 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.ListBox listBox36;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem записатьВБДToolStripMenuItem;
@@ -955,5 +954,8 @@
         private System.Windows.Forms.TextBox textBox24;
         private System.Windows.Forms.TextBox textBox25;
         private System.Windows.Forms.ToolStripMenuItem печатьToolStripMenuItem;
+        private System.Windows.Forms.TextBox textBox26;
+        private System.Windows.Forms.TextBox textBox27;
+        private System.Windows.Forms.TextBox textBox28;
     }
 }

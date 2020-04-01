@@ -42,14 +42,14 @@ namespace WindowsFormsApp2
 
         public static SqlConnection GetDBConnection()
         {
-            string datasource12 = Convert.ToString(Datasource1);
-            string database12 = Convert.ToString(Database1);
-            string username12 = Convert.ToString(Username1);
-            string password12 = Convert.ToString(Password1);
-            //string datasource = @"DESKTOP-9H4S4ED\SQLEXPRESS";
-            //string database = "ps_bankrussia";
-            //string username = "adminkbr";
-            // string password = "aA12345678";
+            //string datasource12 = Convert.ToString(Datasource1);
+            //string database12 = Convert.ToString(Database1);
+           // string username12 = Convert.ToString(Username1);
+            //string password12 = Convert.ToString(Password1);
+            string datasource12 = @"DESKTOP-9H4S4ED\SQLEXPRESS";
+            string database12 = "ps_bankrussia";
+            string username12 = "adminkbr";
+            string password12 = "aA12345678";
             return DBSQLServerUtils.GetDBConnection(datasource12, database12, username12, password12);
         }
     }

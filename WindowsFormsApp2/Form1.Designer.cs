@@ -165,6 +165,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(1075, 451);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.UseWaitCursor = true;
+            this.dataGridView1.Visible = false;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // comboBox1
@@ -261,8 +262,8 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button1;
-       
-      
+
+
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolStripMenuItem настройкиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem настройкиБазаДанныхToolStripMenuItem;

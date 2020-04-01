@@ -109,6 +109,7 @@
             this.Controls.Add(this.linkLabel1);
             this.Name = "Form5";
             this.Text = "О программе";
+            this.Load += new System.EventHandler(this.Form5_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

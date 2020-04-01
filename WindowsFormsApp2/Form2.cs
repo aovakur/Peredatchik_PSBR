@@ -17,6 +17,10 @@ namespace WindowsFormsApp2
     public partial class Form2 : Form
     {
         public int pp_summ;
+       ///public List<INN> pbook = new List<INN>();
+
+        //string INN = new List<string>();
+        //var KPP = new List<string>();
 
         pp createPP = new pp();
 
@@ -47,8 +51,8 @@ namespace WindowsFormsApp2
             textBox17.ReadOnly = true;
             textBox18.ReadOnly = true;
             textBox19.ReadOnly = true;
+
             
-           
         }
 
        
@@ -105,12 +109,14 @@ namespace WindowsFormsApp2
 
         public void Form2_Load(object sender, EventArgs e)
         {
-           // MessageBox.Show(createPP.P4);
+            
+
+            // MessageBox.Show(createPP.P4);
             SqlConnection conn = DBUtils.GetDBConnection();
             SqlCommand sqlCmd = new SqlCommand();
             sqlCmd.Connection = conn;
             sqlCmd.CommandType = CommandType.Text;
-            sqlCmd.CommandText = "Select Company_name from company";
+            sqlCmd.CommandText = "Select Company_name from dbo.Company";
             conn.Open(); //Открываем соединение
             SqlDataReader read = sqlCmd.ExecuteReader(); //Считываем и извлекаем данные
             while (read.Read()) //Читаем пока есть данные
@@ -118,16 +124,28 @@ namespace WindowsFormsApp2
                 // MessageBox.Show(read.GetValue(0).ToString());
                 listBox14.Items.Add(read.GetValue(0).ToString());
                 listBox22.Items.Add(read.GetValue(0).ToString());
+                // INN.Add(read.GetValue(1).ToString());
+                //KPP.Add(read.GetValue(2).ToString());
+
+                //listBox14.Items.Add(read.GetValue(1).ToString());
+                //listBox22.Items.Add(read.GetValue(0).ToString());
                 //Добавляем данные в лист итем
             }
 
             conn.Close(); //Закрываем соединение
 
+
+            // Вывод элементов списка.
+           // foreach (var item in INN)
+          //  {
+            //    listBox22.Items.Add(item.ToString());
+                //Console.WriteLine(item);
+           // }
         }
 
         private void записатьВБДToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            string sqlExpression = String.Format("INSERT INTO dbo.create_pp (form_okyd,name_bank_docum,number_pp,date_pp,summa_propisiu,Summa_platelshika,Name_platelshika) VALUES ({0}, '{1}',{2},'{3}','{4}',{5},{6})", createPP.P2, createPP.P0, createPP.P3,createPP.P4,createPP.P6, createPP.P7, createPP.P8);
         }
 
         public void сохранитьToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -187,26 +205,32 @@ namespace WindowsFormsApp2
             createPP.P6 = Convert.ToString(createPP.summ_pp(createPP.P7));
             textBox6.Text = Convert.ToString(createPP.P6);
             //pp_summ = Convert.ToInt32(textBox5.Text);
+
+            // Поле 24 - назначение платежа
+            textBox26.Text = "Сумма " + "" + createPP.P7 + ", Без налога (НДС)";
+            createPP.P24 = textBox26.Text;
+
         }
 
 
         public void listBox14_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Выбор компании
+            // Передаем название организации 
             createPP.P8 = listBox14.SelectedItem.ToString();
 
-            //Генерация ИНН
-           createPP.P60 = Convert.ToInt32(createPP.GetINN(createPP.P8));
+
+            // Формируем ИНН
+            createPP.P60 = Convert.ToString(createPP.GetINN(createPP.P8));
             textBox7.Text = Convert.ToString(createPP.P60);
 
             //Генерация КПП
 
             createPP.P102 = Convert.ToInt32(createPP.GetKPP(createPP.P8));
-            textBox9.Text = Convert.ToString(createPP.P60);
+            textBox9.Text = Convert.ToString(createPP.P102);
 
             //Генерация Поля 101
 
-            createPP.P101 = Convert.ToInt32(createPP.GetKPP(createPP.P8));
+            createPP.P101 = Convert.ToInt32(createPP.Get101(createPP.P8));
             textBox8.Text = Convert.ToString(createPP.P101);
 
 
@@ -240,7 +264,17 @@ namespace WindowsFormsApp2
 
         private void listBox22_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // передаем название организации
+            createPP.P16 = listBox22.SelectedItem.ToString();
 
+            // Формируем ИНН
+            createPP.P61 = Convert.ToString(createPP.GetINN(createPP.P16));
+            textBox27.Text = Convert.ToString(createPP.P61);
+
+            //Генерация КПП
+
+            createPP.P103 = Convert.ToInt32(createPP.GetKPP(createPP.P16));
+            textBox28.Text = Convert.ToString(createPP.P103);
         }
 
         public void сформироватьED101ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -338,6 +372,12 @@ namespace WindowsFormsApp2
         {
             Form5 newForm5 = new Form5();
             newForm5.Show();
+        }
+
+        private void textBox26_TextChanged(object sender, EventArgs e)
+        {
+            
+
         }
     }
 
