@@ -37,11 +37,13 @@ namespace WindowsFormsApp2
         string p8;
         string p60;
         string p61;
+        string p9;
         string p10;
         string p11;
         string p12;
         string p13;
         string p15;
+        string p17;
         string p18;
         int p21;
         int p102;
@@ -50,6 +52,7 @@ namespace WindowsFormsApp2
         string p24;
         string p16;
         string p14;
+        string p22,p104,p105,p106,p107,p108,p109,p110;
 
         
 
@@ -110,6 +113,12 @@ namespace WindowsFormsApp2
             set { p8 = value; }
         }
 
+        public string P9
+        {
+            get { return p9; }
+            set { p9 = value; }
+        }
+
         public string P11
         {
             get { return p11; }
@@ -127,6 +136,12 @@ namespace WindowsFormsApp2
         {
             get { return p16; }
             set { p16 = value; }
+        }
+
+        public string P17
+        {
+            get { return p17; }
+            set { p17 = value; }
         }
 
         public string P14
@@ -204,6 +219,57 @@ namespace WindowsFormsApp2
         {
             get { return p13; }
             set { p13 = value; }
+        }
+
+
+        //для срочного платежного поручения 
+
+        public string P22
+        {
+            get { return p22; }
+            set { p22 = value; }
+        }
+
+        public string P104
+        {
+            get { return p104; }
+            set { p104 = value; }
+        }
+
+        public string P105
+        {
+            get { return p105; }
+            set { p105 = value; }
+        }
+
+        public string P106
+        {
+            get { return p106; }
+            set { p106 = value; }
+        }
+
+        public string P107
+        {
+            get { return p107; }
+            set { p107 = value; }
+        }
+
+        public string P108
+        {
+            get { return p108; }
+            set { p108 = value; }
+        }
+
+        public string P109
+        {
+            get { return p109; }
+            set { p109 = value; }
+        }
+
+        public string P110
+        {
+            get { return p110; }
+            set { p110 = value; }
         }
 
 
@@ -451,7 +517,7 @@ namespace WindowsFormsApp2
         {
             string b;
             BaseFont baseFont = BaseFont.CreateFont(@"C:\PeredatchikPSBR\Template\Tahoma.ttf", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
-            PdfReader template = new PdfReader("C:\\PeredatchikPSBR\\Template\\Template_7.pdf");
+            PdfReader template = new PdfReader("C:\\PeredatchikPSBR\\Template\\Template_8.pdf");
             PdfStamper stamper = new PdfStamper(template, new FileStream("C:\\PeredatchikPSBR\\pdf\\pdf_new.pdf", FileMode.Create));
             AcroFields fields = stamper.AcroFields;
             fields.AddSubstitutionFont(baseFont);

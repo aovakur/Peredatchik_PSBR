@@ -183,7 +183,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="kisspng-russian-ruble-ruble-sign-foreign-exchange-market-r-5ad076326cef51.8067054215236111864462.jpg" />
     <None Include="Resources\kisspng-russian-ruble-ruble-sign-foreign-exchange-market-r-5ad076326cef51.8067054215236111864462.jpg" />
     <Content Include="templatePP.html" />
   </ItemGroup>
