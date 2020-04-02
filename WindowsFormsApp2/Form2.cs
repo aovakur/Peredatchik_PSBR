@@ -482,6 +482,9 @@ namespace WindowsFormsApp2
             {
                 MessageBox.Show("Выплаты, которые происходят по исполнительным актам о возмещении нанесенного вреда здоровью или жизни. Уплата алиментов");
                 textBox24.ForeColor = Color.Black;
+                createPP.P21 = Convert.ToInt16(textBox24.Text);
+                textBox24.ReadOnly = true;
+
 
             }
 
@@ -489,24 +492,32 @@ namespace WindowsFormsApp2
             {
                 MessageBox.Show("Выплаты, которые происходят по исполнительным актам о возмещении нанесенного вреда здоровью или жизни. Уплата алиментов");
                 textBox24.ForeColor = Color.Black;
+                createPP.P21 = Convert.ToInt16(textBox24.Text);
+                textBox24.ReadOnly = true;
             }
 
             else if (textBox24.Text == "3")
             {
                 MessageBox.Show("Оплата задолженности по налогам, сборам и взносам. Выдача заработной платы сотрудникам");
                 textBox24.ForeColor = Color.Black;
+                createPP.P21 = Convert.ToInt16(textBox24.Text);
+                textBox24.ReadOnly = true;
             }
 
             else if (textBox24.Text == "4")
             {
                 MessageBox.Show("Денежные выплаты по прочим исполнительным актам");
                 textBox24.ForeColor = Color.Black;
+                createPP.P21 = Convert.ToInt16(textBox24.Text);
+                textBox24.ReadOnly = true;
             }
 
             else if (textBox24.Text == "5")
             {
                 MessageBox.Show("Все остальные платежные документы в календарной последовательности их поступления");
                 textBox24.ForeColor = Color.Black;
+                createPP.P21 = Convert.ToInt16(textBox24.Text);
+                textBox24.ReadOnly = true;
 
             }
 

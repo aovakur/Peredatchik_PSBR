@@ -43,6 +43,7 @@ namespace WindowsFormsApp2
         string p13;
         string p15;
         string p18;
+        int p21;
         int p102;
         int p103;
         int p101;
@@ -138,6 +139,12 @@ namespace WindowsFormsApp2
         {
             get { return p15; }
             set { p15 = value; }
+        }
+
+        public int P21
+        {
+            get { return p21; }
+            set { p21 = value; }
         }
 
         public string P60
