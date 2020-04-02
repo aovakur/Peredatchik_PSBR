@@ -20,7 +20,9 @@ namespace WindowsFormsApp2
         public Form1()
         {
             InitializeComponent();
-            dataGridView1.Visible = false;
+            dataGridView1.Visible = true;
+            comboBox1.SelectedItem = "Созданные";
+            //dataGridView1.Visible = true;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -95,8 +97,8 @@ namespace WindowsFormsApp2
                     sqlDataAdap.Fill(dtRecord);
                     dataGridView1.DataSource = dtRecord;
 
-                 //   MessageBox.Show("Connection successful!");
-
+                    //   MessageBox.Show("Connection successful!");
+                    conn.Close();
                 }
                 catch (SqlException ex)
                 {
@@ -174,7 +176,7 @@ namespace WindowsFormsApp2
                     dataGridView1.DataSource = dtRecord;
 
                     //   MessageBox.Show("Connection successful!");
-
+                    conn.Close();
                 }
                 catch (SqlException ex)
                 {
@@ -267,7 +269,7 @@ namespace WindowsFormsApp2
                     dataGridView1.DataSource = dtRecord;
 
                     //   MessageBox.Show("Connection successful!");
-
+                    conn.Close();
                 }
                 catch (SqlException ex)
                 {

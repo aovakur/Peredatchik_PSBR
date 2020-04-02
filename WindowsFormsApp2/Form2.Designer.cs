@@ -308,9 +308,9 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(480, 389);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(40, 13);
+            this.label11.Size = new System.Drawing.Size(44, 13);
             this.label11.TabIndex = 26;
-            this.label11.Text = "Счет #";
+            this.label11.Text = "Счет №";
             this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label12
@@ -337,7 +337,7 @@
             this.listBox15.FormattingEnabled = true;
             this.listBox15.Location = new System.Drawing.Point(546, 283);
             this.listBox15.Name = "listBox15";
-            this.listBox15.Size = new System.Drawing.Size(101, 17);
+            this.listBox15.Size = new System.Drawing.Size(170, 17);
             this.listBox15.TabIndex = 34;
             // 
             // label13
@@ -345,18 +345,18 @@
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(480, 283);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(40, 13);
+            this.label13.Size = new System.Drawing.Size(44, 13);
             this.label13.TabIndex = 33;
-            this.label13.Text = "Счет #";
+            this.label13.Text = "Счет №";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(480, 471);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(40, 13);
+            this.label14.Size = new System.Drawing.Size(44, 13);
             this.label14.TabIndex = 38;
-            this.label14.Text = "Счет #";
+            this.label14.Text = "Счет №";
             // 
             // label15
             // 
@@ -408,7 +408,7 @@
             this.listBox19.FormattingEnabled = true;
             this.listBox19.Location = new System.Drawing.Point(546, 504);
             this.listBox19.Name = "listBox19";
-            this.listBox19.Size = new System.Drawing.Size(101, 17);
+            this.listBox19.Size = new System.Drawing.Size(170, 17);
             this.listBox19.TabIndex = 47;
             // 
             // label17
@@ -416,9 +416,9 @@
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(480, 504);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(40, 13);
+            this.label17.Size = new System.Drawing.Size(44, 13);
             this.label17.TabIndex = 46;
-            this.label17.Text = "Счет #";
+            this.label17.Text = "Счет №";
             // 
             // listBox22
             // 
@@ -727,6 +727,7 @@
             this.textBox24.Name = "textBox24";
             this.textBox24.Size = new System.Drawing.Size(100, 20);
             this.textBox24.TabIndex = 101;
+            this.textBox24.TextChanged += new System.EventHandler(this.textBox24_TextChanged);
             // 
             // textBox25
             // 
@@ -772,7 +773,8 @@
             // 
             this.textBox30.Location = new System.Drawing.Point(546, 389);
             this.textBox30.Name = "textBox30";
-            this.textBox30.Size = new System.Drawing.Size(100, 20);
+            this.textBox30.ReadOnly = true;
+            this.textBox30.Size = new System.Drawing.Size(170, 20);
             this.textBox30.TabIndex = 107;
             // 
             // textBox31
@@ -787,13 +789,15 @@
             // 
             this.textBox32.Location = new System.Drawing.Point(546, 471);
             this.textBox32.Name = "textBox32";
-            this.textBox32.Size = new System.Drawing.Size(100, 20);
+            this.textBox32.ReadOnly = true;
+            this.textBox32.Size = new System.Drawing.Size(170, 20);
             this.textBox32.TabIndex = 109;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(899, 750);
             this.Controls.Add(this.textBox32);
             this.Controls.Add(this.textBox31);

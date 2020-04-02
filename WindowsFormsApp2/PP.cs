@@ -41,6 +41,7 @@ namespace WindowsFormsApp2
         string p11;
         string p12;
         string p13;
+        string p15;
         string p18;
         int p102;
         int p103;
@@ -131,6 +132,12 @@ namespace WindowsFormsApp2
         {
             get { return p14; }
             set { p14 = value; }
+        }
+
+        public string P15
+        {
+            get { return p15; }
+            set { p15 = value; }
         }
 
         public string P60
@@ -381,7 +388,32 @@ namespace WindowsFormsApp2
 
         }
 
-      
+
+        public string GetAcc(string bank)
+        {
+
+            //Генерация ACC
+            SqlConnection conn6 = DBUtils.GetDBConnection();
+            conn6.Open();
+            SqlCommand sqlCmd = new SqlCommand();
+            sqlCmd.Connection = conn6;
+            sqlCmd.CommandType = CommandType.StoredProcedure;
+            sqlCmd.CommandText = "GETACC";
+            SqlParameter namecompany = new SqlParameter
+            {
+                ParameterName = "@companynameGETACC",
+                Value = bank
+            };
+
+            sqlCmd.Parameters.Add(namecompany);
+            string ACC_bank = Convert.ToString(sqlCmd.ExecuteScalar());
+            conn6.Close(); //Закрываем соединение
+
+            return ACC_bank;
+
+        }
+
+
 
         public string ed101(string p4)
         {

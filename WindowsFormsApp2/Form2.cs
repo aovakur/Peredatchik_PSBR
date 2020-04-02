@@ -47,6 +47,8 @@ namespace WindowsFormsApp2
             textBox17.ReadOnly = true;
             textBox18.ReadOnly = true;
             textBox19.ReadOnly = true;
+
+            textBox24.ForeColor = Color.Black;
         }
 
        
@@ -109,7 +111,14 @@ namespace WindowsFormsApp2
 
             //формируется кор счет 30 text box
             //createPP.P12 = Convert.ToString(createPP.GetCOR(createPP.P10));
-           //textBox30.Text = Convert.ToString(createPP.P12);
+            //textBox30.Text = Convert.ToString(createPP.P12);
+
+
+            //Формируем Корр счет 
+
+            createPP.P12 = Convert.ToString(createPP.GetAcc(createPP.P10));
+            textBox30.Text = Convert.ToString(createPP.P12);
+
 
         }
 
@@ -177,24 +186,21 @@ namespace WindowsFormsApp2
         {
             if (radioButton1.Checked == true)
             {
-                MessageBox.Show("Флажок " + radioButton2.Text + "  теперь включен");
+                MessageBox.Show("Флаг  " + radioButton2.Text + " теперь включен");
                 textBox3.ReadOnly = true;
-                //textBox3.ReadOnly = false;
-                // createPP.nesrochpp();
+             
 
             }
             else
             {
-                MessageBox.Show("Флажок " + radioButton1.Text + "  теперь выключен");
-                // createPP.srochpp();
+                MessageBox.Show("Флаг  " + radioButton1.Text + " теперь выключен");
+         
                 textBox3.ReadOnly = false;
             }
         }
 
         public void textBox3_TextChanged(object sender, EventArgs e)
         {
-           
-          
         }
 
         private void listBox11_SelectedIndexChanged(object sender, EventArgs e)
@@ -204,6 +210,7 @@ namespace WindowsFormsApp2
 
         public void textBox5_TextChanged(object sender, EventArgs e)
         {
+            
             createPP.P7 = Convert.ToInt32(textBox5.Text);
            // pp_summ = createPP.P7;
 
@@ -448,6 +455,14 @@ namespace WindowsFormsApp2
             createPP.P14 = Convert.ToString(createPP.GetBIC(createPP.P13));
             textBox31.Text = Convert.ToString(createPP.P14);
 
+
+            //Формируем Корр счет 
+
+            createPP.P15 = Convert.ToString(createPP.GetAcc(createPP.P13));
+            textBox32.Text = Convert.ToString(createPP.P15);
+
+
+
         }
 
         private void textBox29_TextChanged(object sender, EventArgs e)
@@ -458,6 +473,49 @@ namespace WindowsFormsApp2
         private void label5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        public void textBox24_TextChanged(object sender, EventArgs e)
+        {
+            
+            if (textBox24.Text == "1")
+            {
+                MessageBox.Show("Выплаты, которые происходят по исполнительным актам о возмещении нанесенного вреда здоровью или жизни. Уплата алиментов");
+                textBox24.ForeColor = Color.Black;
+
+            }
+
+            else if (textBox24.Text == "2")
+            {
+                MessageBox.Show("Выплаты, которые происходят по исполнительным актам о возмещении нанесенного вреда здоровью или жизни. Уплата алиментов");
+                textBox24.ForeColor = Color.Black;
+            }
+
+            else if (textBox24.Text == "3")
+            {
+                MessageBox.Show("Оплата задолженности по налогам, сборам и взносам. Выдача заработной платы сотрудникам");
+                textBox24.ForeColor = Color.Black;
+            }
+
+            else if (textBox24.Text == "4")
+            {
+                MessageBox.Show("Денежные выплаты по прочим исполнительным актам");
+                textBox24.ForeColor = Color.Black;
+            }
+
+            else if (textBox24.Text == "5")
+            {
+                MessageBox.Show("Все остальные платежные документы в календарной последовательности их поступления");
+                textBox24.ForeColor = Color.Black;
+
+            }
+
+            else if (textBox24.Text != "1" || textBox24.Text != "2" || textBox24.Text != "3" || textBox24.Text != "4" || textBox24.Text != "5") 
+            { MessageBox.Show("Введите корректную очередность платежа");
+                textBox24.ForeColor = Color.Red;
+            }
+                
+           
         }
     }
 

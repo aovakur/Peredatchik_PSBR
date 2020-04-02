@@ -40,15 +40,15 @@
             this.эСИСToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ручнойВводToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.автоматическийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.подписаниеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.настройкиБазаДанныхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.помощьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.настройкиБазаДанныхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.подписаниеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -103,7 +103,7 @@
             // ручнаяВводToolStripMenuItem
             // 
             this.ручнаяВводToolStripMenuItem.Name = "ручнаяВводToolStripMenuItem";
-            this.ручнаяВводToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
+            this.ручнаяВводToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.ручнаяВводToolStripMenuItem.Text = "Ручной ввод";
             this.ручнаяВводToolStripMenuItem.Click += new System.EventHandler(this.ручнаяВводToolStripMenuItem_Click);
             // 
@@ -141,6 +141,26 @@
             this.автоматическийToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.автоматическийToolStripMenuItem.Text = "Автоматический";
             // 
+            // подписаниеToolStripMenuItem
+            // 
+            this.подписаниеToolStripMenuItem.Name = "подписаниеToolStripMenuItem";
+            this.подписаниеToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
+            this.подписаниеToolStripMenuItem.Text = "Подписание";
+            // 
+            // настройкиToolStripMenuItem
+            // 
+            this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
+            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(146, 20);
+            this.настройкиToolStripMenuItem.Text = "Настройки сохранения";
+            this.настройкиToolStripMenuItem.Click += new System.EventHandler(this.настройкиToolStripMenuItem_Click);
+            // 
+            // настройкиБазаДанныхToolStripMenuItem
+            // 
+            this.настройкиБазаДанныхToolStripMenuItem.Name = "настройкиБазаДанныхToolStripMenuItem";
+            this.настройкиБазаДанныхToolStripMenuItem.Size = new System.Drawing.Size(149, 20);
+            this.настройкиБазаДанныхToolStripMenuItem.Text = "Настройки база данных";
+            this.настройкиБазаДанныхToolStripMenuItem.Click += new System.EventHandler(this.настройкиБазаДанныхToolStripMenuItem_Click);
+            // 
             // помощьToolStripMenuItem
             // 
             this.помощьToolStripMenuItem.Name = "помощьToolStripMenuItem";
@@ -157,6 +177,9 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.WaitCursor;
@@ -200,26 +223,6 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // настройкиToolStripMenuItem
-            // 
-            this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
-            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(146, 20);
-            this.настройкиToolStripMenuItem.Text = "Настройки сохранения";
-            this.настройкиToolStripMenuItem.Click += new System.EventHandler(this.настройкиToolStripMenuItem_Click);
-            // 
-            // настройкиБазаДанныхToolStripMenuItem
-            // 
-            this.настройкиБазаДанныхToolStripMenuItem.Name = "настройкиБазаДанныхToolStripMenuItem";
-            this.настройкиБазаДанныхToolStripMenuItem.Size = new System.Drawing.Size(149, 20);
-            this.настройкиБазаДанныхToolStripMenuItem.Text = "Настройки база данных";
-            this.настройкиБазаДанныхToolStripMenuItem.Click += new System.EventHandler(this.настройкиБазаДанныхToolStripMenuItem_Click);
-            // 
-            // подписаниеToolStripMenuItem
-            // 
-            this.подписаниеToolStripMenuItem.Name = "подписаниеToolStripMenuItem";
-            this.подписаниеToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
-            this.подписаниеToolStripMenuItem.Text = "Подписание";
             // 
             // Form1
             // 
