@@ -205,7 +205,7 @@ namespace WindowsFormsApp2
            
            
             //  MessageBox.Show("Платежное поручение сохранено");
-            createPP.pdf(createPP.P0, createPP.P4, createPP.P6, createPP.P60, createPP.P102, createPP.P7, createPP.P8, createPP.P9, createPP.P10, createPP.P11, createPP.P12, createPP.P101, createPP.P13, createPP.P14, createPP.P15, createPP.P17, createPP.P61, createPP.P103, createPP.P16);
+            createPP.pdf(createPP.P0, createPP.P4, createPP.P6, createPP.P60, createPP.P102, createPP.P7, createPP.P8, createPP.P9, createPP.P10, createPP.P11, createPP.P12, createPP.P101, createPP.P13, createPP.P14, createPP.P15, createPP.P17, createPP.P61, createPP.P103, createPP.P16, createPP.P21,createPP.P24, createPP.P5, createPP.P22, createPP.P104,createPP.P105,createPP.P106,createPP.P107,createPP.P108, createPP.P109,createPP.P110);
 
         }
 
@@ -239,6 +239,8 @@ namespace WindowsFormsApp2
 
         public void textBox3_TextChanged(object sender, EventArgs e)
         {
+
+            createPP.P5 = Convert.ToString(textBox3.Text);
         }
 
         private void listBox11_SelectedIndexChanged(object sender, EventArgs e)

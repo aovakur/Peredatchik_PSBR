@@ -31,7 +31,7 @@ namespace WindowsFormsApp2
         string p0;
         int p2;
         int p3;
-        string p4;
+        string p4,p5;
         int p7;
         string p6;
         string p8;
@@ -86,6 +86,12 @@ namespace WindowsFormsApp2
         {
             get { return p4; }
             set { p4 = value; }
+        }
+
+        public string P5
+        {
+            get { return p5; }
+            set { p5 = value; }
         }
 
         public string Date_pp()
@@ -513,15 +519,18 @@ namespace WindowsFormsApp2
         }
 
 
-        public string pdf(string p0, string p4, string p6, string p60, int p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p61, int p103, string p16)
+        public string pdf(string p0, string p4, string p6, string p60, int p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p61, int p103, string p16, int p21, string p24, string p5, string p22, string p104, string p105, string p106, string p107, string p108, string p109, string p110)
         {
             string b;
             string pathsafe = "C:\\PeredatchikPSBR\\pdf\\" + p4 + "_" + p0 + ".pdf";
             BaseFont baseFont = BaseFont.CreateFont(@"C:\PeredatchikPSBR\Template\Tahoma.ttf", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
-            PdfReader template = new PdfReader("C:\\PeredatchikPSBR\\Template\\Template_9.pdf");
+            PdfReader template = new PdfReader("C:\\PeredatchikPSBR\\Template\\Template_10.pdf");
             PdfStamper stamper = new PdfStamper(template, new FileStream(pathsafe, FileMode.Create));
             AcroFields fields = stamper.AcroFields;
             fields.AddSubstitutionFont(baseFont);
+
+            // Поля для не срочного платежного поручения 
+
             fields.SetField("p4", p4);
             fields.SetField("p3", p0);
             fields.SetField("p6", p6);
@@ -541,6 +550,24 @@ namespace WindowsFormsApp2
             fields.SetField("p61", p61);
             fields.SetField("p103", p103.ToString());
             fields.SetField("p16", p16);
+            fields.SetField("p21", p21.ToString());
+            fields.SetField("p24", p24);
+
+
+            // Поля срочного платежного поручения 
+            fields.SetField("p5", p5);
+
+            // Поля бюджетного платежного поручения 
+            fields.SetField("p22", p22);
+            fields.SetField("p104", p104);
+            fields.SetField("p105", p105);
+            fields.SetField("p106", p106);
+            fields.SetField("p107", p107);
+            fields.SetField("p108", p108);
+            fields.SetField("p109", p109);
+            fields.SetField("p110", p110);
+
+            //Форматирование 
             stamper.FormFlattening = false;
             stamper.Close();
 
