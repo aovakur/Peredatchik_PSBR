@@ -202,16 +202,17 @@ namespace WindowsFormsApp2
 
         public void сохранитьToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            createPP.P0 = Convert.ToString(textBox10.Text);
-            createPP.P4 = Convert.ToString(textBox2.Text);
+           
+           
             //  MessageBox.Show("Платежное поручение сохранено");
-            createPP.pdf(createPP.P0, createPP.P4, createPP.P6, createPP.P7, createPP.P8);
+            createPP.pdf(createPP.P0, createPP.P4, createPP.P6, createPP.P60, createPP.P102, createPP.P7, createPP.P8, createPP.P9, createPP.P10, createPP.P11, createPP.P12, createPP.P101, createPP.P13, createPP.P14, createPP.P15, createPP.P17, createPP.P61, createPP.P103, createPP.P16);
 
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-
+            // Для передачи на сохранения 
+            createPP.P4 = Convert.ToString(textBox2.Text);
         }
 
         private void label28_Click(object sender, EventArgs e)
@@ -659,6 +660,17 @@ namespace WindowsFormsApp2
         {
             //Для передачи на сохранения 
             createPP.P110 = Convert.ToString(textBox19.Text);
+        }
+
+        private void textBox10_TextChanged(object sender, EventArgs e)
+        {
+            //Для передачи на сохранения 
+            createPP.P0 = Convert.ToString(textBox10.Text);
+        }
+
+        private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

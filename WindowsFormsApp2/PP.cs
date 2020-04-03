@@ -513,12 +513,13 @@ namespace WindowsFormsApp2
         }
 
 
-        public string pdf(string p0, string p4, string p6, int p7, string p8)
+        public string pdf(string p0, string p4, string p6, string p60, int p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p61, int p103, string p16)
         {
             string b;
+            string pathsafe = "C:\\PeredatchikPSBR\\pdf\\" + p4 + "_" + p0 + ".pdf";
             BaseFont baseFont = BaseFont.CreateFont(@"C:\PeredatchikPSBR\Template\Tahoma.ttf", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
-            PdfReader template = new PdfReader("C:\\PeredatchikPSBR\\Template\\Template_8.pdf");
-            PdfStamper stamper = new PdfStamper(template, new FileStream("C:\\PeredatchikPSBR\\pdf\\pdf_new.pdf", FileMode.Create));
+            PdfReader template = new PdfReader("C:\\PeredatchikPSBR\\Template\\Template_9.pdf");
+            PdfStamper stamper = new PdfStamper(template, new FileStream(pathsafe, FileMode.Create));
             AcroFields fields = stamper.AcroFields;
             fields.AddSubstitutionFont(baseFont);
             fields.SetField("p4", p4);
@@ -526,6 +527,20 @@ namespace WindowsFormsApp2
             fields.SetField("p6", p6);
             fields.SetField("p7", p7.ToString());
             fields.SetField("p8", p8);
+            fields.SetField("p60", p60);
+            fields.SetField("p102", p102.ToString());
+            fields.SetField("p9", p9);
+            fields.SetField("p10", p10);
+            fields.SetField("p11", p11);
+            fields.SetField("p12", p12);
+            fields.SetField("p101", p101.ToString());
+            fields.SetField("p13", p13);
+            fields.SetField("p14", p14);
+            fields.SetField("p15", p15);
+            fields.SetField("p17", p17);
+            fields.SetField("p61", p61);
+            fields.SetField("p103", p103.ToString());
+            fields.SetField("p16", p16);
             stamper.FormFlattening = false;
             stamper.Close();
 
