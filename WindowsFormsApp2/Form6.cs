@@ -41,10 +41,10 @@ namespace WindowsFormsApp2
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            string datasource = @".\SQLEXPRESS";
-            string database = "ps_bankrussia";
-            string username = "adminkbr";
-            string password = "aA12345678";
+           string datasource = @".\SQLEXPRESS";
+           string database = "ps_bankrussia";
+           string username = "adminkbr";
+           string password = "aA12345678";
 
             if (checkBox1.Checked == true)
                 {

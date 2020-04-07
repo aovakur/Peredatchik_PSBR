@@ -31,7 +31,8 @@ namespace WindowsFormsApp2
         string p0;
         int p2;
         int p3;
-        string p4,p5;
+        string p4;
+        string p5;
         int p7;
         string p6;
         string p8;
@@ -52,7 +53,14 @@ namespace WindowsFormsApp2
         string p24;
         string p16;
         string p14;
-        string p22,p104,p105,p106,p107,p108,p109,p110;
+        string p22;
+        string p104;
+        string p105;
+        string p106;
+        string p107;
+        string p108;
+        string p109;
+        string p110;
 
         
 
@@ -576,6 +584,145 @@ namespace WindowsFormsApp2
             return b;
         }
         
+
+        public string insertDB (string p0, string p4, string p6, string p60, int p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p61, int p103, string p16, int p21, string p24, string p5, string p22, string p104, string p105, string p106, string p107, string p108, string p109, string p110)
+        {
+            string b;
+
+            SqlConnection conn6 = DBUtils.GetDBConnection();
+            conn6.Open();
+            SqlCommand sqlCmd = new SqlCommand();
+            sqlCmd.Connection = conn6;
+            sqlCmd.CommandType = CommandType.StoredProcedure;
+            sqlCmd.CommandText = "creatnewPP_full";
+
+            sqlCmd.Parameters.AddWithValue("@p0", 123);
+            sqlCmd.Parameters.AddWithValue("@p4", p4);
+            sqlCmd.Parameters.AddWithValue("@p6", p6);
+            sqlCmd.Parameters.AddWithValue("@p60", p60);
+            sqlCmd.Parameters.AddWithValue("@p102", p102);
+            sqlCmd.Parameters.AddWithValue("@p7", p7);
+            sqlCmd.Parameters.AddWithValue("@p8", p8);
+            sqlCmd.Parameters.AddWithValue("@p9", p9);
+            sqlCmd.Parameters.AddWithValue("@p10", p10);
+            sqlCmd.Parameters.AddWithValue("@p11", p11);
+            sqlCmd.Parameters.AddWithValue("@p12", p12);
+            sqlCmd.Parameters.AddWithValue("@p101", p101);
+            sqlCmd.Parameters.AddWithValue("@p13", p13);
+            sqlCmd.Parameters.AddWithValue("@p14", p14);
+            sqlCmd.Parameters.AddWithValue("@p15", p15);
+            sqlCmd.Parameters.AddWithValue("@p17", p17);
+            sqlCmd.Parameters.AddWithValue("@p61", p61);
+            sqlCmd.Parameters.AddWithValue("@p103", p103);
+            sqlCmd.Parameters.AddWithValue("@p16", p16);
+            sqlCmd.Parameters.AddWithValue("@p21", p21);
+            sqlCmd.Parameters.AddWithValue("@p24", p24);
+            sqlCmd.Parameters.AddWithValue("@p5", p5);
+            sqlCmd.Parameters.AddWithValue("@p22", p22);
+            sqlCmd.Parameters.AddWithValue("@p104", p104);
+            sqlCmd.Parameters.AddWithValue("@p105", p105);
+            sqlCmd.Parameters.AddWithValue("@p106", p106);
+            sqlCmd.Parameters.AddWithValue("@p107", p107);
+            sqlCmd.Parameters.AddWithValue("@p108", p108);
+            sqlCmd.Parameters.AddWithValue("@p109", p109);
+            sqlCmd.Parameters.AddWithValue("@p110", p110);
+
+            var result = sqlCmd.ExecuteScalar();
+            MessageBox.Show("Создана новая запись в БД  " + Convert.ToString(result));
+            conn6.Close(); //Закрываем соединение
+
+            b = "Данные в БД записаны";
+        
+            return b;
+        }
+
+
+        public string insertDB_brief(string p0, string p4, string p6, string p60, int p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p61, int p103, string p16, int p21, string p24)
+        {
+            string b;
+
+            SqlConnection conn6 = DBUtils.GetDBConnection();
+            conn6.Open();
+            SqlCommand sqlCmd = new SqlCommand();
+            sqlCmd.Connection = conn6;
+            sqlCmd.CommandType = CommandType.StoredProcedure;
+            sqlCmd.CommandText = "creatnewPP_brief";
+            sqlCmd.Parameters.AddWithValue("@p0", 123);
+            sqlCmd.Parameters.AddWithValue("@p4", p4);
+            sqlCmd.Parameters.AddWithValue("@p6", p6);
+            sqlCmd.Parameters.AddWithValue("@p60", p60);
+            sqlCmd.Parameters.AddWithValue("@p102", p102);
+            sqlCmd.Parameters.AddWithValue("@p7", p7);
+            sqlCmd.Parameters.AddWithValue("@p8", p8);
+            sqlCmd.Parameters.AddWithValue("@p9", p9);
+            sqlCmd.Parameters.AddWithValue("@p10", p10);
+            sqlCmd.Parameters.AddWithValue("@p11", p11);
+            sqlCmd.Parameters.AddWithValue("@p12", p12);
+            sqlCmd.Parameters.AddWithValue("@p101", p101);
+            sqlCmd.Parameters.AddWithValue("@p13", p13);
+            sqlCmd.Parameters.AddWithValue("@p14", p14);
+            sqlCmd.Parameters.AddWithValue("@p15", p15);
+            sqlCmd.Parameters.AddWithValue("@p17", p17);
+            sqlCmd.Parameters.AddWithValue("@p61", p61);
+            sqlCmd.Parameters.AddWithValue("@p103", p103);
+            sqlCmd.Parameters.AddWithValue("@p16", p16);
+            sqlCmd.Parameters.AddWithValue("@p21", p21);
+            sqlCmd.Parameters.AddWithValue("@p24", p24);
+            var result = sqlCmd.ExecuteScalar();
+            MessageBox.Show("Создана новая запись в БД  " + Convert.ToString(result));
+            conn6.Close(); //Закрываем соединение
+
+            b = "Данные в БД записаны";
+         
+            return b;
+        }
+
+
+        public string insertDB_urgency(string p0, string p4, string p6, string p60, int p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p61, int p103, string p16, int p21, string p24, string p5)
+        {
+            string b;
+
+            SqlConnection conn6 = DBUtils.GetDBConnection();
+            conn6.Open();
+            SqlCommand sqlCmd = new SqlCommand();
+            sqlCmd.Connection = conn6;
+            sqlCmd.CommandType = CommandType.StoredProcedure;
+            sqlCmd.CommandText = "creatnewPP_urgency";
+            sqlCmd.Parameters.AddWithValue("@p0", 123);
+            sqlCmd.Parameters.AddWithValue("@p4", p4);
+            sqlCmd.Parameters.AddWithValue("@p6", p6);
+            sqlCmd.Parameters.AddWithValue("@p60", p60);
+            sqlCmd.Parameters.AddWithValue("@p102", p102);
+            sqlCmd.Parameters.AddWithValue("@p7", p7);
+            sqlCmd.Parameters.AddWithValue("@p8", p8);
+            sqlCmd.Parameters.AddWithValue("@p9", p9);
+            sqlCmd.Parameters.AddWithValue("@p10", p10);
+            sqlCmd.Parameters.AddWithValue("@p11", p11);
+            sqlCmd.Parameters.AddWithValue("@p12", p12);
+            sqlCmd.Parameters.AddWithValue("@p101", p101);
+            sqlCmd.Parameters.AddWithValue("@p13", p13);
+            sqlCmd.Parameters.AddWithValue("@p14", p14);
+            sqlCmd.Parameters.AddWithValue("@p15", p15);
+            sqlCmd.Parameters.AddWithValue("@p17", p17);
+            sqlCmd.Parameters.AddWithValue("@p61", p61);
+            sqlCmd.Parameters.AddWithValue("@p103", p103);
+            sqlCmd.Parameters.AddWithValue("@p16", p16);
+            sqlCmd.Parameters.AddWithValue("@p21", p21);
+            sqlCmd.Parameters.AddWithValue("@p24", p24);
+            sqlCmd.Parameters.AddWithValue("@p5", p5);
+
+            var result = sqlCmd.ExecuteScalar();
+            MessageBox.Show("Создана новая запись в БД  " + Convert.ToString(result));
+            conn6.Close(); //Закрываем соединение
+
+            b = "Данные в БД записаны";
+            
+            return b;
+        }
+
+
+
+
 
 
         public string ed501(string p4)

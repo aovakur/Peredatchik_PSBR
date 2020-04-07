@@ -10,7 +10,8 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Globalization;
 using System.Data.OleDb;
-
+using PdfiumViewer;
+using System.Drawing.Printing;
 
 namespace WindowsFormsApp2
 {
@@ -195,9 +196,22 @@ namespace WindowsFormsApp2
            // }
         }
 
-        private void записатьВБДToolStripMenuItem_Click(object sender, EventArgs e)
+        public void записатьВБДToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string sqlExpression = String.Format("INSERT INTO dbo.create_pp (form_okyd,name_bank_docum,number_pp,date_pp,summa_propisiu,Summa_platelshika,Name_platelshika) VALUES ({0}, '{1}',{2},'{3}','{4}',{5},{6})", createPP.P2, createPP.P0, createPP.P3,createPP.P4,createPP.P6, createPP.P7, createPP.P8);
+            if(radioButton2.Checked == true && checkBox1.Checked == true )
+            {
+               createPP.insertDB(createPP.P0, createPP.P4, createPP.P6, createPP.P60, createPP.P102, createPP.P7, createPP.P8, createPP.P9, createPP.P10, createPP.P11, createPP.P12, createPP.P101, createPP.P13, createPP.P14, createPP.P15, createPP.P17, createPP.P61, createPP.P103, createPP.P16, createPP.P21, createPP.P24, createPP.P5, createPP.P22, createPP.P104, createPP.P105, createPP.P106, createPP.P107, createPP.P108, createPP.P109, createPP.P110);
+            }
+            
+            else if (radioButton1.Checked == true && checkBox1.Checked == false )
+            {
+                createPP.insertDB_brief(createPP.P0, createPP.P4, createPP.P6, createPP.P60, createPP.P102, createPP.P7, createPP.P8, createPP.P9, createPP.P10, createPP.P11, createPP.P12, createPP.P101, createPP.P13, createPP.P14, createPP.P15, createPP.P17, createPP.P61, createPP.P103, createPP.P16, createPP.P21, createPP.P24);
+            }
+
+           else if (radioButton2.Checked == true)
+            {
+                createPP.insertDB_urgency(createPP.P0, createPP.P4, createPP.P6, createPP.P60, createPP.P102, createPP.P7, createPP.P8, createPP.P9, createPP.P10, createPP.P11, createPP.P12, createPP.P101, createPP.P13, createPP.P14, createPP.P15, createPP.P17, createPP.P61, createPP.P103, createPP.P16, createPP.P21, createPP.P24, createPP.P5);
+            }
         }
 
         public void сохранитьToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -473,7 +487,19 @@ namespace WindowsFormsApp2
 
         private void печатьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-          
+            var path = @"C:\PeredatchikPSBR\pdf\03.04.2020_100.pdf";
+            using (var document = PdfDocument.Load(path))
+            {
+                using (var printDocument = document.CreatePrintDocument())
+                {
+                    printDocument.PrinterSettings.PrintFileName = "Letter_SkidTags_Report_9ae93aa7-4359-444e-a033-eb5bf17f5ce6.pdf";
+                    //printDocument.PrinterSettings.PrinterName = @"printerName";
+                   // printDocument.DocumentName = "file.pdf";
+                    //printDocument.PrinterSettings.PrintFileName = "file.pdf";
+                    printDocument.PrintController = new StandardPrintController();
+                    printDocument.Print();
+                }
+            }
         }
 
         private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
@@ -630,50 +656,47 @@ namespace WindowsFormsApp2
 
         private void textBox14_TextChanged(object sender, EventArgs e)
         {
-            //Для передачи на сохранения 
+            //Для сохранения 
             createPP.P105 = Convert.ToString(textBox14.Text);
         }
 
         private void textBox15_TextChanged(object sender, EventArgs e)
         {
-            //Для передачи на сохранения 
+            //Для сохранения 
             createPP.P106 = Convert.ToString(textBox15.Text);
         }
 
         private void textBox16_TextChanged(object sender, EventArgs e)
         {
-            //Для передачи на сохранения 
+            //Для сохранения 
             createPP.P107 = Convert.ToString(textBox16.Text);
         }
 
         private void textBox17_TextChanged(object sender, EventArgs e)
         {
-            //Для передачи на сохранения 
+            //Для сохранения 
             createPP.P108 = Convert.ToString(textBox17.Text);
         }
 
         private void textBox18_TextChanged(object sender, EventArgs e)
         {
-            //Для передачи на сохранения 
+            //Для сохранения 
             createPP.P109 = Convert.ToString(textBox18.Text);
         }
 
         private void textBox19_TextChanged(object sender, EventArgs e)
         {
-            //Для передачи на сохранения 
+            //Для сохранения 
             createPP.P110 = Convert.ToString(textBox19.Text);
         }
 
         private void textBox10_TextChanged(object sender, EventArgs e)
         {
-            //Для передачи на сохранения 
+            //Для сохранения 
             createPP.P0 = Convert.ToString(textBox10.Text);
         }
 
-        private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 
  
