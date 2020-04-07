@@ -39,66 +39,69 @@ namespace WindowsFormsApp2
             if (selectedState=="Созданные")
             {
                 SqlConnection conn = DBUtils.GetDBConnection();
+                conn.Open();
 
                 try
                 {
+                    
                     //MessageBox.Show("Openning Connection ...");
                     SqlCommand sqlCmd = new SqlCommand();
-                    sqlCmd.Connection = conn;
-                    sqlCmd.CommandType = CommandType.Text;
-                    sqlCmd.CommandText = "Select id as 'Порядковый номер ПП', " +
-                        "postinbank as 'Поступило в банк', " +
-                        "spissoschet as 'Списано со сч.плат',"  +
-                        "form_okyd as 'Номер формы ОКУД'," +
-                        "name_bank_docum as 'Наименование банковской документации'," +
-                        "number_pp as 'Номер платежного поручения '," +
-                        "date_pp as 'Списано со сч.плат'," +
-                        "vid_platezha as 'Вид платежа'," +
-                        "status_platelshik as 'Статус платежа'," +
-                        "summa_propisiu as 'Сумма прописью'," +
-                        "INN_platelshika as 'ИНН плательщика'," +
-                        "KPP_platelshika as 'КПП плательщика'," +
-                        "Summa_platelshika as 'Сумма платежа'," +
-                        "Name_platelshika as 'Наименование организации плательщика'," +
-                        "Acc_platelshika as 'Счет плательщика'," +
-                        "bank_platelshika as 'Банк плательщика'," +
-                        "BIK_platelshika as 'БИК плательщика'," +
-                        "KOR_poluchat as 'Кор.счет получателя'," +
-                        "BANK_poluchat as 'Банк получателя'," +
-                        "BIK_poluchat as 'БИК получателя'," +
-                        "ACC_bank_poluchat as 'Счет банк получатель'," +
-                        "INN_poluchat as 'ИНН получателя'," +
-                        "KPP_poluchat as 'КПП получателя'," +
-                        "ACC_poluchat as 'Номер счета получателя'," +
-                        "name_poluchat as 'Наименование компании-получателя'," +
-                        "shifr_pp as 'Шифр ПП'," +
-                        "srochnost as 'Срочность ПП'," +
-                        "naznachenie as 'Назначение платежа'," +
-                        "ocherednost as 'Очередность'," +
-                        "kod as 'УИН платежа'," +
-                        "rezerv as 'Резервное поле'," +
-                        "KBK as 'КБК'," +
-                        "OKTMO as 'ОКТМО'," +
-                        "osnovanie_pp as 'Основание платежа'," +
-                        "nalog_period as 'Налоговый период'," +
-                        "Nomer_docum as 'Номер документа'," +
-                        "date_docum as 'Дата документа'," +
-                        "kod_vyplatu as 'Код выплаты'," +
-                        "naznachenie_PP as 'Назначение ПП'," +
-                        "MP 'МП'," +
-                        "PODPIS as 'Подпись'," +
-                        "BANK_OTMETK as 'Отметка банка'," +
-                        "Unknow as 'Дополнительное поле'" +
-                        "from create_pp";
+                        sqlCmd.Connection = conn;
+                        sqlCmd.CommandType = CommandType.Text;
+                        sqlCmd.CommandText = "Select id as 'Порядковый номер ПП', " +
+                            "postinbank as 'Поступило в банк', " +
+                            "spissoschet as 'Списано со сч.плат'," +
+                            "form_okyd as 'Номер формы ОКУД'," +
+                            "name_bank_docum as 'Наименование банковской документации'," +
+                            "number_pp as 'Номер платежного поручения '," +
+                            "date_pp as 'Списано со сч.плат'," +
+                            "vid_platezha as 'Вид платежа'," +
+                            "status_platelshik as 'Статус платежа'," +
+                            "summa_propisiu as 'Сумма прописью'," +
+                            "INN_platelshika as 'ИНН плательщика'," +
+                            "KPP_platelshika as 'КПП плательщика'," +
+                            "Summa_platelshika as 'Сумма платежа'," +
+                            "Name_platelshika as 'Наименование организации плательщика'," +
+                            "Acc_platelshika as 'Счет плательщика'," +
+                            "bank_platelshika as 'Банк плательщика'," +
+                            "BIK_platelshika as 'БИК плательщика'," +
+                            "KOR_poluchat as 'Кор.счет получателя'," +
+                            "BANK_poluchat as 'Банк получателя'," +
+                            "BIK_poluchat as 'БИК получателя'," +
+                            "ACC_bank_poluchat as 'Счет банк получатель'," +
+                            "INN_poluchat as 'ИНН получателя'," +
+                            "KPP_poluchat as 'КПП получателя'," +
+                            "ACC_poluchat as 'Номер счета получателя'," +
+                            "name_poluchat as 'Наименование компании-получателя'," +
+                            "shifr_pp as 'Шифр ПП'," +
+                            "srochnost as 'Срочность ПП'," +
+                            "naznachenie as 'Назначение платежа'," +
+                            "ocherednost as 'Очередность'," +
+                            "kod as 'УИН платежа'," +
+                            "rezerv as 'Резервное поле'," +
+                            "KBK as 'КБК'," +
+                            "OKTMO as 'ОКТМО'," +
+                            "osnovanie_pp as 'Основание платежа'," +
+                            "nalog_period as 'Налоговый период'," +
+                            "Nomer_docum as 'Номер документа'," +
+                            "date_docum as 'Дата документа'," +
+                            "kod_vyplatu as 'Код выплаты'," +
+                            "naznachenie_PP as 'Назначение ПП'," +
+                            "MP 'МП'," +
+                            "PODPIS as 'Подпись'," +
+                            "BANK_OTMETK as 'Отметка банка'," +
+                            "Unknow as 'Дополнительное поле'" +
+                            "from create_pp";
 
-        SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
+                        SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
 
-                    DataTable dtRecord = new DataTable();
-                    sqlDataAdap.Fill(dtRecord);
-                    dataGridView1.DataSource = dtRecord;
+                        DataTable dtRecord = new DataTable();
+                        sqlDataAdap.Fill(dtRecord);
+                        dataGridView1.DataSource = dtRecord;
 
-                    //   MessageBox.Show("Connection successful!");
-                    conn.Close();
+                        //   MessageBox.Show("Connection successful!");
+                       conn.Close();
+                    
                 }
                 catch (SqlException ex)
                 {
@@ -117,6 +120,7 @@ namespace WindowsFormsApp2
             {
 
                 SqlConnection conn = DBUtils.GetDBConnection();
+                conn.Open();
 
                 try
                 {
@@ -181,6 +185,7 @@ namespace WindowsFormsApp2
                 catch (SqlException ex)
                 {
                     MessageBox.Show(ex.Message);
+                    conn.Close();
                 }
                 finally
                 {
@@ -211,6 +216,7 @@ namespace WindowsFormsApp2
             {
                 dataGridView1.Visible = true;
                 SqlConnection conn = DBUtils.GetDBConnection();
+                conn.Open();
 
                 try
                 {
@@ -274,6 +280,7 @@ namespace WindowsFormsApp2
                 catch (SqlException ex)
                 {
                     MessageBox.Show(ex.Message);
+                    conn.Close();
                 }
                 finally
                 {
@@ -288,6 +295,7 @@ namespace WindowsFormsApp2
             {
                 dataGridView1.Visible = true;
                 SqlConnection conn = DBUtils.GetDBConnection();
+                conn.Open();
 
                 try
                 {
@@ -301,13 +309,14 @@ namespace WindowsFormsApp2
                     DataTable dtRecord = new DataTable();
                     sqlDataAdap.Fill(dtRecord);
                     dataGridView1.DataSource = dtRecord;
-
+                    conn.Close();
                     //   MessageBox.Show("Connection successful!");
 
                 }
                 catch (SqlException ex)
                 {
                     MessageBox.Show(ex.Message);
+                    conn.Close();
                 }
                 finally
                 {

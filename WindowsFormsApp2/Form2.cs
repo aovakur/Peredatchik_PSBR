@@ -194,24 +194,97 @@ namespace WindowsFormsApp2
             //    listBox22.Items.Add(item.ToString());
                 //Console.WriteLine(item);
            // }
+
+            
         }
 
         public void записатьВБДToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(radioButton2.Checked == true && checkBox1.Checked == true )
+            if (textBox10.Text != "" && textBox5.Text != "" && textBox24.Text != "" && textBox26.Text != "" && Convert.ToString(listBox14.SelectedItem) != "" && Convert.ToString(listBox15.SelectedItem) != "" && Convert.ToString(listBox10.SelectedItem) != "" && Convert.ToString(listBox18.SelectedItem) != "" && Convert.ToString(listBox19.SelectedItem) != "" && Convert.ToString(listBox22.SelectedItem) != "")
             {
-               createPP.insertDB(createPP.P0, createPP.P4, createPP.P6, createPP.P60, createPP.P102, createPP.P7, createPP.P8, createPP.P9, createPP.P10, createPP.P11, createPP.P12, createPP.P101, createPP.P13, createPP.P14, createPP.P15, createPP.P17, createPP.P61, createPP.P103, createPP.P16, createPP.P21, createPP.P24, createPP.P5, createPP.P22, createPP.P104, createPP.P105, createPP.P106, createPP.P107, createPP.P108, createPP.P109, createPP.P110);
+                if (radioButton2.Checked == true && checkBox1.Checked == true)
+                {
+                    createPP.insertDB(createPP.P0, createPP.P4, createPP.P6, createPP.P60, createPP.P102, createPP.P7, createPP.P8, createPP.P9, createPP.P10, createPP.P11, createPP.P12, createPP.P101, createPP.P13, createPP.P14, createPP.P15, createPP.P17, createPP.P61, createPP.P103, createPP.P16, createPP.P21, createPP.P24, createPP.P5, createPP.P22, createPP.P104, createPP.P105, createPP.P106, createPP.P107, createPP.P108, createPP.P109, createPP.P110);
+                    Close();
+                }
+
+                else if (radioButton1.Checked == true && checkBox1.Checked == false)
+                {
+                    createPP.insertDB_brief(createPP.P0, createPP.P4, createPP.P6, createPP.P60, createPP.P102, createPP.P7, createPP.P8, createPP.P9, createPP.P10, createPP.P11, createPP.P12, createPP.P101, createPP.P13, createPP.P14, createPP.P15, createPP.P17, createPP.P61, createPP.P103, createPP.P16, createPP.P21, createPP.P24);
+                    Close();
+                }
+
+                else if (radioButton2.Checked == true)
+                {
+                    createPP.insertDB_urgency(createPP.P0, createPP.P4, createPP.P6, createPP.P60, createPP.P102, createPP.P7, createPP.P8, createPP.P9, createPP.P10, createPP.P11, createPP.P12, createPP.P101, createPP.P13, createPP.P14, createPP.P15, createPP.P17, createPP.P61, createPP.P103, createPP.P16, createPP.P21, createPP.P24, createPP.P5);
+                    Close();
+                }
             }
-            
-            else if (radioButton1.Checked == true && checkBox1.Checked == false )
+            else
             {
-                createPP.insertDB_brief(createPP.P0, createPP.P4, createPP.P6, createPP.P60, createPP.P102, createPP.P7, createPP.P8, createPP.P9, createPP.P10, createPP.P11, createPP.P12, createPP.P101, createPP.P13, createPP.P14, createPP.P15, createPP.P17, createPP.P61, createPP.P103, createPP.P16, createPP.P21, createPP.P24);
+                if (textBox10.Text == "")
+                {
+                    textBox10.BackColor = Color.Fuchsia;
+
+                }
+
+                if (textBox5.Text == "")
+                {
+                    textBox5.BackColor = Color.Fuchsia;
+
+                }
+
+                if (textBox24.Text == "")
+                {
+                    textBox24.BackColor = Color.Fuchsia;
+
+                }
+
+                if (textBox26.Text == "")
+                {
+                    textBox26.BackColor = Color.Fuchsia;
+
+                }
+
+
+                if (Convert.ToString(listBox14.SelectedItem) == "")
+                {
+                    listBox14.BackColor = Color.Fuchsia;
+
+                }
+
+                if (Convert.ToString(listBox15.SelectedItem) == "")
+                {
+                    listBox15.BackColor = Color.Fuchsia;
+
+                }
+
+                if (Convert.ToString(listBox18.SelectedItem) == "")
+                {
+                    listBox18.BackColor = Color.Fuchsia;
+
+                }
+
+
+                if (Convert.ToString(listBox19.SelectedItem) == "")
+                {
+                    listBox19.BackColor = Color.Fuchsia;
+
+                }
+
+                if (Convert.ToString(listBox22.SelectedItem) == "")
+                {
+                    listBox22.BackColor = Color.Fuchsia;
+
+                }
+
+                if (Convert.ToString(listBox10.SelectedItem) == "")
+                {
+                    listBox10.BackColor = Color.Fuchsia;
+
+                }
             }
 
-           else if (radioButton2.Checked == true)
-            {
-                createPP.insertDB_urgency(createPP.P0, createPP.P4, createPP.P6, createPP.P60, createPP.P102, createPP.P7, createPP.P8, createPP.P9, createPP.P10, createPP.P11, createPP.P12, createPP.P101, createPP.P13, createPP.P14, createPP.P15, createPP.P17, createPP.P61, createPP.P103, createPP.P16, createPP.P21, createPP.P24, createPP.P5);
-            }
         }
 
         public void сохранитьToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -696,7 +769,10 @@ namespace WindowsFormsApp2
             createPP.P0 = Convert.ToString(textBox10.Text);
         }
 
-       
+        private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
  
