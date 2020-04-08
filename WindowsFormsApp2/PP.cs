@@ -109,6 +109,13 @@ namespace WindowsFormsApp2
             return curDate;
         }
 
+        static public string Date1()
+        {
+            DateTime dt = DateTime.Now;
+            string curDate = dt.ToShortDateString();
+            return curDate;
+        }
+
         public int P7
         {
             get { return p7; }
@@ -596,7 +603,7 @@ namespace WindowsFormsApp2
             sqlCmd.CommandType = CommandType.StoredProcedure;
             sqlCmd.CommandText = "creatnewPP_full";
 
-            sqlCmd.Parameters.AddWithValue("@p0", 123);
+            sqlCmd.Parameters.AddWithValue("@p0", p0);
             sqlCmd.Parameters.AddWithValue("@p4", p4);
             sqlCmd.Parameters.AddWithValue("@p6", p6);
             sqlCmd.Parameters.AddWithValue("@p60", p60);
@@ -647,7 +654,7 @@ namespace WindowsFormsApp2
             sqlCmd.Connection = conn6;
             sqlCmd.CommandType = CommandType.StoredProcedure;
             sqlCmd.CommandText = "creatnewPP_brief";
-            sqlCmd.Parameters.AddWithValue("@p0", 123);
+            sqlCmd.Parameters.AddWithValue("@p0", p0);
             sqlCmd.Parameters.AddWithValue("@p4", p4);
             sqlCmd.Parameters.AddWithValue("@p6", p6);
             sqlCmd.Parameters.AddWithValue("@p60", p60);
@@ -688,7 +695,7 @@ namespace WindowsFormsApp2
             sqlCmd.Connection = conn6;
             sqlCmd.CommandType = CommandType.StoredProcedure;
             sqlCmd.CommandText = "creatnewPP_urgency";
-            sqlCmd.Parameters.AddWithValue("@p0", 123);
+            sqlCmd.Parameters.AddWithValue("@p0", p0);
             sqlCmd.Parameters.AddWithValue("@p4", p4);
             sqlCmd.Parameters.AddWithValue("@p6", p6);
             sqlCmd.Parameters.AddWithValue("@p60", p60);
