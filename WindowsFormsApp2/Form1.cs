@@ -34,7 +34,7 @@ namespace WindowsFormsApp2
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Cursor.Current = Cursors.Default;
+           // Cursor.Current = Cursors.Default;
         }
 
         public void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -42,10 +42,10 @@ namespace WindowsFormsApp2
             //dataGridView1.Visible = true;
           //  string selectedState = comboBox1.SelectedItem.ToString();
             //button2.Visible =true;
-            Cursor.Current = Cursors.Default;
+           // Cursor.Current = Cursors.Default;
 
             this.Size = new Size(1500, 800);
-            DataTable DT = new DataTable();
+          //  DataTable DT = new DataTable();
 
 
         }
@@ -69,7 +69,7 @@ namespace WindowsFormsApp2
             Cursor.Current = Cursors.Default;
             textBox1.ReadOnly = true;
             textBox1.Text = Convert.ToString(pp.Date1());
-            maindb();
+
 
         }
 
@@ -118,16 +118,24 @@ namespace WindowsFormsApp2
 
         public void созданныеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            maindb();
-           
+            if (DBUtils.Datasource1 != String.Empty && DBUtils.Database1 != String.Empty && DBUtils.Username1 != String.Empty && DBUtils.Password1 != String.Empty)
+            {
+                maindb();
+            }
+
+            else
+            {
+                MessageBox.Show("К локальной/сетевой базе данных не удалось подключиться");
+            }
+
         }
 
         public void отправленныеToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            while (DG.Rows.Count > 1)
-                for (int i = 0; i < DG.Rows.Count - 1; i++)
-                    DG.Rows.Remove(DG.Rows[i]);
+            //while (DG.Rows.Count > 1)
+           //     for (int i = 0; i < DG.Rows.Count - 1; i++)
+             //       DG.Rows.Remove(DG.Rows[i]);
           
             SqlConnection conn = DBUtils.GetDBConnection();
             conn.Open();
@@ -212,7 +220,7 @@ namespace WindowsFormsApp2
 
         }
 
-        public void maindb()
+        private void maindb()
         {
             this.Size = new Size(1500, 800);
             DG.Bounds = new Rectangle(10, 80, 1460, 650);
@@ -226,6 +234,7 @@ namespace WindowsFormsApp2
 
             try
             {
+
 
                 //MessageBox.Show("Openning Connection ...");
                 SqlCommand sqlCmd = new SqlCommand();
@@ -299,6 +308,21 @@ namespace WindowsFormsApp2
                 //MessageBox.Show("Подключение закрыто...");
             }
 
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            //textBox2.Text = DBUtils.Datasource1;
+            //textBox3.Text = DBUtils.Database1;
+           // textBox4.Text = DBUtils.Username1;
+            //textBox5.Text = DBUtils.Password1;
         }
     }
 }

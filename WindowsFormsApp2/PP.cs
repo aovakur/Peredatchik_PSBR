@@ -512,7 +512,7 @@ namespace WindowsFormsApp2
         public string ed101(string p4)
         {
             string a;
-            StreamWriter f = new StreamWriter("C:\\PeredatchikPSBR\\test3.ed101");
+            StreamWriter f = new StreamWriter("C:\\PeredatchikPSBR\\ed101\\test.ed101");
             f.WriteLine("" + p4);
             f.WriteLine("<?xml version=" + '\u0022' + "1.0" + '\u0022' + "encoding=" + '\u0022' + "WINDOWS-1251" + '\u0022' + "?>");
             f.WriteLine("<ED101 xmlns=" + '\u0022' + "urn:cbr-ru:ed:v2.0" + '\u0022' + "EDNo=" + '\u0022' + "1" + '\u0022' + " " + "EDDate=" + '\u0022' + p4 + '\u0022' + "EDAuthor=" + '\u0022' + "4525545000" + '\u0022' + " " + "TransKind=" + '\u0022' + "01" + '\u0022' + " Priority=" + '\u0022' + "5" + '\u0022' + "Sum = " + "2400000" + '\u0022' + "PaymentPrecedence=" + '\u0022' + "60" + '\u0022' + "SystemCode=" + '\u0022' + "05" + '\u0022' + " PaytKind=" + '\u0022' + "4" + '\u0022' + "ReceiptDate=" + '\u0022' + "2018-07-02" + '\u0022' + "ChargeOffDate=" + '\u0022' + "2018-07-02" + '\u0022' + ">");
@@ -805,7 +805,7 @@ namespace WindowsFormsApp2
 
                                              )))))));
 
-                doc.Save("C:\\PeredatchikPSBR\\test.ed501");
+                doc.Save("C:\\PeredatchikPSBR\\ed501\\test.ed501");
 
             b = "Платежное поручение в формате ED501 сохранено";
             MessageBox.Show(b);
