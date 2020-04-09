@@ -921,7 +921,7 @@ namespace WindowsFormsApp2
 
         private void textBox29_TextChanged(object sender, EventArgs e)
         {
-
+            createPP.P24 = Convert.ToString(textBox29.Text);
         }
 
         private void label5_Click(object sender, EventArgs e)
