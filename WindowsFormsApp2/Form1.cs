@@ -71,6 +71,17 @@ namespace WindowsFormsApp2
             textBox1.Text = Convert.ToString(pp.Date1());
 
 
+            if (DBUtils.Datasource1 != null && DBUtils.Database1 != null && DBUtils.Username1 != null && DBUtils.Password1 != null)
+            {
+                maindb();
+            }
+
+            else
+            {
+                MessageBox.Show("К локальной/сетевой базе данных не удалось подключиться");
+            }
+
+
         }
 
         public int a;
@@ -118,7 +129,7 @@ namespace WindowsFormsApp2
 
         public void созданныеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (DBUtils.Datasource1 != String.Empty && DBUtils.Database1 != String.Empty && DBUtils.Username1 != String.Empty && DBUtils.Password1 != String.Empty)
+            if (DBUtils.Datasource1 != null && DBUtils.Database1 != null && DBUtils.Username1 != null && DBUtils.Password1 != null)
             {
                 maindb();
             }
@@ -323,6 +334,11 @@ namespace WindowsFormsApp2
             //textBox3.Text = DBUtils.Database1;
            // textBox4.Text = DBUtils.Username1;
             //textBox5.Text = DBUtils.Password1;
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }
