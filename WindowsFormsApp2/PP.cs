@@ -62,12 +62,6 @@ namespace WindowsFormsApp2
         string p109;
         string p110;
 
-        
-
-        SqlConnection conn = DBUtils.GetDBConnection();
-        SqlCommand command = new SqlCommand();
-       
-
         public string P0
         {
             get { return p0; }
