@@ -108,8 +108,8 @@
             // отправленныеToolStripMenuItem
             // 
             this.отправленныеToolStripMenuItem.Name = "отправленныеToolStripMenuItem";
-            this.отправленныеToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.отправленныеToolStripMenuItem.Text = "Отправленные";
+            this.отправленныеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.отправленныеToolStripMenuItem.Text = "Принятые";
             this.отправленныеToolStripMenuItem.Click += new System.EventHandler(this.отправленныеToolStripMenuItem_Click);
             // 
             // эПДToolStripMenuItem1

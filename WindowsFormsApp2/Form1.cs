@@ -50,7 +50,6 @@ namespace WindowsFormsApp2
 
         }
 
-
         private void ручнаяВводToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form1 f2 = new Form1();
@@ -59,10 +58,6 @@ namespace WindowsFormsApp2
             Form2 newForm2 = new Form2();
             newForm2.Show();
         }
-
-
-
-
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -75,6 +70,13 @@ namespace WindowsFormsApp2
             DBUtils.Database1 = Convert.ToString(Form6.ReadSetting("database"));
             DBUtils.Username1 = Convert.ToString(Form6.ReadSetting("username"));
             DBUtils.Password1 = Convert.ToString(Form6.ReadSetting("password"));
+
+            this.Size = new Size(1500, 800);
+            DG.Bounds = new Rectangle(10, 80, 1460, 650);
+            DG.Anchor = ((AnchorStyles)(((AnchorStyles.Top | AnchorStyles.Left) | AnchorStyles.Right | AnchorStyles.Bottom)));
+            DG.AllowUserToAddRows = false;
+            this.Controls.Add(DG);
+
 
             if (DBUtils.Datasource1 != null && DBUtils.Database1 != null && DBUtils.Username1 != null && DBUtils.Password1 != null)
             {
@@ -138,7 +140,14 @@ namespace WindowsFormsApp2
         {
             if (DBUtils.Datasource1 != null && DBUtils.Database1 != null && DBUtils.Username1 != null && DBUtils.Password1 != null)
             {
-                GetCurrentPP();
+                if (checkBox1.Checked == true)
+                {
+                    maindb();
+                }
+                else
+                {
+                    GetCurrentPP();
+                }
             }
 
             else
@@ -157,11 +166,7 @@ namespace WindowsFormsApp2
 
             SqlConnection conn = DBUtils.GetDBConnection();
             conn.Open();
-            this.Size = new Size(1500, 800);
-            DG.Bounds = new Rectangle(10, 80, 1460, 650);
-            DG.Anchor = ((AnchorStyles)(((AnchorStyles.Top | AnchorStyles.Left) | AnchorStyles.Right | AnchorStyles.Bottom)));
-            DG.AllowUserToAddRows = false;
-            this.Controls.Add(DG);
+           
 
             try
             {
@@ -171,11 +176,11 @@ namespace WindowsFormsApp2
                 sqlCmd.CommandType = CommandType.Text;
                 sqlCmd.CommandText = "Select id as 'Порядковый номер ПП', " +
                     "postinbank as 'Поступило в банк', " +
-                    "spissoschet as 'Списано со сч.плат'," +
+                    "spissoschet as 'Списано со счета плательщика'," +
                     "form_okyd as 'Номер формы ОКУД'," +
                     "name_bank_docum as 'Наименование банковской документации'," +
-                    "number_pp as 'Номер платежного поручения '," +
-                    "date_pp as 'Списано со сч.плат'," +
+                    "number_pp as 'Номер платежного поручения'," +
+                    "date_pp as 'Списано со счета плательщика'," +
                     "vid_platezha as 'Вид платежа'," +
                     "status_platelshik as 'Статус платежа'," +
                     "summa_propisiu as 'Сумма прописью'," +
@@ -210,8 +215,7 @@ namespace WindowsFormsApp2
                     "naznachenie_PP as 'Назначение ПП'," +
                     "MP 'МП'," +
                     "PODPIS as 'Подпись'," +
-                    "BANK_OTMETK as 'Отметка банка'," +
-                    "Unknow as 'Дополнительное поле'" +
+                    "BANK_OTMETK as 'Отметка банка'" +
                     "from history_pp";
 
                 SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
@@ -240,12 +244,7 @@ namespace WindowsFormsApp2
 
         private void maindb()
         {
-            this.Size = new Size(1500, 800);
-            DG.Bounds = new Rectangle(10, 80, 1460, 650);
-            DG.Anchor = ((AnchorStyles)(((AnchorStyles.Top | AnchorStyles.Left) | AnchorStyles.Right | AnchorStyles.Bottom)));
-            DG.AllowUserToAddRows = false;
-            this.Controls.Add(DG);
-
+            
 
             SqlConnection conn = DBUtils.GetDBConnection();
             conn.Open();
@@ -260,12 +259,13 @@ namespace WindowsFormsApp2
                 sqlCmd.Connection = conn;
                 sqlCmd.CommandType = CommandType.Text;
                 sqlCmd.CommandText = "Select id as 'Порядковый номер ПП', " +
+                    "status as 'Статус'," +
                     "postinbank as 'Поступило в банк', " +
-                    "spissoschet as 'Списано со сч.плат'," +
+                    "spissoschet as 'Списано со счета плательщика'," +
                     "form_okyd as 'Номер формы ОКУД'," +
                     "name_bank_docum as 'Наименование банковской документации'," +
                     "number_pp as 'Номер платежного поручения '," +
-                    "date_pp as 'Списано со сч.плат'," +
+                    "date_pp as 'Списано со счета плательщика'," +
                     "vid_platezha as 'Вид платежа'," +
                     "status_platelshik as 'Статус платежа'," +
                     "summa_propisiu as 'Сумма прописью'," +
@@ -300,8 +300,7 @@ namespace WindowsFormsApp2
                     "naznachenie_PP as 'Назначение ПП'," +
                     "MP 'МП'," +
                     "PODPIS as 'Подпись'," +
-                    "BANK_OTMETK as 'Отметка банка'," +
-                    "Unknow as 'Дополнительное поле'" +
+                    "BANK_OTMETK as 'Отметка банка'" +
                     "from create_pp";
 
                 SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
@@ -391,7 +390,6 @@ namespace WindowsFormsApp2
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)

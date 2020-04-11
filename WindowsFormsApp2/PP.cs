@@ -61,11 +61,18 @@ namespace WindowsFormsApp2
         string p108;
         string p109;
         string p110;
+        string status;
 
         public string P0
         {
             get { return p0; }
             set { p0 = value; }
+        }
+
+        public string Status
+        {
+            get { return status; }
+            set { status = "Новое"; }
         }
 
         public string P1
@@ -596,7 +603,7 @@ namespace WindowsFormsApp2
             sqlCmd.Connection = conn6;
             sqlCmd.CommandType = CommandType.StoredProcedure;
             sqlCmd.CommandText = "creatnewPP_full";
-
+            sqlCmd.Parameters.AddWithValue("@status", status);
             sqlCmd.Parameters.AddWithValue("@p0", p0);
             sqlCmd.Parameters.AddWithValue("@p4", p4);
             sqlCmd.Parameters.AddWithValue("@p6", p6);
