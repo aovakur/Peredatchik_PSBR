@@ -33,6 +33,8 @@
             this.эПДToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.статусыЭПДToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.созданныеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.отправленныеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.эПДToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ручнаяВводToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.интеграцияС1СToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,8 +50,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.созданныеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.отправленныеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -96,6 +96,21 @@
             this.статусыЭПДToolStripMenuItem.Name = "статусыЭПДToolStripMenuItem";
             this.статусыЭПДToolStripMenuItem.Size = new System.Drawing.Size(91, 20);
             this.статусыЭПДToolStripMenuItem.Text = "Статусы ЭПД";
+            this.статусыЭПДToolStripMenuItem.Click += new System.EventHandler(this.статусыЭПДToolStripMenuItem_Click);
+            // 
+            // созданныеToolStripMenuItem
+            // 
+            this.созданныеToolStripMenuItem.Name = "созданныеToolStripMenuItem";
+            this.созданныеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.созданныеToolStripMenuItem.Text = "Созданные";
+            this.созданныеToolStripMenuItem.Click += new System.EventHandler(this.созданныеToolStripMenuItem_Click);
+            // 
+            // отправленныеToolStripMenuItem
+            // 
+            this.отправленныеToolStripMenuItem.Name = "отправленныеToolStripMenuItem";
+            this.отправленныеToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.отправленныеToolStripMenuItem.Text = "Отправленные";
+            this.отправленныеToolStripMenuItem.Click += new System.EventHandler(this.отправленныеToolStripMenuItem_Click);
             // 
             // эПДToolStripMenuItem1
             // 
@@ -212,20 +227,7 @@
             this.checkBox1.TabIndex = 8;
             this.checkBox1.Text = "Отображать документы за все дни";
             this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // созданныеToolStripMenuItem
-            // 
-            this.созданныеToolStripMenuItem.Name = "созданныеToolStripMenuItem";
-            this.созданныеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.созданныеToolStripMenuItem.Text = "Созданные";
-            this.созданныеToolStripMenuItem.Click += new System.EventHandler(this.созданныеToolStripMenuItem_Click);
-            // 
-            // отправленныеToolStripMenuItem
-            // 
-            this.отправленныеToolStripMenuItem.Name = "отправленныеToolStripMenuItem";
-            this.отправленныеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.отправленныеToolStripMenuItem.Text = "Отправленные";
-            this.отправленныеToolStripMenuItem.Click += new System.EventHandler(this.отправленныеToolStripMenuItem_Click);
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // Form1
             // 

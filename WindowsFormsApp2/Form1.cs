@@ -23,10 +23,10 @@ namespace WindowsFormsApp2
         public Form1()
         {
             InitializeComponent();
-           // dataGridView1.Visible = false;
+            // dataGridView1.Visible = false;
             //comboBox1.SelectedItem = "Созданные";
             //dataGridView1.Visible = true;
-            
+
 
         }
 
@@ -34,18 +34,18 @@ namespace WindowsFormsApp2
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           // Cursor.Current = Cursors.Default;
+            // Cursor.Current = Cursors.Default;
         }
 
         public void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             //dataGridView1.Visible = true;
-          //  string selectedState = comboBox1.SelectedItem.ToString();
+            //  string selectedState = comboBox1.SelectedItem.ToString();
             //button2.Visible =true;
-           // Cursor.Current = Cursors.Default;
+            // Cursor.Current = Cursors.Default;
 
             this.Size = new Size(1500, 800);
-          //  DataTable DT = new DataTable();
+            //  DataTable DT = new DataTable();
 
 
         }
@@ -71,9 +71,16 @@ namespace WindowsFormsApp2
             textBox1.Text = Convert.ToString(pp.Date1());
 
 
+            DBUtils.Datasource1 = Convert.ToString(Form6.ReadSetting("datasource"));
+            DBUtils.Database1 = Convert.ToString(Form6.ReadSetting("database"));
+            DBUtils.Username1 = Convert.ToString(Form6.ReadSetting("username"));
+            DBUtils.Password1 = Convert.ToString(Form6.ReadSetting("password"));
+
             if (DBUtils.Datasource1 != null && DBUtils.Database1 != null && DBUtils.Username1 != null && DBUtils.Password1 != null)
             {
-                maindb();
+
+                    GetCurrentPP();
+             
             }
 
             else
@@ -131,7 +138,7 @@ namespace WindowsFormsApp2
         {
             if (DBUtils.Datasource1 != null && DBUtils.Database1 != null && DBUtils.Username1 != null && DBUtils.Password1 != null)
             {
-                maindb();
+                GetCurrentPP();
             }
 
             else
@@ -144,10 +151,10 @@ namespace WindowsFormsApp2
         public void отправленныеToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            //while (DG.Rows.Count > 1)
-           //     for (int i = 0; i < DG.Rows.Count - 1; i++)
-             //       DG.Rows.Remove(DG.Rows[i]);
-          
+            while (DG.Rows.Count > 1)
+             for (int i = 0; i < DG.Rows.Count - 1; i++)
+                DG.Rows.Remove(DG.Rows[i]);
+
             SqlConnection conn = DBUtils.GetDBConnection();
             conn.Open();
             this.Size = new Size(1500, 800);
@@ -243,6 +250,7 @@ namespace WindowsFormsApp2
             SqlConnection conn = DBUtils.GetDBConnection();
             conn.Open();
 
+
             try
             {
 
@@ -322,6 +330,51 @@ namespace WindowsFormsApp2
 
         }
 
+        private void GetCurrentPP()
+            {
+
+            this.Size = new Size(1500, 800);
+            DG.Bounds = new Rectangle(10, 80, 1460, 650);
+            DG.Anchor = ((AnchorStyles)(((AnchorStyles.Top | AnchorStyles.Left) | AnchorStyles.Right | AnchorStyles.Bottom)));
+            DG.AllowUserToAddRows = false;
+            this.Controls.Add(DG);
+
+
+            SqlConnection conn = DBUtils.GetDBConnection();
+            conn.Open();
+
+            try {
+                //Выбор банка плательщика 
+                SqlConnection conn3 = DBUtils.GetDBConnection();
+                conn3.Open();
+                SqlCommand sqlCmd = new SqlCommand();
+                sqlCmd.Connection = conn3;
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.CommandText = "GETCORRENTPP";
+                SqlParameter namecompany = new SqlParameter
+                {
+                    ParameterName = "@GETDATE",
+                    Value = Convert.ToString(pp.Date1())
+                };
+                sqlCmd.Parameters.Add(namecompany);
+
+                SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
+
+                DataTable dtRecord = new DataTable();
+                sqlDataAdap.Fill(dtRecord);
+                DG.DataSource = dtRecord;
+                DG.ReadOnly = true;
+
+                //   MessageBox.Show("Connection successful!");
+                conn3.Close();
+            }
+
+            catch
+            {
+
+            }
+        }
+
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             
@@ -338,6 +391,39 @@ namespace WindowsFormsApp2
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                maindb();
+            }
+            else
+            {
+                GetCurrentPP();
+            }
+
+        }
+
+        private void статусыЭПДToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void сегодняшниеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            if (DBUtils.Datasource1 != null && DBUtils.Database1 != null && DBUtils.Username1 != null && DBUtils.Password1 != null)
+            {
+                GetCurrentPP();
+            }
+
+            else
+            {
+                MessageBox.Show("К локальной/сетевой базе данных не удалось подключиться");
+            }
 
         }
     }

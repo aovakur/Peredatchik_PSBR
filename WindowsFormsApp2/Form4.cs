@@ -15,7 +15,7 @@ namespace WindowsFormsApp2
     {
 
         public string safepath;
-        //settings settings = new settings();
+       
         FolderBrowserDialog FBD = new FolderBrowserDialog();
 
         public Form4()
@@ -36,8 +36,10 @@ namespace WindowsFormsApp2
 
         private void Form4_Load(object sender, EventArgs e)
         {
-           
+
             safepath = FBD.SelectedPath;
+            //safepath = "C:\\Program Files\\Business architecture\\PeredatchikPSBR\\";
+           //textBox1.ReadOnly = true;
             textBox1.Text = settings.safepath;
             textBox6.Text = settings.safepathpdf;
             textBox4.Text = settings.safepathetemplate;
@@ -50,7 +52,8 @@ namespace WindowsFormsApp2
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+            //safepath = "C:\\Program Files\\Business architecture\\PeredatchikPSBR\\";
+
             if (FBD.ShowDialog() == DialogResult.OK)
             {
                 

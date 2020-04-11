@@ -17,6 +17,7 @@ namespace WindowsFormsApp2
 
         public static string safepath_1(string safepath1)
         {
+
             string pdf = "\\pdf\\";
             string ed501 = "\\ed501\\";
             string ed101 = "\\ed101\\";
@@ -25,8 +26,9 @@ namespace WindowsFormsApp2
 
             //path
             safepath = safepath1;
+            
             //pdf
-            safepathpdf=safepath+pdf;
+            safepathpdf =safepath+pdf;
             //ed501
             safepathed501=safepath + ed501;
             //template_pp

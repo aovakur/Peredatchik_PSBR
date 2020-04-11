@@ -5,17 +5,71 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace WindowsFormsApp2
 {
+
+    
     public partial class Form6 : Form
     {
+       
         public Form6()
         {
             InitializeComponent();
+            //ReadAllSettings();
+            checkBox1.Checked = true;
+
+           // ReadSetting("NotValid");
+           //AddUpdateAppSettings("NewSetting", "May 7, 2014");
+           //AddUpdateAppSettings("Setting1", "May 8, 2014");
+           // ReadAllSettings();
         }
+
+        public static string ReadSetting(string key)
+        {
+            string ErrorMSG = "Error ";
+
+            try
+            {
+                var appSettings = ConfigurationManager.AppSettings;
+                string result = appSettings[key] ?? "Not Found";
+                return result;
+
+            }
+            catch (ConfigurationErrorsException)
+            {
+                //Console.WriteLine("Error reading app settings");
+                return ErrorMSG;
+            }
+
+           
+        }
+
+        static void AddUpdateAppSettings(string key, string value)
+        {
+            try
+            {
+                var configFile = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                var settings = configFile.AppSettings.Settings;
+                if (settings[key] == null)
+                {
+                    settings.Add(key, value);
+                }
+                else
+                {
+                    settings[key].Value = value;
+                }
+                configFile.Save(ConfigurationSaveMode.Modified);
+                ConfigurationManager.RefreshSection(configFile.AppSettings.SectionInformation.Name);
+            }
+            catch (ConfigurationErrorsException)
+            {
+                Console.WriteLine("Error writing app settings");
+            }
+        }
+
 
         private void label3_Click(object sender, EventArgs e)
         {
@@ -33,19 +87,15 @@ namespace WindowsFormsApp2
 
         private void Form6_Load(object sender, EventArgs e)
         {
-            textBox1.Text = Convert.ToString(DBUtils.Datasource1);
-            textBox2.Text = Convert.ToString(DBUtils.Database1);
-            textBox3.Text = Convert.ToString(DBUtils.Username1);
-            textBox4.Text = "**********";
+
+           textBox1.Text = Convert.ToString(DBUtils.Datasource1);
+           textBox2.Text = Convert.ToString(DBUtils.Database1);
+           textBox3.Text = Convert.ToString(DBUtils.Username1);
+           textBox4.Text = "**********";
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-
-            string datasource = @"194.58.70.79";
-            string database = "ps_bankrussia";
-            string username = "adminkbr";
-            string password = "P@ssw0rd";
 
             //string datasource = @"DESKTOP-9H4S4ED\SQLEXPRESS";
             //string database = "ps_bankrussia";
@@ -54,23 +104,23 @@ namespace WindowsFormsApp2
 
             if (checkBox1.Checked == true)
                 {
-                 
-                    textBox1.ReadOnly = true;
-                    textBox2.ReadOnly = true;
-                    textBox3.ReadOnly = true;
-                    textBox4.ReadOnly = true;
 
-                    textBox1.Text = datasource;
-                    textBox2.Text = database;
-                    textBox3.Text = "**********";
-                    textBox4.Text = "**********";
+                textBox1.ReadOnly = true;
+                textBox2.ReadOnly = true;
+                textBox3.ReadOnly = true;
+                textBox4.ReadOnly = true;
+                button1.Visible = false;
 
-                    DBUtils.Datasource1 = datasource;
-                    DBUtils.Database1 = database;
-                    DBUtils.Username1 = username;
-                    DBUtils.Password1 = password;
+                DBUtils.Datasource1 = Convert.ToString(Form6.ReadSetting("datasource"));
+                DBUtils.Database1 = Convert.ToString(Form6.ReadSetting("database"));
+                DBUtils.Username1 = Convert.ToString(Form6.ReadSetting("username"));
+                DBUtils.Password1 = Convert.ToString(Form6.ReadSetting("password"));
 
-                    button1.Visible = false;
+
+                textBox1.Text = DBUtils.Datasource1;
+                textBox2.Text = DBUtils.Database1;
+                textBox3.Text = DBUtils.Username1;
+                textBox4.Text = DBUtils.Password1;
             }
 
             else

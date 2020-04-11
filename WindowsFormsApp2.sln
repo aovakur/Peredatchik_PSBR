@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp2", "WindowsFormsApp2\WindowsFormsApp2.csproj", "{B6371213-2801-4322-A876-3CA36EBA6870}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup1", "Setup1\Setup1.vdproj", "{4984E7E4-E996-486B-AE37-104106640C7A}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Peredatchik_PSBR", "Setup1\Setup1.vdproj", "{4984E7E4-E996-486B-AE37-104106640C7A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

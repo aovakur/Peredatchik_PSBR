@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace WindowsFormsApp2
 {
@@ -17,41 +18,36 @@ namespace WindowsFormsApp2
         public static string Datasource1
         {
             get { return datasource; }
-            set { datasource = value; }
+            set { datasource = Convert.ToString(Form6.ReadSetting("datasource")); }
         }
 
         public static string Database1
         {
             get { return database; }
-            set { database = value; }
+            set { database = Convert.ToString(Form6.ReadSetting("database")); }
         }
 
         public static string Username1
         {
             get { return username; }
-            set { username = value; }
+            set { username = Convert.ToString(Form6.ReadSetting("username")); }
         }
 
 
         public static string Password1
         {
             get { return password; }
-            set { password = value; }
+            set { password = Convert.ToString(Form6.ReadSetting("password")); }
         }
 
 
         public static SqlConnection GetDBConnection()
         {
+
             string datasource12 = Convert.ToString(Datasource1);
             string database12 = Convert.ToString(Database1);
             string username12 = Convert.ToString(Username1);
             string password12 = Convert.ToString(Password1);
-            //string datasource12 = @"DESKTOP-9H4S4ED\SQLEXPRESS";
-           // string password12 = "aA12345678";
-            //string datasource12 = @"194.58.70.79";
-           // string database12 = "ps_bankrussia";
-           // string username12 = "adminkbr";
-           // string password12 = "P@ssw0rd";
             return DBSQLServerUtils.GetDBConnection(datasource12, database12, username12, password12);
         }
     }
