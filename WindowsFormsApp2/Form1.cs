@@ -61,6 +61,9 @@ namespace WindowsFormsApp2
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            string safepath = "C:\\Program Files\\Business architecture\\PeredatchikPSBR";
+            settings.safepath_1(safepath);
+
             Cursor.Current = Cursors.Default;
             textBox1.ReadOnly = true;
             textBox1.Text = Convert.ToString(pp.Date1());

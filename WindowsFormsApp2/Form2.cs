@@ -163,6 +163,7 @@ namespace WindowsFormsApp2
         public void Form2_Load(object sender, EventArgs e)
         {
             
+            
 
             // MessageBox.Show(createPP.P4);
             SqlConnection conn = DBUtils.GetDBConnection();
