@@ -72,10 +72,11 @@ namespace WindowsFormsApp2
             DBUtils.Password1 = Convert.ToString(Form6.ReadSetting("password"));
 
             this.Size = new Size(1500, 800);
-            DG.Bounds = new Rectangle(10, 80, 1460, 650);
-            DG.Anchor = ((AnchorStyles)(((AnchorStyles.Top | AnchorStyles.Left) | AnchorStyles.Right | AnchorStyles.Bottom)));
-            DG.AllowUserToAddRows = false;
-            this.Controls.Add(DG);
+            //DataGridViewWithFilter DG = new DataGridViewWithFilter();
+           DG.Bounds = new Rectangle(10, 80, 1460, 650);
+           DG.Anchor = ((AnchorStyles)(((AnchorStyles.Top | AnchorStyles.Left) | AnchorStyles.Right | AnchorStyles.Bottom)));
+           DG.AllowUserToAddRows = false;
+           this.Controls.Add(DG);
 
 
             if (DBUtils.Datasource1 != null && DBUtils.Database1 != null && DBUtils.Username1 != null && DBUtils.Password1 != null)
@@ -159,6 +160,11 @@ namespace WindowsFormsApp2
 
         public void отправленныеToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //DataGridViewWithFilter DG = new DataGridViewWithFilter();
+            //DG.Bounds = new Rectangle(10, 80, 1460, 650);
+            //DG.Anchor = ((AnchorStyles)(((AnchorStyles.Top | AnchorStyles.Left) | AnchorStyles.Right | AnchorStyles.Bottom)));
+            //DG.AllowUserToAddRows = false;
+            //this.Controls.Add(DG);
 
             while (DG.Rows.Count > 1)
              for (int i = 0; i < DG.Rows.Count - 1; i++)
@@ -242,9 +248,14 @@ namespace WindowsFormsApp2
 
         }
 
-        private void maindb()
+        public  void maindb()
         {
-            
+
+            //DataGridViewWithFilter DG = new DataGridViewWithFilter();
+           // DG.Bounds = new Rectangle(10, 80, 1460, 650);
+            //DG.Anchor = ((AnchorStyles)(((AnchorStyles.Top | AnchorStyles.Left) | AnchorStyles.Right | AnchorStyles.Bottom)));
+            //DG.AllowUserToAddRows = false;
+           // Form1.Controls.Add(DG);
 
             SqlConnection conn = DBUtils.GetDBConnection();
             conn.Open();
@@ -252,7 +263,7 @@ namespace WindowsFormsApp2
 
             try
             {
-
+                
 
                 //MessageBox.Show("Openning Connection ...");
                 SqlCommand sqlCmd = new SqlCommand();
@@ -329,49 +340,53 @@ namespace WindowsFormsApp2
 
         }
 
-        private void GetCurrentPP()
+        public void GetCurrentPP()
             {
+           // DataGridViewWithFilter DG = new DataGridViewWithFilter();
+            //this.Size = new Size(1500, 800);
+           // DG.Bounds = new Rectangle(10, 80, 1460, 650);
+            //DG.Anchor = ((AnchorStyles)(((AnchorStyles.Top | AnchorStyles.Left) | AnchorStyles.Right | AnchorStyles.Bottom)));
+           // DG.AllowUserToAddRows = false;
+            //Form1.Controls.Add(DG);
 
-            this.Size = new Size(1500, 800);
-            DG.Bounds = new Rectangle(10, 80, 1460, 650);
-            DG.Anchor = ((AnchorStyles)(((AnchorStyles.Top | AnchorStyles.Left) | AnchorStyles.Right | AnchorStyles.Bottom)));
-            DG.AllowUserToAddRows = false;
-            this.Controls.Add(DG);
 
+           // public SqlConnection conn = DBUtils.GetDBConnection();
+            //conn3.Open();
 
-            SqlConnection conn = DBUtils.GetDBConnection();
-            conn.Open();
-
-            try {
-                //Выбор банка плательщика 
-                SqlConnection conn3 = DBUtils.GetDBConnection();
-                conn3.Open();
-                SqlCommand sqlCmd = new SqlCommand();
-                sqlCmd.Connection = conn3;
-                sqlCmd.CommandType = CommandType.StoredProcedure;
-                sqlCmd.CommandText = "GETCORRENTPP";
-                SqlParameter namecompany = new SqlParameter
+             try
                 {
-                    ParameterName = "@GETDATE",
-                    Value = Convert.ToString(pp.Date1())
-                };
-                sqlCmd.Parameters.Add(namecompany);
+                    //Выбор банка плательщика 
+                    SqlConnection conn3 = DBUtils.GetDBConnection();
+                    conn3.Open();
+                    SqlCommand sqlCmd = new SqlCommand();
+                    sqlCmd.Connection = conn3;
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+                    sqlCmd.CommandText = "GETCORRENTPP";
+                    SqlParameter namecompany = new SqlParameter
+                    {
+                        ParameterName = "@GETDATE",
+                        Value = Convert.ToString(pp.Date1())
+                    };
+                    sqlCmd.Parameters.Add(namecompany);
 
-                SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
+                    SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
 
-                DataTable dtRecord = new DataTable();
-                sqlDataAdap.Fill(dtRecord);
-                DG.DataSource = dtRecord;
-                DG.ReadOnly = true;
+                    DataTable dtRecord = new DataTable();
+                    sqlDataAdap.Fill(dtRecord);
+                    DG.DataSource = dtRecord;
+                    DG.ReadOnly = true;
 
                 //   MessageBox.Show("Connection successful!");
                 conn3.Close();
             }
 
-            catch
-            {
+                catch
+                {
 
-            }
+                }
+           
+
+           
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)

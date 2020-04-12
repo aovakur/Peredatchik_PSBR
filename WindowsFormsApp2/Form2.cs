@@ -551,7 +551,7 @@ namespace WindowsFormsApp2
                 {
                     
                    //MessageBox.Show("Платежное поручение в формате Ed101");
-                   createPP.ed101(createPP.P4);
+                   createPP.ed101(createPP.P0, createPP.P4, createPP.P6, createPP.P60, createPP.P102, createPP.P7, createPP.P8, createPP.P9, createPP.P10, createPP.P11, createPP.P12, createPP.P101, createPP.P13, createPP.P14, createPP.P15, createPP.P17, createPP.P61, createPP.P103, createPP.P16, createPP.P21, createPP.P24, createPP.P5, createPP.P22, createPP.P104, createPP.P105, createPP.P106, createPP.P107, createPP.P108, createPP.P109, createPP.P110);
                        
                 }
                 else
@@ -718,7 +718,7 @@ namespace WindowsFormsApp2
             if (textBox10.Text != "" && textBox5.Text != "" && textBox24.Text != "" && textBox26.Text != "" && Convert.ToString(listBox14.SelectedItem) != "" && Convert.ToString(listBox15.SelectedItem) != "" && Convert.ToString(listBox10.SelectedItem) != "" && Convert.ToString(listBox18.SelectedItem) != "" && Convert.ToString(listBox19.SelectedItem) != "" && Convert.ToString(listBox22.SelectedItem) != "")
             {
                 //Передаем все параметры
-                createPP.ed501(createPP.P4);
+                createPP.ed501(createPP.P0, createPP.P4, createPP.P6, createPP.P60, createPP.P102, createPP.P7, createPP.P8, createPP.P9, createPP.P10, createPP.P11, createPP.P12, createPP.P101, createPP.P13, createPP.P14, createPP.P15, createPP.P17, createPP.P61, createPP.P103, createPP.P16, createPP.P21, createPP.P24, createPP.P5, createPP.P22, createPP.P104, createPP.P105, createPP.P106, createPP.P107, createPP.P108, createPP.P109, createPP.P110);
             }
             else
             {
@@ -1052,6 +1052,13 @@ namespace WindowsFormsApp2
         {
 
         }
+
+        public void Form2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
+        }
+
+       
     }
 
  

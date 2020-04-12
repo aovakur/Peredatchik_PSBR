@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.эПДToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.статусыЭПДToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.созданныеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,27 +42,18 @@
             this.подписаниеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.настройкиБазаДанныхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.помощьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.contextMenuStrip1.SuspendLayout();
+            this.помощьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.сохранитьВPdfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сохранитьВED101ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сохранитьВED501СПФСToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сохранитВMT101SwiftToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.эПДToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(99, 26);
-            // 
-            // эПДToolStripMenuItem
-            // 
-            this.эПДToolStripMenuItem.Name = "эПДToolStripMenuItem";
-            this.эПДToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
-            this.эПДToolStripMenuItem.Text = "ЭПД";
             // 
             // menuStrip1
             // 
@@ -76,6 +64,7 @@
             this.статусыЭПДToolStripMenuItem,
             this.эПДToolStripMenuItem1,
             this.эСИСToolStripMenuItem,
+            this.toolStripMenuItem1,
             this.подписаниеToolStripMenuItem,
             this.настройкиToolStripMenuItem,
             this.настройкиБазаДанныхToolStripMenuItem,
@@ -183,12 +172,6 @@
             this.настройкиБазаДанныхToolStripMenuItem.Text = "Настройки база данных";
             this.настройкиБазаДанныхToolStripMenuItem.Click += new System.EventHandler(this.настройкиБазаДанныхToolStripMenuItem_Click);
             // 
-            // помощьToolStripMenuItem
-            // 
-            this.помощьToolStripMenuItem.Name = "помощьToolStripMenuItem";
-            this.помощьToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
-            this.помощьToolStripMenuItem.Text = "Помощь";
-            // 
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
@@ -229,6 +212,47 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // помощьToolStripMenuItem
+            // 
+            this.помощьToolStripMenuItem.Name = "помощьToolStripMenuItem";
+            this.помощьToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.помощьToolStripMenuItem.Text = "Помощь";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.сохранитьВPdfToolStripMenuItem,
+            this.сохранитьВED101ToolStripMenuItem,
+            this.сохранитьВED501СПФСToolStripMenuItem,
+            this.сохранитВMT101SwiftToolStripMenuItem});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(77, 20);
+            this.toolStripMenuItem1.Text = "Сохранить";
+            // 
+            // сохранитьВPdfToolStripMenuItem
+            // 
+            this.сохранитьВPdfToolStripMenuItem.Name = "сохранитьВPdfToolStripMenuItem";
+            this.сохранитьВPdfToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.сохранитьВPdfToolStripMenuItem.Text = "Сохранить в pdf";
+            // 
+            // сохранитьВED101ToolStripMenuItem
+            // 
+            this.сохранитьВED101ToolStripMenuItem.Name = "сохранитьВED101ToolStripMenuItem";
+            this.сохранитьВED101ToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.сохранитьВED101ToolStripMenuItem.Text = "Сохранить в ED101";
+            // 
+            // сохранитьВED501СПФСToolStripMenuItem
+            // 
+            this.сохранитьВED501СПФСToolStripMenuItem.Name = "сохранитьВED501СПФСToolStripMenuItem";
+            this.сохранитьВED501СПФСToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.сохранитьВED501СПФСToolStripMenuItem.Text = "Сохранить в ED501 (СПФС)";
+            // 
+            // сохранитВMT101SwiftToolStripMenuItem
+            // 
+            this.сохранитВMT101SwiftToolStripMenuItem.Name = "сохранитВMT101SwiftToolStripMenuItem";
+            this.сохранитВMT101SwiftToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.сохранитВMT101SwiftToolStripMenuItem.Text = "Сохранит в MT101 (Swift)";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -242,7 +266,6 @@
             this.Name = "Form1";
             this.Text = "Передатчик ПС БР";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.contextMenuStrip1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -251,9 +274,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem эПДToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem эПДToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem эСИСToolStripMenuItem;
@@ -263,7 +283,6 @@
         private System.Windows.Forms.ToolStripMenuItem интеграцияСДругимиФорматамиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ручнойВводToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem автоматическийToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem помощьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
 
         private System.Windows.Forms.ToolStripMenuItem настройкиToolStripMenuItem;
@@ -274,6 +293,12 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.ToolStripMenuItem созданныеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem отправленныеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem сохранитьВPdfToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem сохранитьВED101ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem сохранитьВED501СПФСToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem сохранитВMT101SwiftToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem помощьToolStripMenuItem;
     }
 }
 

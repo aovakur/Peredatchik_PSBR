@@ -510,24 +510,24 @@ namespace WindowsFormsApp2
 
 
 
-        public string ed101(string p4)
+        public string ed101(string p0, string p4, string p6, string p60, int p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p61, int p103, string p16, int p21, string p24, string p5, string p22, string p104, string p105, string p106, string p107, string p108, string p109, string p110)
         {
             string a;
-            StreamWriter f = new StreamWriter("C:\\PeredatchikPSBR\\ed101\\test.ed101");
-            f.WriteLine("" + p4);
+            string safepdf = settings.safepathed101 + p4+"_" + p0 + ".ed101";
+            StreamWriter f = new StreamWriter(safepdf);
             f.WriteLine("<?xml version=" + '\u0022' + "1.0" + '\u0022' + "encoding=" + '\u0022' + "WINDOWS-1251" + '\u0022' + "?>");
-            f.WriteLine("<ED101 xmlns=" + '\u0022' + "urn:cbr-ru:ed:v2.0" + '\u0022' + "EDNo=" + '\u0022' + "1" + '\u0022' + " " + "EDDate=" + '\u0022' + p4 + '\u0022' + "EDAuthor=" + '\u0022' + "4525545000" + '\u0022' + " " + "TransKind=" + '\u0022' + "01" + '\u0022' + " Priority=" + '\u0022' + "5" + '\u0022' + "Sum = " + "2400000" + '\u0022' + "PaymentPrecedence=" + '\u0022' + "60" + '\u0022' + "SystemCode=" + '\u0022' + "05" + '\u0022' + " PaytKind=" + '\u0022' + "4" + '\u0022' + "ReceiptDate=" + '\u0022' + "2018-07-02" + '\u0022' + "ChargeOffDate=" + '\u0022' + "2018-07-02" + '\u0022' + ">");
-            f.WriteLine("       <AccDoc AccDocNo=" + '\u0022' + "10" + '\u0022' + "AccDocDate=" + '\u0022' + "2018-07-02" + '\u0022' + "/>");
-            f.WriteLine("       <Payer PersonalAcc=" + '\u0022' + "40702810200203001037" + '\u0022' + "INN=" + '\u0022' + "7726274727" + '\u0022' + ">");
-            f.WriteLine("               <Name>ООО ТЕХНО ПЛЮС</Name>");
-            f.WriteLine("               <Bank BIC=" + '\u0022' + "044525545" + '\u0022' + "CorrespAcc=" + '\u0022' + "30101810300000000545" + '\u0022' + "/>");
+            f.WriteLine("<ED101 xmlns=" + '\u0022' + "urn:cbr-ru:ed:v2.0" + '\u0022' +" "+ "EDNo=" + '\u0022' + "1" + '\u0022' + " " + "EDDate=" + '\u0022' + p4 + '\u0022' + " "+"EDAuthor=" + '\u0022' + "4525545000" + '\u0022' + " " + "TransKind=" + '\u0022' + p101 + '\u0022' + " Priority=" + '\u0022' + p21 + '\u0022'+" " + "Sum=" + '\u0022' + p7 + '\u0022' +" "+ "PaymentPrecedence=" + '\u0022' + "60" + '\u0022' +" "+ "SystemCode=" + '\u0022' + "05" + '\u0022' + " PaytKind=" + '\u0022' + "4" + '\u0022' +" "+ "ReceiptDate=" + '\u0022' + "2018-07-02" + '\u0022' + " " + "ChargeOffDate=" + '\u0022' + "2018-07-02" + '\u0022' + ">");
+            f.WriteLine("       <AccDoc AccDocNo=" + '\u0022' + p0  + '\u0022'+ " " + "AccDocDate=" + '\u0022' + p4 + '\u0022' + "/>");
+            f.WriteLine("       <Payer PersonalAcc=" + '\u0022' + p9 + '\u0022' +" "+ "INN=" + '\u0022' + p60 + '\u0022' + ">");
+            f.WriteLine("               <Name>"+p8+"</Name>");
+            f.WriteLine("               <Bank BIC=" + '\u0022' + p11 + '\u0022'+" " + "CorrespAcc=" + '\u0022' + p12 + '\u0022' + "/>");
             f.WriteLine("       </Payer>");
-            f.WriteLine("       <Payee PersonalAcc=" + '\u0022' + "40702810010130010079" + '\u0022' + "INN=" + '\u0022' + "7726062105" + '\u0022' + ">");
-            f.WriteLine("           <Payee PersonalAcc=" + '\u0022' + "40702810010130010079" + '\u0022' + "INN=" + '\u0022' + "7726062105" + '\u0022' + ">");
-            f.WriteLine("           <Bank BIC=" + '\u0022' + "044525411" + '\u0022' + "CorrespAcc=" + '\u0022' + "30101810145250000411" + '\u0022' + "/>");
-            f.WriteLine("       <Bank BIC=" + '\u0022' + "044525411" + '\u0022' + "CorrespAcc=" + '\u0022' + "30101810145250000411" + '\u0022' + "/>");
-            f.WriteLine("       <Purpose>ОПЛАТА ПО ДОГОВОРУ 95456 ОТ 15.01.2018 В ТОМ ЧИСЛЕ НДС 4000 РУБ</Purpose>");
-            f.WriteLine("/ED101");
+            f.WriteLine("       <Payee PersonalAcc=" + '\u0022' + p17 + '\u0022' + " " +"INN=" + '\u0022' + p61 + '\u0022' + ">");
+            f.WriteLine("       <Name>" + p16 + "</Name>");
+            f.WriteLine("       <Bank BIC=" + '\u0022' + p14 + '\u0022' +" "+ "CorrespAcc=" + '\u0022' + p17 + '\u0022' + "/>");
+            f.WriteLine("       </Payee>");
+            f.WriteLine("       <Purpose>"+p24+"</Purpose>");
+            f.WriteLine("</ED101>");
             f.Close();
             a = "Платежное поручение в формате ED101 сохранено";
             MessageBox.Show(a);
@@ -733,10 +733,12 @@ namespace WindowsFormsApp2
 
 
 
-        public string ed501(string p4)
+        public string ed501(string p0, string p4, string p6, string p60, int p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p61, int p103, string p16, int p21, string p24, string p5, string p22, string p104, string p105, string p106, string p107, string p108, string p109, string p110)
         {
-           string b;
-                XDocument doc = new XDocument(new XElement("Document",
+            string safe501 = settings.safepathed501 + p4 + "_" + p0 + ".ed501";
+            string b;
+            
+            XDocument doc = new XDocument(new XElement("Document",
                                                    new XElement("CstmrCdtTrfInitn",
                                                        new XElement("GrpHdr",
                                                             new XElement("MsgId", "other text"),
@@ -806,7 +808,7 @@ namespace WindowsFormsApp2
 
                                              )))))));
 
-                doc.Save("C:\\PeredatchikPSBR\\ed501\\test.ed501");
+                doc.Save(safe501);
 
             b = "Платежное поручение в формате ED501 сохранено";
             MessageBox.Show(b);
