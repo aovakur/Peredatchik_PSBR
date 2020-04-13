@@ -19,6 +19,7 @@ namespace WindowsFormsApp2
     public partial class Form1 : Form
 
     {
+        
         public string selectedState;
         public Form1()
         {
@@ -76,17 +77,17 @@ namespace WindowsFormsApp2
 
             this.Size = new Size(1500, 800);
             //DataGridViewWithFilter DG = new DataGridViewWithFilter();
-           DG.Bounds = new Rectangle(10, 80, 1460, 650);
-           DG.Anchor = ((AnchorStyles)(((AnchorStyles.Top | AnchorStyles.Left) | AnchorStyles.Right | AnchorStyles.Bottom)));
-           DG.AllowUserToAddRows = false;
-           this.Controls.Add(DG);
+            DG.Bounds = new Rectangle(10, 80, 1460, 650);
+            DG.Anchor = ((AnchorStyles)(((AnchorStyles.Top | AnchorStyles.Left) | AnchorStyles.Right | AnchorStyles.Bottom)));
+            DG.AllowUserToAddRows = false;
+            this.Controls.Add(DG);
 
 
             if (DBUtils.Datasource1 != null && DBUtils.Database1 != null && DBUtils.Username1 != null && DBUtils.Password1 != null)
             {
 
-                    GetCurrentPP();
-             
+                GetCurrentPP();
+
             }
 
             else
@@ -170,12 +171,12 @@ namespace WindowsFormsApp2
             //this.Controls.Add(DG);
 
             while (DG.Rows.Count > 1)
-             for (int i = 0; i < DG.Rows.Count - 1; i++)
-                DG.Rows.Remove(DG.Rows[i]);
+                for (int i = 0; i < DG.Rows.Count - 1; i++)
+                    DG.Rows.Remove(DG.Rows[i]);
 
             SqlConnection conn = DBUtils.GetDBConnection();
             conn.Open();
-           
+
 
             try
             {
@@ -251,14 +252,14 @@ namespace WindowsFormsApp2
 
         }
 
-        public  void maindb()
+        public void maindb()
         {
 
             //DataGridViewWithFilter DG = new DataGridViewWithFilter();
-           // DG.Bounds = new Rectangle(10, 80, 1460, 650);
+            // DG.Bounds = new Rectangle(10, 80, 1460, 650);
             //DG.Anchor = ((AnchorStyles)(((AnchorStyles.Top | AnchorStyles.Left) | AnchorStyles.Right | AnchorStyles.Bottom)));
             //DG.AllowUserToAddRows = false;
-           // Form1.Controls.Add(DG);
+            // Form1.Controls.Add(DG);
 
             SqlConnection conn = DBUtils.GetDBConnection();
             conn.Open();
@@ -266,7 +267,7 @@ namespace WindowsFormsApp2
 
             try
             {
-                
+
 
                 //MessageBox.Show("Openning Connection ...");
                 SqlCommand sqlCmd = new SqlCommand();
@@ -344,57 +345,57 @@ namespace WindowsFormsApp2
         }
 
         public void GetCurrentPP()
-            {
-           // DataGridViewWithFilter DG = new DataGridViewWithFilter();
+        {
+            // DataGridViewWithFilter DG = new DataGridViewWithFilter();
             //this.Size = new Size(1500, 800);
-           // DG.Bounds = new Rectangle(10, 80, 1460, 650);
+            // DG.Bounds = new Rectangle(10, 80, 1460, 650);
             //DG.Anchor = ((AnchorStyles)(((AnchorStyles.Top | AnchorStyles.Left) | AnchorStyles.Right | AnchorStyles.Bottom)));
-           // DG.AllowUserToAddRows = false;
+            // DG.AllowUserToAddRows = false;
             //Form1.Controls.Add(DG);
 
 
-           // public SqlConnection conn = DBUtils.GetDBConnection();
+            // public SqlConnection conn = DBUtils.GetDBConnection();
             //conn3.Open();
 
-             try
+            try
+            {
+                //Выбор банка плательщика 
+                SqlConnection conn3 = DBUtils.GetDBConnection();
+                conn3.Open();
+                SqlCommand sqlCmd = new SqlCommand();
+                sqlCmd.Connection = conn3;
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.CommandText = "GETCORRENTPP";
+                SqlParameter namecompany = new SqlParameter
                 {
-                    //Выбор банка плательщика 
-                    SqlConnection conn3 = DBUtils.GetDBConnection();
-                    conn3.Open();
-                    SqlCommand sqlCmd = new SqlCommand();
-                    sqlCmd.Connection = conn3;
-                    sqlCmd.CommandType = CommandType.StoredProcedure;
-                    sqlCmd.CommandText = "GETCORRENTPP";
-                    SqlParameter namecompany = new SqlParameter
-                    {
-                        ParameterName = "@GETDATE",
-                        Value = Convert.ToString(pp.Date1())
-                    };
-                    sqlCmd.Parameters.Add(namecompany);
+                    ParameterName = "@GETDATE",
+                    Value = Convert.ToString(pp.Date1())
+                };
+                sqlCmd.Parameters.Add(namecompany);
 
-                    SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
+                SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
 
-                    DataTable dtRecord = new DataTable();
-                    sqlDataAdap.Fill(dtRecord);
-                    DG.DataSource = dtRecord;
-                    DG.ReadOnly = true;
+                DataTable dtRecord = new DataTable();
+                sqlDataAdap.Fill(dtRecord);
+                DG.DataSource = dtRecord;
+                DG.ReadOnly = true;
 
                 //   MessageBox.Show("Connection successful!");
                 conn3.Close();
             }
 
-                catch
-                {
+            catch
+            {
 
-                }
-           
+            }
 
-           
+
+
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            
+
 
         }
 
@@ -402,7 +403,7 @@ namespace WindowsFormsApp2
         {
             //textBox2.Text = DBUtils.Datasource1;
             //textBox3.Text = DBUtils.Database1;
-           // textBox4.Text = DBUtils.Username1;
+            // textBox4.Text = DBUtils.Username1;
             //textBox5.Text = DBUtils.Password1;
         }
 
@@ -440,6 +441,25 @@ namespace WindowsFormsApp2
             {
                 MessageBox.Show("К локальной/сетевой базе данных не удалось подключиться");
             }
+
+        }
+
+
+
+        private void сохранитьВPdfToolStripMenuItem_Click(object sender, EventArgs e)
+
+        {
+            string a = DG.CurrentRow.Cells[0].Value.ToString();
+            MessageBox.Show(a);
+            string b = DG.CurrentRow.Cells[1].Value.ToString();
+            MessageBox.Show(b);
+
+            pp createPPload = new pp()
+            {
+                P0 = DG.CurrentRow.Cells[0].Value.ToString(),
+                P4 = DG.CurrentRow.Cells[1].Value.ToString(),
+
+            };
 
         }
     }

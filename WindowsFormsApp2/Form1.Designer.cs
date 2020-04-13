@@ -39,19 +39,19 @@
             this.эСИСToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ручнойВводToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.автоматическийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.подписаниеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.настройкиБазаДанныхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.помощьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьВPdfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьВED101ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьВED501СПФСToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитВMT101SwiftToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.подписаниеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.настройкиБазаДанныхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.помощьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -90,14 +90,14 @@
             // созданныеToolStripMenuItem
             // 
             this.созданныеToolStripMenuItem.Name = "созданныеToolStripMenuItem";
-            this.созданныеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.созданныеToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.созданныеToolStripMenuItem.Text = "Созданные";
             this.созданныеToolStripMenuItem.Click += new System.EventHandler(this.созданныеToolStripMenuItem_Click);
             // 
             // отправленныеToolStripMenuItem
             // 
             this.отправленныеToolStripMenuItem.Name = "отправленныеToolStripMenuItem";
-            this.отправленныеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.отправленныеToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.отправленныеToolStripMenuItem.Text = "Принятые";
             this.отправленныеToolStripMenuItem.Click += new System.EventHandler(this.отправленныеToolStripMenuItem_Click);
             // 
@@ -152,6 +152,42 @@
             this.автоматическийToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.автоматическийToolStripMenuItem.Text = "Автоматический";
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.сохранитьВPdfToolStripMenuItem,
+            this.сохранитьВED101ToolStripMenuItem,
+            this.сохранитьВED501СПФСToolStripMenuItem,
+            this.сохранитВMT101SwiftToolStripMenuItem});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(77, 20);
+            this.toolStripMenuItem1.Text = "Сохранить";
+            // 
+            // сохранитьВPdfToolStripMenuItem
+            // 
+            this.сохранитьВPdfToolStripMenuItem.Name = "сохранитьВPdfToolStripMenuItem";
+            this.сохранитьВPdfToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.сохранитьВPdfToolStripMenuItem.Text = "Сохранить в pdf";
+            this.сохранитьВPdfToolStripMenuItem.Click += new System.EventHandler(this.сохранитьВPdfToolStripMenuItem_Click);
+            // 
+            // сохранитьВED101ToolStripMenuItem
+            // 
+            this.сохранитьВED101ToolStripMenuItem.Name = "сохранитьВED101ToolStripMenuItem";
+            this.сохранитьВED101ToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.сохранитьВED101ToolStripMenuItem.Text = "Сохранить в ED101";
+            // 
+            // сохранитьВED501СПФСToolStripMenuItem
+            // 
+            this.сохранитьВED501СПФСToolStripMenuItem.Name = "сохранитьВED501СПФСToolStripMenuItem";
+            this.сохранитьВED501СПФСToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.сохранитьВED501СПФСToolStripMenuItem.Text = "Сохранить в ED501 (СПФС)";
+            // 
+            // сохранитВMT101SwiftToolStripMenuItem
+            // 
+            this.сохранитВMT101SwiftToolStripMenuItem.Name = "сохранитВMT101SwiftToolStripMenuItem";
+            this.сохранитВMT101SwiftToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.сохранитВMT101SwiftToolStripMenuItem.Text = "Сохранит в MT101 (Swift)";
+            // 
             // подписаниеToolStripMenuItem
             // 
             this.подписаниеToolStripMenuItem.Name = "подписаниеToolStripMenuItem";
@@ -171,6 +207,12 @@
             this.настройкиБазаДанныхToolStripMenuItem.Size = new System.Drawing.Size(149, 20);
             this.настройкиБазаДанныхToolStripMenuItem.Text = "Настройки база данных";
             this.настройкиБазаДанныхToolStripMenuItem.Click += new System.EventHandler(this.настройкиБазаДанныхToolStripMenuItem_Click);
+            // 
+            // помощьToolStripMenuItem
+            // 
+            this.помощьToolStripMenuItem.Name = "помощьToolStripMenuItem";
+            this.помощьToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.помощьToolStripMenuItem.Text = "Помощь";
             // 
             // оПрограммеToolStripMenuItem
             // 
@@ -211,47 +253,6 @@
             this.checkBox1.Text = "Отображать документы за все дни";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // помощьToolStripMenuItem
-            // 
-            this.помощьToolStripMenuItem.Name = "помощьToolStripMenuItem";
-            this.помощьToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
-            this.помощьToolStripMenuItem.Text = "Помощь";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.сохранитьВPdfToolStripMenuItem,
-            this.сохранитьВED101ToolStripMenuItem,
-            this.сохранитьВED501СПФСToolStripMenuItem,
-            this.сохранитВMT101SwiftToolStripMenuItem});
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(77, 20);
-            this.toolStripMenuItem1.Text = "Сохранить";
-            // 
-            // сохранитьВPdfToolStripMenuItem
-            // 
-            this.сохранитьВPdfToolStripMenuItem.Name = "сохранитьВPdfToolStripMenuItem";
-            this.сохранитьВPdfToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
-            this.сохранитьВPdfToolStripMenuItem.Text = "Сохранить в pdf";
-            // 
-            // сохранитьВED101ToolStripMenuItem
-            // 
-            this.сохранитьВED101ToolStripMenuItem.Name = "сохранитьВED101ToolStripMenuItem";
-            this.сохранитьВED101ToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
-            this.сохранитьВED101ToolStripMenuItem.Text = "Сохранить в ED101";
-            // 
-            // сохранитьВED501СПФСToolStripMenuItem
-            // 
-            this.сохранитьВED501СПФСToolStripMenuItem.Name = "сохранитьВED501СПФСToolStripMenuItem";
-            this.сохранитьВED501СПФСToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
-            this.сохранитьВED501СПФСToolStripMenuItem.Text = "Сохранить в ED501 (СПФС)";
-            // 
-            // сохранитВMT101SwiftToolStripMenuItem
-            // 
-            this.сохранитВMT101SwiftToolStripMenuItem.Name = "сохранитВMT101SwiftToolStripMenuItem";
-            this.сохранитВMT101SwiftToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
-            this.сохранитВMT101SwiftToolStripMenuItem.Text = "Сохранит в MT101 (Swift)";
             // 
             // Form1
             // 
