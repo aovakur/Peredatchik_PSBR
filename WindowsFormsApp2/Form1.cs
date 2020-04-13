@@ -449,18 +449,38 @@ namespace WindowsFormsApp2
         private void сохранитьВPdfToolStripMenuItem_Click(object sender, EventArgs e)
 
         {
-            string a = DG.CurrentRow.Cells[0].Value.ToString();
-            MessageBox.Show(a);
-            string b = DG.CurrentRow.Cells[1].Value.ToString();
-            MessageBox.Show(b);
 
-            pp createPPload = new pp()
-            {
-                P0 = DG.CurrentRow.Cells[0].Value.ToString(),
-                P4 = DG.CurrentRow.Cells[1].Value.ToString(),
-
-            };
-
+            pp createPP = new pp();
+            createPP.P0 = DG.CurrentRow.Cells[0].Value.ToString();
+            createPP.P4 = DG.CurrentRow.Cells[1].Value.ToString();
+            createPP.P60 = DG.CurrentRow.Cells[2].Value.ToString();
+           // createPP.P102 = Convert.ToInt16(DG.CurrentRow.Cells[3].Value.ToString());
+            //createPP.P7 = Convert.ToInt16(DG.CurrentRow.Cells[4].Value.ToString());
+            createPP.P8 = DG.CurrentRow.Cells[5].Value.ToString();
+            createPP.P9 = DG.CurrentRow.Cells[6].Value.ToString();
+            createPP.P10 = DG.CurrentRow.Cells[7].Value.ToString();
+            createPP.P11 = DG.CurrentRow.Cells[8].Value.ToString();
+            createPP.P12 = DG.CurrentRow.Cells[9].Value.ToString();
+            createPP.P101 = Convert.ToInt32(DG.CurrentRow.Cells[10]);
+            createPP.P13 = DG.CurrentRow.Cells[11].Value.ToString();
+            createPP.P14 = DG.CurrentRow.Cells[12].Value.ToString();
+            createPP.P15 = DG.CurrentRow.Cells[13].Value.ToString();
+            createPP.P17 = DG.CurrentRow.Cells[14].Value.ToString();
+            createPP.P61 = DG.CurrentRow.Cells[15].Value.ToString();
+            createPP.P103 = Convert.ToInt16(DG.CurrentRow.Cells[16].Value.ToString());
+            createPP.P16 = DG.CurrentRow.Cells[17].Value.ToString();
+            createPP.P21 = Convert.ToInt16(DG.CurrentRow.Cells[18].Value.ToString());
+            createPP.P24 = DG.CurrentRow.Cells[19].Value.ToString();
+            createPP.P5 = DG.CurrentRow.Cells[20].Value.ToString();
+            createPP.P22 = DG.CurrentRow.Cells[21].Value.ToString();
+            createPP.P104 = DG.CurrentRow.Cells[22].Value.ToString();
+            createPP.P105 = DG.CurrentRow.Cells[23].Value.ToString();
+            createPP.P106 = DG.CurrentRow.Cells[24].Value.ToString();
+            createPP.P107 = DG.CurrentRow.Cells[25].Value.ToString();
+            createPP.P108 = DG.CurrentRow.Cells[26].Value.ToString();
+            createPP.P109 = DG.CurrentRow.Cells[27].Value.ToString();
+            createPP.P110 = DG.CurrentRow.Cells[28].Value.ToString();
         }
+        
     }
 }
