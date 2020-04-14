@@ -24,8 +24,11 @@ namespace WindowsFormsApp2
            // ReadSetting("NotValid");
            //AddUpdateAppSettings("NewSetting", "May 7, 2014");
            //AddUpdateAppSettings("Setting1", "May 8, 2014");
-           // ReadAllSettings();
+          
         }
+
+
+
 
         public static string ReadSetting(string key)
         {

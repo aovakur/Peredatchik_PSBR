@@ -481,6 +481,10 @@ namespace WindowsFormsApp2
             createPP.P109 = DG.CurrentRow.Cells[27].Value.ToString();
             createPP.P110 = DG.CurrentRow.Cells[28].Value.ToString();
         }
-        
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

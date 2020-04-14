@@ -25,7 +25,7 @@ using iTextSharp.text.pdf;
 
 namespace WindowsFormsApp2
 {
-    class pp
+    partial class pp
     {
         string p1;
         string p0;
@@ -733,7 +733,7 @@ namespace WindowsFormsApp2
 
 
 
-        public string ed501(string p0, string p4, string p6, string p60, int p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p61, int p103, string p16, int p21, string p24, string p5, string p22, string p104, string p105, string p106, string p107, string p108, string p109, string p110)
+        public string ed501(string Msgid, string p0, string p4, string p6, string p60, int p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p61, int p103, string p16, int p21, string p24, string p5, string p22, string p104, string p105, string p106, string p107, string p108, string p109, string p110)
         {
             string safe501 = settings.safepathed501 + p4 + "_" + p0 + ".ed501";
             string b;
@@ -741,7 +741,7 @@ namespace WindowsFormsApp2
             XDocument doc = new XDocument(new XElement("Document",
                                                    new XElement("CstmrCdtTrfInitn",
                                                        new XElement("GrpHdr",
-                                                            new XElement("MsgId", "other text"),
+                                                            new XElement("MsgId", Msgid),
                                                             new XElement("CreDtTm", p4),
                                                             new XElement("NbOfTxs", "other text"),
                                                                 new XElement("InitgPty",
@@ -810,7 +810,7 @@ namespace WindowsFormsApp2
 
                 doc.Save(safe501);
 
-            b = "Платежное поручение в формате ED501 сохранено";
+            b = "Платежное поручение №" +Msgid + "в формате ED501 сохранено";
             MessageBox.Show(b);
             return b;
 

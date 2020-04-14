@@ -37,8 +37,6 @@
             this.интеграцияС1СToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.интеграцияСДругимиФорматамиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.эСИСToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ручнойВводToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.автоматическийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьВPdfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьВED101ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,6 +50,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.eD999ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ручнойВводToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,6 +105,7 @@
             // 
             this.эПДToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ручнаяВводToolStripMenuItem,
+            this.ручнойВводToolStripMenuItem,
             this.интеграцияС1СToolStripMenuItem,
             this.интеграцияСДругимиФорматамиToolStripMenuItem});
             this.эПДToolStripMenuItem1.Name = "эПДToolStripMenuItem1";
@@ -114,8 +115,8 @@
             // ручнаяВводToolStripMenuItem
             // 
             this.ручнаяВводToolStripMenuItem.Name = "ручнаяВводToolStripMenuItem";
-            this.ручнаяВводToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.ручнаяВводToolStripMenuItem.Text = "Ручной ввод";
+            this.ручнаяВводToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.ручнаяВводToolStripMenuItem.Text = "Ручной ввод (автозаполнение)";
             this.ручнаяВводToolStripMenuItem.Click += new System.EventHandler(this.ручнаяВводToolStripMenuItem_Click);
             // 
             // интеграцияС1СToolStripMenuItem
@@ -133,24 +134,10 @@
             // эСИСToolStripMenuItem
             // 
             this.эСИСToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ручнойВводToolStripMenuItem,
-            this.автоматическийToolStripMenuItem});
+            this.eD999ToolStripMenuItem});
             this.эСИСToolStripMenuItem.Name = "эСИСToolStripMenuItem";
             this.эСИСToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.эСИСToolStripMenuItem.Text = "ЭСИС";
-            // 
-            // ручнойВводToolStripMenuItem
-            // 
-            this.ручнойВводToolStripMenuItem.Name = "ручнойВводToolStripMenuItem";
-            this.ручнойВводToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.ручнойВводToolStripMenuItem.Text = "Ручной ввод";
-            this.ручнойВводToolStripMenuItem.Click += new System.EventHandler(this.ручнойВводToolStripMenuItem_Click);
-            // 
-            // автоматическийToolStripMenuItem
-            // 
-            this.автоматическийToolStripMenuItem.Name = "автоматическийToolStripMenuItem";
-            this.автоматическийToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.автоматическийToolStripMenuItem.Text = "Автоматический";
             // 
             // toolStripMenuItem1
             // 
@@ -254,6 +241,18 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // eD999ToolStripMenuItem
+            // 
+            this.eD999ToolStripMenuItem.Name = "eD999ToolStripMenuItem";
+            this.eD999ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.eD999ToolStripMenuItem.Text = "ED999";
+            // 
+            // ручнойВводToolStripMenuItem
+            // 
+            this.ручнойВводToolStripMenuItem.Name = "ручнойВводToolStripMenuItem";
+            this.ручнойВводToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.ручнойВводToolStripMenuItem.Text = "Ручной ввод";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -282,8 +281,6 @@
         private System.Windows.Forms.ToolStripMenuItem ручнаяВводToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem интеграцияС1СToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem интеграцияСДругимиФорматамиToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ручнойВводToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem автоматическийToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
 
         private System.Windows.Forms.ToolStripMenuItem настройкиToolStripMenuItem;
@@ -300,6 +297,8 @@
         private System.Windows.Forms.ToolStripMenuItem сохранитьВED501СПФСToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сохранитВMT101SwiftToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem помощьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eD999ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ручнойВводToolStripMenuItem;
     }
 }
 

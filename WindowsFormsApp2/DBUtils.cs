@@ -18,26 +18,26 @@ namespace WindowsFormsApp2
         public static string Datasource1
         {
             get { return datasource; }
-            set { datasource = Convert.ToString(Form6.ReadSetting("datasource")); }
+            set { datasource = value; }
         }
 
         public static string Database1
         {
             get { return database; }
-            set { database = Convert.ToString(Form6.ReadSetting("database")); }
+            set { database = value; ; }
         }
 
         public static string Username1
         {
             get { return username; }
-            set { username = Convert.ToString(Form6.ReadSetting("username")); }
+            set { username = value; }
         }
 
 
         public static string Password1
         {
             get { return password; }
-            set { password = Convert.ToString(Form6.ReadSetting("password")); }
+            set { password = value; }
         }
 
 
