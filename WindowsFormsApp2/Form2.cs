@@ -545,6 +545,8 @@ namespace WindowsFormsApp2
 
         public void сформироватьED101ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            string EDno = pp.GetEDNo();
+
             try
             {
 
@@ -552,7 +554,7 @@ namespace WindowsFormsApp2
                 {
                     
                    //MessageBox.Show("Платежное поручение в формате Ed101");
-                   createPP.ed101(createPP.P0, createPP.P4, createPP.P6, createPP.P60, createPP.P102, createPP.P7, createPP.P8, createPP.P9, createPP.P10, createPP.P11, createPP.P12, createPP.P101, createPP.P13, createPP.P14, createPP.P15, createPP.P17, createPP.P61, createPP.P103, createPP.P16, createPP.P21, createPP.P24, createPP.P5, createPP.P22, createPP.P104, createPP.P105, createPP.P106, createPP.P107, createPP.P108, createPP.P109, createPP.P110);
+                   createPP.ed101(EDno,createPP.P0, createPP.P4, createPP.P6, createPP.P60, createPP.P102, createPP.P7, createPP.P8, createPP.P9, createPP.P10, createPP.P11, createPP.P12, createPP.P101, createPP.P13, createPP.P14, createPP.P15, createPP.P17, createPP.P61, createPP.P103, createPP.P16, createPP.P21, createPP.P24, createPP.P5, createPP.P22, createPP.P104, createPP.P105, createPP.P106, createPP.P107, createPP.P108, createPP.P109, createPP.P110);
                        
                 }
                 else
