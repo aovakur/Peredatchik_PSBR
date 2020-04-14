@@ -510,21 +510,23 @@ namespace WindowsFormsApp2
 
 
 
-        public string ed101(string EDNo,string p0, string p4, string p6, string p60, int p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p61, int p103, string p16, int p21, string p24, string p5, string p22, string p104, string p105, string p106, string p107, string p108, string p109, string p110)
+        public string ed101(string fulldate, string currentday, string EDNo, string UIS, string p0, string p4, string p6, string p60, int p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p61, int p103, string p16, int p21, string p24, string p5, string p22, string p104, string p105, string p106, string p107, string p108, string p109, string p110)
         {
             string a;
-            string safeed101 = settings.safepathed101 + p4+"_" + p0 +"_"+ EDNo + ".ed101";
+
+
+            string safeed101 = settings.safepathed101 + currentday + "_" + p0 +"_"+ EDNo + ".ed101";
             StreamWriter f = new StreamWriter(safeed101);
             f.WriteLine("<?xml version=" + '\u0022' + "1.0" + '\u0022' + " " + "encoding=" + '\u0022' + "WINDOWS-1251" + '\u0022' + "?>");
-            f.WriteLine("<ED101 xmlns=" + '\u0022' + "urn:cbr-ru:ed:v2.0" + '\u0022' +" "+ "EDNo=" + '\u0022' + EDNo + '\u0022' + " " + "EDDate=" + '\u0022' + p4 + '\u0022' + " "+"EDAuthor=" + '\u0022' + "4525545000" + '\u0022' + " " + "TransKind=" + '\u0022' + p101 + '\u0022' + " Priority=" + '\u0022' + p21 + '\u0022'+" " + "Sum=" + '\u0022' + p7 + '\u0022' +" "+ "PaymentPrecedence=" + '\u0022' + "60" + '\u0022' +" "+ "SystemCode=" + '\u0022' + "05" + '\u0022' + " PaytKind=" + '\u0022' + "4" + '\u0022' +" "+ "ReceiptDate=" + '\u0022' + "2018-07-02" + '\u0022' + " " + "ChargeOffDate=" + '\u0022' + "2018-07-02" + '\u0022' + ">");
-            f.WriteLine("       <AccDoc AccDocNo=" + '\u0022' + p0  + '\u0022'+ " " + "AccDocDate=" + '\u0022' + p4 + '\u0022' + "/>");
+            f.WriteLine("<ED101 xmlns=" + '\u0022' + "urn:cbr-ru:ed:v2.0" + '\u0022' +" "+ "EDNo=" + '\u0022' + EDNo + '\u0022' + " " + "EDDate=" + '\u0022' + fulldate + '\u0022' + " "+"EDAuthor=" + '\u0022' + UIS + '\u0022' + " " + "TransKind=" + '\u0022' + p101 + '\u0022' + " Priority=" + '\u0022' + p21 + '\u0022'+" " + "Sum=" + '\u0022' + p7 + '\u0022' +" "+ "PaymentPrecedence=" + '\u0022' + "60" + '\u0022' +" "+ "SystemCode=" + '\u0022' + "05" + '\u0022' + " PaytKind=" + '\u0022' + "4" + '\u0022' +" "+ "ReceiptDate=" + '\u0022' + "2018-07-02" + '\u0022' + " " + "ChargeOffDate=" + '\u0022' + "2018-07-02" + '\u0022' + ">");
+            f.WriteLine("       <AccDoc AccDocNo=" + '\u0022' + p0  + '\u0022'+ " " + "AccDocDate=" + '\u0022' + fulldate + '\u0022' + "/>");
             f.WriteLine("       <Payer PersonalAcc=" + '\u0022' + p9 + '\u0022' +" "+ "INN=" + '\u0022' + p60 + '\u0022' + ">");
             f.WriteLine("               <Name>"+p8+"</Name>");
             f.WriteLine("               <Bank BIC=" + '\u0022' + p11 + '\u0022'+" " + "CorrespAcc=" + '\u0022' + p12 + '\u0022' + "/>");
             f.WriteLine("       </Payer>");
             f.WriteLine("       <Payee PersonalAcc=" + '\u0022' + p17 + '\u0022' + " " +"INN=" + '\u0022' + p61 + '\u0022' + ">");
-            f.WriteLine("       <Name>" + p16 + "</Name>");
-            f.WriteLine("       <Bank BIC=" + '\u0022' + p14 + '\u0022' +" "+ "CorrespAcc=" + '\u0022' + p17 + '\u0022' + "/>");
+            f.WriteLine("               <Name>" + p16 + "</Name>");
+            f.WriteLine("               <Bank BIC=" + '\u0022' + p14 + '\u0022' +" "+ "CorrespAcc=" + '\u0022' + p15 + '\u0022' + "/>");
             f.WriteLine("       </Payee>");
             f.WriteLine("       <Purpose>"+p24+"</Purpose>");
             f.WriteLine("</ED101>");
@@ -733,7 +735,7 @@ namespace WindowsFormsApp2
 
 
 
-        public string ed501(string Msgid, string p0, string p4, string p6, string p60, int p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p61, int p103, string p16, int p21, string p24, string p5, string p22, string p104, string p105, string p106, string p107, string p108, string p109, string p110)
+        public string ed501(string Msgid, string UIS, string p0, string p4, string p6, string p60, int p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p61, int p103, string p16, int p21, string p24, string p5, string p22, string p104, string p105, string p106, string p107, string p108, string p109, string p110)
         {
             string safe501 = settings.safepathed501 + p4 + "_" + p0 + ".ed501";
             string b;
