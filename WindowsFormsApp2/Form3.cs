@@ -19,8 +19,7 @@ namespace WindowsFormsApp2
         {
             
             InitializeComponent();
-           // int find_pp = Convert.ToInt32(textBox1.Text);
-
+          
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -37,7 +36,13 @@ namespace WindowsFormsApp2
 
         private void Form3_Load(object sender, EventArgs e)
         {
+            string currentUIS = Convert.ToString(Form6.ReadSetting("UIS"));
+            textBox1.Text = currentUIS;
+        }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+          
         }
     }
 }

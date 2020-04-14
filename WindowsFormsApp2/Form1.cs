@@ -486,5 +486,11 @@ namespace WindowsFormsApp2
         {
             
         }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Form3 newForm3 = new Form3();
+            newForm3.Show();
+        }
     }
 }

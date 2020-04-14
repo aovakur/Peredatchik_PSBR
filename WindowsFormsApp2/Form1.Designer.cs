@@ -52,6 +52,7 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.eD999ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ручнойВводToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,11 +69,12 @@
             this.подписаниеToolStripMenuItem,
             this.настройкиToolStripMenuItem,
             this.настройкиБазаДанныхToolStripMenuItem,
+            this.toolStripMenuItem2,
             this.помощьToolStripMenuItem,
             this.оПрограммеToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(737, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(928, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -90,14 +92,14 @@
             // созданныеToolStripMenuItem
             // 
             this.созданныеToolStripMenuItem.Name = "созданныеToolStripMenuItem";
-            this.созданныеToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.созданныеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.созданныеToolStripMenuItem.Text = "Созданные";
             this.созданныеToolStripMenuItem.Click += new System.EventHandler(this.созданныеToolStripMenuItem_Click);
             // 
             // отправленныеToolStripMenuItem
             // 
             this.отправленныеToolStripMenuItem.Name = "отправленныеToolStripMenuItem";
-            this.отправленныеToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.отправленныеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.отправленныеToolStripMenuItem.Text = "Принятые";
             this.отправленныеToolStripMenuItem.Click += new System.EventHandler(this.отправленныеToolStripMenuItem_Click);
             // 
@@ -122,13 +124,13 @@
             // интеграцияС1СToolStripMenuItem
             // 
             this.интеграцияС1СToolStripMenuItem.Name = "интеграцияС1СToolStripMenuItem";
-            this.интеграцияС1СToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.интеграцияС1СToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.интеграцияС1СToolStripMenuItem.Text = "Обработка формата 1С";
             // 
             // интеграцияСДругимиФорматамиToolStripMenuItem
             // 
             this.интеграцияСДругимиФорматамиToolStripMenuItem.Name = "интеграцияСДругимиФорматамиToolStripMenuItem";
-            this.интеграцияСДругимиФорматамиToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.интеграцияСДругимиФорматамиToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.интеграцияСДругимиФорматамиToolStripMenuItem.Text = "Обработка Swift";
             // 
             // эСИСToolStripMenuItem
@@ -253,11 +255,18 @@
             this.ручнойВводToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.ручнойВводToolStripMenuItem.Text = "Ручной ввод";
             // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(79, 20);
+            this.toolStripMenuItem2.Text = "Настройки";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1413, 578);
+            this.ClientSize = new System.Drawing.Size(1604, 578);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
@@ -299,6 +308,7 @@
         private System.Windows.Forms.ToolStripMenuItem помощьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eD999ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ручнойВводToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
     }
 }
 
