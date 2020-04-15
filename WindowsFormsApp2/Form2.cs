@@ -23,7 +23,7 @@ namespace WindowsFormsApp2
         settings settings = new settings();
         FolderBrowserDialog FBD = new FolderBrowserDialog();
         string UIS=Convert.ToString(Form6.ReadSetting("UIS"));
-        string currentday = Convert.ToString(Form6.ReadSetting("currentday"));
+        
 
         public Form2()
         {
@@ -558,6 +558,7 @@ namespace WindowsFormsApp2
 
             string fulldate = curentyear +"-"+ curentmonth + "-" + curentday;
 
+            string currentday = Convert.ToString(Form6.ReadSetting("currentday"));
 
             try
             {
