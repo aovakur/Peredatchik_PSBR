@@ -81,7 +81,7 @@ namespace WindowsFormsApp2
                 //Обновляю последнее полное имя 
                 AddUpdateAppSettings("MessageIDED501_full", Convert.ToString(NewfullmsgID));
 
-                int CurrentIDED501_new = Convert.ToInt16(ReadSetting("MessageIDED501"));
+                //int CurrentIDED501_new = Convert.ToInt16(ReadSetting("MessageIDED501"));
                 string CurrentIDED501FULL_new = Convert.ToString(ReadSetting("MessageIDED501_full"));
            
                 return CurrentIDED501FULL_new;
@@ -90,26 +90,24 @@ namespace WindowsFormsApp2
             else
             {
                 AddUpdateAppSettings("currentday", fulldate);
-                AddUpdateAppSettings("MessageIDED501", "0");
+                AddUpdateAppSettings("MessageIDED501", "000000001");
 
                 string msgName = ReadSetting("MessageName");
 
                 int CurrentIDED501 = Convert.ToInt16(ReadSetting("MessageIDED501"));
-                int NewIDED501 = CurrentIDED501 + 1;
-
-                string NewIDED501_1 = NewIDED501.ToString("00000000");
+            
+                string NewIDED501_1 = CurrentIDED501.ToString("00000000");
 
 
                 //Генерирую полное имя
                 String NewfullmsgID = msgName + "_pain_MSG_" + fulldate + "_" + NewIDED501_1;
 
-                //Обновляю счетчик
-                AddUpdateAppSettings("MessageIDED501", Convert.ToString(NewIDED501));
+              
 
                 //Обновляю последнее полное имя 
                 AddUpdateAppSettings("MessageIDED501_full", Convert.ToString(NewfullmsgID));
 
-                int CurrentIDED501_new = Convert.ToInt16(ReadSetting("MessageIDED501"));
+           
                 
                 string CurrentIDED501FULL_new = Convert.ToString(ReadSetting("MessageIDED501_full"));
                 return CurrentIDED501FULL_new;
@@ -118,7 +116,7 @@ namespace WindowsFormsApp2
 
         public static string GetEDNo()
         {
-            int EDNo = Convert.ToInt32(ReadSetting("EDNo"));
+            
             DateTime dt = DateTime.Now;
             string curDate = dt.ToShortDateString();
 
@@ -131,6 +129,7 @@ namespace WindowsFormsApp2
 
             if (fulldate == currentday)
             {
+                int EDNo = Convert.ToInt32(ReadSetting("EDNo"));
                 int NewEDNo = EDNo + 1;
                 //+8 нулей 
                 string NewEDNo_1 = NewEDNo.ToString("00000000");

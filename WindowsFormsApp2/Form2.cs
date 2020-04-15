@@ -732,11 +732,13 @@ namespace WindowsFormsApp2
         {
             //получаем уникальный номер сообщения Ed501
             string MSGID = pp.generateMSDEd501ID();
+            int CurrentIDED501 = Convert.ToInt16(pp.ReadSetting("MessageIDED501"));
+            string CurrentIDED501_1 = CurrentIDED501.ToString("00000000");
 
             if (textBox10.Text != "" && textBox5.Text != "" && textBox24.Text != "" && textBox26.Text != "" && Convert.ToString(listBox14.SelectedItem) != "" && Convert.ToString(listBox15.SelectedItem) != "" && Convert.ToString(listBox10.SelectedItem) != "" && Convert.ToString(listBox18.SelectedItem) != "" && Convert.ToString(listBox19.SelectedItem) != "" && Convert.ToString(listBox22.SelectedItem) != "")
             {
                 //Передаем все параметры
-                createPP.ed501(MSGID, UIS, createPP.P0, createPP.P4, createPP.P6, createPP.P60, createPP.P102, createPP.P7, createPP.P8, createPP.P9, createPP.P10, createPP.P11, createPP.P12, createPP.P101, createPP.P13, createPP.P14, createPP.P15, createPP.P17, createPP.P61, createPP.P103, createPP.P16, createPP.P21, createPP.P24, createPP.P5, createPP.P22, createPP.P104, createPP.P105, createPP.P106, createPP.P107, createPP.P108, createPP.P109, createPP.P110);
+                createPP.ed501(CurrentIDED501_1, MSGID, UIS, createPP.P0, createPP.P4, createPP.P6, createPP.P60, createPP.P102, createPP.P7, createPP.P8, createPP.P9, createPP.P10, createPP.P11, createPP.P12, createPP.P101, createPP.P13, createPP.P14, createPP.P15, createPP.P17, createPP.P61, createPP.P103, createPP.P16, createPP.P21, createPP.P24, createPP.P5, createPP.P22, createPP.P104, createPP.P105, createPP.P106, createPP.P107, createPP.P108, createPP.P109, createPP.P110);
             }
             else
             {
