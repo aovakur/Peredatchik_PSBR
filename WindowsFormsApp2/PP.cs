@@ -510,7 +510,7 @@ namespace WindowsFormsApp2
 
 
 
-        public string ed101(string fulldate, string currentday, string EDNo, string UIS, string p0, string p4, string p6, string p60, int p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p61, int p103, string p16, int p21, string p24, string p5, string p22, string p104, string p105, string p106, string p107, string p108, string p109, string p110)
+        public string Ed101(string fulldate, string currentday, string EDNo, string UIS, string p0, string p4, string p6, string p60, int p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p61, int p103, string p16, int p21, string p24, string p5, string p22, string p104, string p105, string p106, string p107, string p108, string p109, string p110)
         {
             string a;
 
@@ -537,7 +537,7 @@ namespace WindowsFormsApp2
         }
 
 
-        public string pdf(string p0, string p4, string p6, string p60, int p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p61, int p103, string p16, int p21, string p24, string p5, string p22, string p104, string p105, string p106, string p107, string p108, string p109, string p110)
+        public string Pdf(string p0, string p4, string p6, string p60, int p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p61, int p103, string p16, int p21, string p24, string p5, string p22, string p104, string p105, string p106, string p107, string p108, string p109, string p110)
         {
             string b;
             string pathsafe = settings.safepathpdf + p4 + "_" + p0 + ".pdf";
@@ -735,81 +735,118 @@ namespace WindowsFormsApp2
 
 
 
-        public string ed501(string CurrentIDED501, string Msgid, string UIS, string p0, string p4, string p6, string p60, int p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p61, int p103, string p16, int p21, string p24, string p5, string p22, string p104, string p105, string p106, string p107, string p108, string p109, string p110)
+        public string Ed501(string CurrentIDED501, string Msgid, string UIS, string p0, string p4, string p6, string p60, int p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p61, int p103, string p16, int p21, string p24, string p5, string p22, string p104, string p105, string p106, string p107, string p108, string p109, string p110)
         {
             string safe501 = settings.safepathed501 + "12345678" + CurrentIDED501 + ".ed501";
             string b;
-            
+
+            DateTime dt = DateTime.Now;
+
+            string fulldaate = dt.ToString("O");
+
             XDocument doc = new XDocument(new XElement("Document",
                                                    new XElement("CstmrCdtTrfInitn",
                                                        new XElement("GrpHdr",
                                                             new XElement("MsgId", Msgid),
-                                                            new XElement("CreDtTm", p4),
+                                                            new XElement("CreDtTm", fulldaate),
                                                             new XElement("NbOfTxs", "other text"),
                                                                 new XElement("InitgPty",
-                                                                  new XElement("Nm", "text"),
+                                                                  new XElement("Nm", p8),
                                                                   new XElement("id",
                                                                      new XElement("OrgId",
                                                                      new XElement("Othr",
-                                                                      new XElement("Id", "text"),
+                                                                      new XElement("Id", p60),
                                                                       new XElement("SchmeNm",
-                                                                        new XElement("cd", "text")
-                                             )))))),
+                                                                        new XElement("cd", "TXID"))))))),
                                              new XElement("PmtInf",
                                                             new XElement("PmtInfId", "other text"),
                                                             new XElement("PmtMtd", "text"),
                                                             new XElement("PmtTpInf",
                                                                 new XElement("InstrPrty", "text"),
                                                                 new XElement("SvcLvl",
-                                                                  new XElement("Cd", "text")
-                                                                  
-                                             )),
-                                                            new XElement("ReqdExctnDt", "text"),
+                                                                  new XElement("Cd", "text"))),
+                                                            new XElement("ReqdExctnDt", p4),
                                                                      new XElement("Dbtr",
-                                                                     new XElement("Nm", "text"),
+                                                                     new XElement("Nm", p8),
                                                                      new XElement("PstlAdr",
-                                                                      new XElement("Ctry", "text")
-                                             ),
+                                                                      new XElement("Ctry", "text")),
                                                                       new XElement("id",
                                                                       new XElement("OrgId",
-                                                                        new XElement("id", "text"),
+                                                                        new XElement("id", p60),
                                                                             new XElement("SchmeNm",
-                                                                            new XElement("Cd", "text"))
-                                                                     
-
-                                             ))),
+                                                                            new XElement("Cd", "TXID"))))),
                                                                      new XElement("DbtrAcct",
                                                                       new XElement("Id",
                                                                         new XElement("Othr",
-                                                                           
-                                                                            new XElement("Id", "text"),
+                                                                            new XElement("Id", p9),
                                                                             new XElement("SchmeNm",
-                                                                            new XElement("Cd", "text")
-                                                                            )
-
-                                             )),
-                                             new XElement("Ccy", "text")
-                                             ),
+                                                                            new XElement("Cd", "ACC"))))),
                                               new XElement("DbtrAg",
                                                                       new XElement("FinInstnId",
                                                                         new XElement("ClrSysMmbId",
                                                                              new XElement("ClrSysId",
-                                                                                 new XElement("Cd", "text")
-                                             ),    
-                                                                            new XElement("MmbId", "text")
-
-                                             ),
+                                                                                 new XElement("Cd", "text")),    
+                                                                            new XElement("MmbId", p11)),
+                                                                        new XElement("Nm", p10),
                                                                               new XElement("PstlAdr",
-                                                                                 new XElement("Ctry", "text")
-                                             ))),
+                                                                                 new XElement("Ctry", "text")))),
                                              new XElement("DbtrAgtAcct",
                                                         new XElement("Id",
                                                             new XElement("Othr",
-                                                                                 new XElement("id", "text")
-
-
-                                             )))))));
-
+                                                                                 new XElement("id", p12)))),
+                                             // данные кредитора
+                                             new XElement("CdtTrfTxInf",
+                                                            new XElement("PmtId",
+                                                            new XElement("InstrId", "10836708385_pain_PMT_20190419_00005"),
+                                                            new XElement("EndToEndId", "7309")),
+                                                            new XElement("PmtTpInf",
+                                                            new XElement("SvcLvl",
+                                                            new XElement("Cd", "NURG"))),
+                                                            new XElement("Amt",
+                                                            new XElement("InstdAmt", p7)),
+                                                            new XElement("ChrgBr", "DEBT"),
+                                                            new XElement("CdtrAgt",
+                                                                new XElement("FinInstnId",
+                                                                    new XElement("ClrSysMmbId",
+                                                                        new XElement("ClrSysId",
+                                                                            new XElement("Cd", "RUCBC"))),
+                                                                    new XElement("Nm", p13),
+                                                                    new XElement("PstlAdr",
+                                                                            new XElement("Ctry", "RU")))),
+                                                            new XElement("CdtrAgtAcct",
+                                                                new XElement("Id",
+                                                                    new XElement("Othr",
+                                                                        new XElement("id", p15)))),
+                                                           new XElement("Cdtr",
+                                                                     new XElement("Nm", p8),
+                                                                     new XElement("PstlAdr",
+                                                                      new XElement("Ctry", "text")),
+                                                                      new XElement("id",
+                                                                      new XElement("OrgId",
+                                                                        new XElement("id", p60),
+                                                                            new XElement("SchmeNm",
+                                                                            new XElement("Cd", "TXID"))))),
+                                                             new XElement("CdtrAcct",
+                                                                      new XElement("Id",
+                                                                        new XElement("Othr",
+                                                                            new XElement("Id", p9),
+                                                                                new XElement("SchmeNm",
+                                                                                     new XElement("Cd", "ACC"))))),
+                                                             new XElement("Purp",
+                                                                                     new XElement("Prtry", p21)),
+                                                             new XElement("Tax",
+                                                                 new XElement("Cdtr",
+                                                                        new XElement("TaxTP", p61)), 
+                                                                 new XElement("Dbtr",
+                                                                        new XElement("TaxTP", p60))),
+                                                             new XElement("RmtInf",
+                                                                new XElement("Ustrd", p24),
+                                                                new XElement("Strd",
+                                                                    new XElement("RfrdDocInf",
+                                                                         new XElement("Tp",
+                                                                            new XElement("CdOrPrtry",
+                                                                                new XElement("Prtry", "3434"))),
+                                                                         new XElement("RltdDt", "3434")))))))));
                 doc.Save(safe501);
 
             b = "Платежное поручение № " +""+Msgid +" "+ "в формате ED501 сохранено";
