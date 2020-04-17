@@ -22,8 +22,8 @@ namespace WindowsFormsApp2
 
         settings settings = new settings();
         FolderBrowserDialog FBD = new FolderBrowserDialog();
-        string UIS=Convert.ToString(Form6.ReadSetting("UIS"));
-        
+        string UIS = Convert.ToString(Form6.ReadSetting("UIS"));
+
 
         public Form2()
         {
@@ -34,7 +34,7 @@ namespace WindowsFormsApp2
             textBox4.Text = "Платежное поручение";
             textBox1.Text = "0401060";
             textBox2.Text = createPP.Date_pp();
-         
+
             textBox23.ReadOnly = true;
             textBox21.ReadOnly = true;
             textBox25.ReadOnly = true;
@@ -54,14 +54,14 @@ namespace WindowsFormsApp2
             textBox24.ForeColor = Color.Black;
 
 
-           
+
         }
 
-       
+
 
         private void ручнаяВводToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -113,8 +113,8 @@ namespace WindowsFormsApp2
 
             //формируется БИК 29 text box
 
-           createPP.P11 = Convert.ToString(createPP.GetBIC(createPP.P10));
-           textBox29.Text = Convert.ToString(createPP.P11);
+            createPP.P11 = Convert.ToString(createPP.GetBIC(createPP.P10));
+            textBox29.Text = Convert.ToString(createPP.P11);
 
             //формируется кор счет 30 text box
             //createPP.P12 = Convert.ToString(createPP.GetCOR(createPP.P10));
@@ -140,7 +140,7 @@ namespace WindowsFormsApp2
             {
                 ParameterName = "@companynameGETCompany",
                 Value = createPP.P8
-            };   
+            };
             sqlCmd.Parameters.Add(namecompany);
 
             SqlParameter namebank = new SqlParameter
@@ -164,8 +164,8 @@ namespace WindowsFormsApp2
 
         public void Form2_Load(object sender, EventArgs e)
         {
-            
-            
+
+
 
             // MessageBox.Show(createPP.P4);
             SqlConnection conn = DBUtils.GetDBConnection();
@@ -192,13 +192,13 @@ namespace WindowsFormsApp2
 
 
             // Вывод элементов списка.
-           // foreach (var item in INN)
-          //  {
+            // foreach (var item in INN)
+            //  {
             //    listBox22.Items.Add(item.ToString());
-                //Console.WriteLine(item);
-           // }
+            //Console.WriteLine(item);
+            // }
 
-            
+
         }
 
         public void записатьВБДToolStripMenuItem_Click(object sender, EventArgs e)
@@ -208,19 +208,19 @@ namespace WindowsFormsApp2
                 if (radioButton2.Checked == true && checkBox1.Checked == true)
                 {
                     createPP.insertDB(createPP.P0, createPP.P4, createPP.P6, createPP.P60, createPP.P102, createPP.P7, createPP.P8, createPP.P9, createPP.P10, createPP.P11, createPP.P12, createPP.P101, createPP.P13, createPP.P14, createPP.P15, createPP.P17, createPP.P61, createPP.P103, createPP.P16, createPP.P21, createPP.P24, createPP.P5, createPP.P22, createPP.P104, createPP.P105, createPP.P106, createPP.P107, createPP.P108, createPP.P109, createPP.P110);
-                  //  Close();
+                    //  Close();
                 }
 
                 else if (radioButton1.Checked == true && checkBox1.Checked == false)
                 {
                     createPP.insertDB_brief(createPP.P0, createPP.P4, createPP.P6, createPP.P60, createPP.P102, createPP.P7, createPP.P8, createPP.P9, createPP.P10, createPP.P11, createPP.P12, createPP.P101, createPP.P13, createPP.P14, createPP.P15, createPP.P17, createPP.P61, createPP.P103, createPP.P16, createPP.P21, createPP.P24);
-                   // Close();
+                    // Close();
                 }
 
                 else if (radioButton2.Checked == true)
                 {
                     createPP.insertDB_urgency(createPP.P0, createPP.P4, createPP.P6, createPP.P60, createPP.P102, createPP.P7, createPP.P8, createPP.P9, createPP.P10, createPP.P11, createPP.P12, createPP.P101, createPP.P13, createPP.P14, createPP.P15, createPP.P17, createPP.P61, createPP.P103, createPP.P16, createPP.P21, createPP.P24, createPP.P5);
-                  //  Close();
+                    //  Close();
                 }
             }
             else
@@ -365,7 +365,7 @@ namespace WindowsFormsApp2
 
 
             //  MessageBox.Show("Платежное поручение сохранено");
-            
+
 
         }
 
@@ -386,13 +386,13 @@ namespace WindowsFormsApp2
             {
                 MessageBox.Show("Флаг  " + radioButton2.Text + " теперь включен");
                 textBox3.ReadOnly = true;
-             
+
 
             }
             else
             {
                 MessageBox.Show("Флаг  " + radioButton1.Text + " теперь выключен");
-         
+
                 textBox3.ReadOnly = false;
             }
         }
@@ -410,9 +410,9 @@ namespace WindowsFormsApp2
 
         public void textBox5_TextChanged(object sender, EventArgs e)
         {
-            
+
             createPP.P7 = Convert.ToInt32(textBox5.Text);
-           // pp_summ = createPP.P7;
+            // pp_summ = createPP.P7;
 
             //textBox6.Text=Convert.ToString(createPP.summ_pp(createPP.P7));
             createPP.P6 = Convert.ToString(createPP.summ_pp(createPP.P7));
@@ -470,7 +470,7 @@ namespace WindowsFormsApp2
             conn3.Close(); //Закрываем соединение
 
 
-            
+
 
 
         }
@@ -482,17 +482,17 @@ namespace WindowsFormsApp2
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         public void textBox7_TextChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void textBox8_TextChanged(object sender, EventArgs e)
@@ -502,7 +502,7 @@ namespace WindowsFormsApp2
 
         private void listBox22_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
 
             //Очищаем банк 
             listBox18.Items.Clear();
@@ -556,7 +556,7 @@ namespace WindowsFormsApp2
             String curentmonth = dt.ToString("MM");
             String curentday = dt.ToString("dd");
 
-            string fulldate = curentyear +"-"+ curentmonth + "-" + curentday;
+            string fulldate = curentyear + "-" + curentmonth + "-" + curentday;
 
             string currentday = Convert.ToString(Form6.ReadSetting("currentday"));
 
@@ -565,10 +565,10 @@ namespace WindowsFormsApp2
 
                 if (textBox10.Text != "" && textBox5.Text != "" && textBox24.Text != "" && textBox26.Text != "" && Convert.ToString(listBox14.SelectedItem) != "" && Convert.ToString(listBox15.SelectedItem) != "" && Convert.ToString(listBox10.SelectedItem) != "" && Convert.ToString(listBox18.SelectedItem) != "" && Convert.ToString(listBox19.SelectedItem) != "" && Convert.ToString(listBox22.SelectedItem) != "")
                 {
-                    
-                   //MessageBox.Show("Платежное поручение в формате Ed101");
-                   createPP.ed101(fulldate, currentday, EDno, UIS, createPP.P0, createPP.P4, createPP.P6, createPP.P60, createPP.P102, createPP.P7, createPP.P8, createPP.P9, createPP.P10, createPP.P11, createPP.P12, createPP.P101, createPP.P13, createPP.P14, createPP.P15, createPP.P17, createPP.P61, createPP.P103, createPP.P16, createPP.P21, createPP.P24, createPP.P5, createPP.P22, createPP.P104, createPP.P105, createPP.P106, createPP.P107, createPP.P108, createPP.P109, createPP.P110);
-                       
+
+                    //MessageBox.Show("Платежное поручение в формате Ed101");
+                    createPP.ed101(fulldate, currentday, EDno, UIS, createPP.P0, createPP.P4, createPP.P6, createPP.P60, createPP.P102, createPP.P7, createPP.P8, createPP.P9, createPP.P10, createPP.P11, createPP.P12, createPP.P101, createPP.P13, createPP.P14, createPP.P15, createPP.P17, createPP.P61, createPP.P103, createPP.P16, createPP.P21, createPP.P24, createPP.P5, createPP.P22, createPP.P104, createPP.P105, createPP.P106, createPP.P107, createPP.P108, createPP.P109, createPP.P110);
+
                 }
                 else
                 {
@@ -635,19 +635,19 @@ namespace WindowsFormsApp2
                     }
                 }
 
-               
+
             }
 
             finally
             {
 
             }
-                
+
         }
 
         private void статусыЭПДToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+
 
         }
 
@@ -724,7 +724,7 @@ namespace WindowsFormsApp2
             }
 
 
-         
+
 
         }
 
@@ -816,7 +816,7 @@ namespace WindowsFormsApp2
         {
             if (checkBox1.Checked == true)
             {
-                
+
 
                 textBox13.ReadOnly = false;
                 textBox14.ReadOnly = false;
@@ -838,7 +838,7 @@ namespace WindowsFormsApp2
                 textBox19.ReadOnly = true;
                 textBox22.ReadOnly = true;
             }
-               
+
 
         }
 
@@ -853,8 +853,8 @@ namespace WindowsFormsApp2
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-           // settings settings = new settings();
-         //   MessageBox.Show(Form2.safepath);
+            // settings settings = new settings();
+            //   MessageBox.Show(Form2.safepath);
         }
 
         private void печатьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -866,7 +866,7 @@ namespace WindowsFormsApp2
                 {
                     printDocument.PrinterSettings.PrintFileName = "Letter_SkidTags_Report_9ae93aa7-4359-444e-a033-eb5bf17f5ce6.pdf";
                     //printDocument.PrinterSettings.PrinterName = @"printerName";
-                   // printDocument.DocumentName = "file.pdf";
+                    // printDocument.DocumentName = "file.pdf";
                     //printDocument.PrinterSettings.PrintFileName = "file.pdf";
                     printDocument.PrintController = new StandardPrintController();
                     printDocument.Print();
@@ -882,7 +882,7 @@ namespace WindowsFormsApp2
 
         private void textBox26_TextChanged(object sender, EventArgs e)
         {
-            
+
 
         }
 
@@ -892,7 +892,7 @@ namespace WindowsFormsApp2
             listBox19.Items.Clear();
 
             //передаем название банка 
-            createPP.P13=listBox18.SelectedItem.ToString();
+            createPP.P13 = listBox18.SelectedItem.ToString();
 
             //формируется БИК 29 text box
 
@@ -951,7 +951,7 @@ namespace WindowsFormsApp2
 
         public void textBox24_TextChanged(object sender, EventArgs e)
         {
-            
+
             if (textBox24.Text == "1")
             {
                 MessageBox.Show("Выплаты, которые происходят по исполнительным актам о возмещении нанесенного вреда здоровью или жизни. Уплата алиментов");
@@ -995,12 +995,13 @@ namespace WindowsFormsApp2
 
             }
 
-            else if (textBox24.Text != "1" || textBox24.Text != "2" || textBox24.Text != "3" || textBox24.Text != "4" || textBox24.Text != "5") 
-            { MessageBox.Show("Введите корректную очередность платежа");
+            else if (textBox24.Text != "1" || textBox24.Text != "2" || textBox24.Text != "3" || textBox24.Text != "4" || textBox24.Text != "5")
+            {
+                MessageBox.Show("Введите корректную очередность платежа");
                 textBox24.ForeColor = Color.Red;
             }
-                
-           
+
+
         }
 
         private void listBox15_SelectedIndexChanged(object sender, EventArgs e)
@@ -1023,7 +1024,7 @@ namespace WindowsFormsApp2
         {
             //Для передачи на сохранения 
             createPP.P22 = Convert.ToString(textBox22.Text);
-            
+
         }
 
         private void textBox14_TextChanged(object sender, EventArgs e)
@@ -1075,11 +1076,17 @@ namespace WindowsFormsApp2
 
         public void Form2_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
+
         }
 
-       
-    }
+        private void Form2_FormClosing(Object sender, FormClosingEventArgs e)
+        {
 
- 
+            Form1 f2 = new Form1();
+            f2.Show();
+        }
+
+
+    }
 }
+

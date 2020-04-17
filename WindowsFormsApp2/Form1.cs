@@ -31,7 +31,7 @@ namespace WindowsFormsApp2
 
         }
 
-        DataGridViewWithFilter DG = new DataGridViewWithFilter();
+        public DataGridViewWithFilter DG = new DataGridViewWithFilter();
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -53,15 +53,16 @@ namespace WindowsFormsApp2
 
         private void ручнаяВводToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form1 f2 = new Form1();
-            f2.Visible = false;
-
+           
             Form2 newForm2 = new Form2();
             newForm2.Show();
+            this.Hide();
+
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        public void Form1_Load(object sender, EventArgs e)
         {
+           
             string safepath = "C:\\Program Files\\Business architecture\\PeredatchikPSBR";
             settings.safepath_1(safepath);
 
@@ -76,7 +77,7 @@ namespace WindowsFormsApp2
             DBUtils.Password1 = Convert.ToString(Form6.ReadSetting("password"));
 
             this.Size = new Size(1500, 800);
-            //DataGridViewWithFilter DG = new DataGridViewWithFilter();
+            
             DG.Bounds = new Rectangle(10, 80, 1460, 650);
             DG.Anchor = ((AnchorStyles)(((AnchorStyles.Top | AnchorStyles.Left) | AnchorStyles.Right | AnchorStyles.Bottom)));
             DG.AllowUserToAddRows = false;
