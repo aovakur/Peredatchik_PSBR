@@ -595,7 +595,7 @@ namespace WindowsFormsApp2
         }
         
 
-        public string insertDB (string p0, string p4, string p6, string p60, int p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p61, int p103, string p16, int p21, string p24, string p5, string p22, string p104, string p105, string p106, string p107, string p108, string p109, string p110)
+        public string insertDB (string p0, string p4, string p6, string p60, int p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p18, string p61, int p103, string p16, int p21, string p24, string p5, string p22, string p104, string p105, string p106, string p107, string p108, string p109, string p110)
         {
             string b;
 
@@ -605,7 +605,6 @@ namespace WindowsFormsApp2
             sqlCmd.Connection = conn6;
             sqlCmd.CommandType = CommandType.StoredProcedure;
             sqlCmd.CommandText = "creatnewPP_full";
-            sqlCmd.Parameters.AddWithValue("@status", status);
             sqlCmd.Parameters.AddWithValue("@p0", p0);
             sqlCmd.Parameters.AddWithValue("@p4", p4);
             sqlCmd.Parameters.AddWithValue("@p6", p6);
@@ -622,6 +621,7 @@ namespace WindowsFormsApp2
             sqlCmd.Parameters.AddWithValue("@p14", p14);
             sqlCmd.Parameters.AddWithValue("@p15", p15);
             sqlCmd.Parameters.AddWithValue("@p17", p17);
+            sqlCmd.Parameters.AddWithValue("@p18", p18);
             sqlCmd.Parameters.AddWithValue("@p61", p61);
             sqlCmd.Parameters.AddWithValue("@p103", p103);
             sqlCmd.Parameters.AddWithValue("@p16", p16);
@@ -647,7 +647,7 @@ namespace WindowsFormsApp2
         }
 
 
-        public string insertDB_brief(string p0, string p4, string p6, string p60, int p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p61, int p103, string p16, int p21, string p24)
+        public string insertDB_brief(string p0, string p4, string p6, string p60, int p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p18, string p61, int p103, string p16, int p21, string p24)
         {
             string b;
 
@@ -673,6 +673,7 @@ namespace WindowsFormsApp2
             sqlCmd.Parameters.AddWithValue("@p14", p14);
             sqlCmd.Parameters.AddWithValue("@p15", p15);
             sqlCmd.Parameters.AddWithValue("@p17", p17);
+            sqlCmd.Parameters.AddWithValue("@p18", p18);
             sqlCmd.Parameters.AddWithValue("@p61", p61);
             sqlCmd.Parameters.AddWithValue("@p103", p103);
             sqlCmd.Parameters.AddWithValue("@p16", p16);
@@ -688,7 +689,7 @@ namespace WindowsFormsApp2
         }
 
 
-        public string insertDB_urgency(string p0, string p4, string p6, string p60, int p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p61, int p103, string p16, int p21, string p24, string p5)
+        public string insertDB_urgency(string p0, string p4, string p6, string p60, int p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p18, string p61, int p103, string p16, int p21, string p24, string p5)
         {
             string b;
 
@@ -714,6 +715,7 @@ namespace WindowsFormsApp2
             sqlCmd.Parameters.AddWithValue("@p14", p14);
             sqlCmd.Parameters.AddWithValue("@p15", p15);
             sqlCmd.Parameters.AddWithValue("@p17", p17);
+            sqlCmd.Parameters.AddWithValue("@p18", p18);
             sqlCmd.Parameters.AddWithValue("@p61", p61);
             sqlCmd.Parameters.AddWithValue("@p103", p103);
             sqlCmd.Parameters.AddWithValue("@p16", p16);

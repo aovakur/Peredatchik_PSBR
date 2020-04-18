@@ -210,7 +210,7 @@ namespace WindowsFormsApp2
                     "KPP_poluchat as 'КПП получателя'," +
                     "ACC_poluchat as 'Номер счета получателя'," +
                     "name_poluchat as 'Наименование компании-получателя'," +
-                    "shifr_pp as 'Шифр ПП'," +
+                    "shifr_pp as 'Вид операции'," +
                     "srochnost as 'Срочность ПП'," +
                     "naznachenie as 'Назначение платежа'," +
                     "ocherednost as 'Очередность'," +
@@ -300,7 +300,7 @@ namespace WindowsFormsApp2
                     "KPP_poluchat as 'КПП получателя'," +
                     "ACC_poluchat as 'Номер счета получателя'," +
                     "name_poluchat as 'Наименование компании-получателя'," +
-                    "shifr_pp as 'Шифр ПП'," +
+                    "shifr_pp as 'Вид операции'," +
                     "srochnost as 'Срочность ПП'," +
                     "naznachenie as 'Назначение платежа'," +
                     "ocherednost as 'Очередность'," +

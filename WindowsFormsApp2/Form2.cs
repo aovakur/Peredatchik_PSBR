@@ -207,19 +207,19 @@ namespace WindowsFormsApp2
             {
                 if (radioButton2.Checked == true && checkBox1.Checked == true)
                 {
-                    createPP.insertDB(createPP.P0, createPP.P4, createPP.P6, createPP.P60, createPP.P102, createPP.P7, createPP.P8, createPP.P9, createPP.P10, createPP.P11, createPP.P12, createPP.P101, createPP.P13, createPP.P14, createPP.P15, createPP.P17, createPP.P61, createPP.P103, createPP.P16, createPP.P21, createPP.P24, createPP.P5, createPP.P22, createPP.P104, createPP.P105, createPP.P106, createPP.P107, createPP.P108, createPP.P109, createPP.P110);
+                    createPP.insertDB(createPP.P0, createPP.P4, createPP.P6, createPP.P60, createPP.P102, createPP.P7, createPP.P8, createPP.P9, createPP.P10, createPP.P11, createPP.P12, createPP.P101, createPP.P13, createPP.P14, createPP.P15, createPP.P17, createPP.P18, createPP.P61, createPP.P103, createPP.P16, createPP.P21, createPP.P24, createPP.P5, createPP.P22, createPP.P104, createPP.P105, createPP.P106, createPP.P107, createPP.P108, createPP.P109, createPP.P110);
                     //  Close();
                 }
 
                 else if (radioButton1.Checked == true && checkBox1.Checked == false)
                 {
-                    createPP.insertDB_brief(createPP.P0, createPP.P4, createPP.P6, createPP.P60, createPP.P102, createPP.P7, createPP.P8, createPP.P9, createPP.P10, createPP.P11, createPP.P12, createPP.P101, createPP.P13, createPP.P14, createPP.P15, createPP.P17, createPP.P61, createPP.P103, createPP.P16, createPP.P21, createPP.P24);
+                    createPP.insertDB_brief(createPP.P0, createPP.P4, createPP.P6, createPP.P60, createPP.P102, createPP.P7, createPP.P8, createPP.P9, createPP.P10, createPP.P11, createPP.P12, createPP.P101, createPP.P13, createPP.P14, createPP.P15, createPP.P17, createPP.P18, createPP.P61, createPP.P103, createPP.P16, createPP.P21, createPP.P24);
                     // Close();
                 }
 
                 else if (radioButton2.Checked == true)
                 {
-                    createPP.insertDB_urgency(createPP.P0, createPP.P4, createPP.P6, createPP.P60, createPP.P102, createPP.P7, createPP.P8, createPP.P9, createPP.P10, createPP.P11, createPP.P12, createPP.P101, createPP.P13, createPP.P14, createPP.P15, createPP.P17, createPP.P61, createPP.P103, createPP.P16, createPP.P21, createPP.P24, createPP.P5);
+                    createPP.insertDB_urgency(createPP.P0, createPP.P4, createPP.P6, createPP.P60, createPP.P102, createPP.P7, createPP.P8, createPP.P9, createPP.P10, createPP.P11, createPP.P12, createPP.P101, createPP.P13, createPP.P14, createPP.P15, createPP.P17, createPP.P18, createPP.P61, createPP.P103, createPP.P16, createPP.P21, createPP.P24, createPP.P5);
                     //  Close();
                 }
             }
