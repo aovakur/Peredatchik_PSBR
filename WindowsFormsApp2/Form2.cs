@@ -12,6 +12,8 @@ using System.Globalization;
 using System.Data.OleDb;
 using PdfiumViewer;
 using System.Drawing.Printing;
+using System.Diagnostics;
+
 
 namespace WindowsFormsApp2
 {
@@ -295,7 +297,7 @@ namespace WindowsFormsApp2
 
             if (textBox10.Text != "" && textBox5.Text != "" && textBox24.Text != "" && textBox26.Text != "" && Convert.ToString(listBox14.SelectedItem) != "" && Convert.ToString(listBox15.SelectedItem) != "" && Convert.ToString(listBox10.SelectedItem) != "" && Convert.ToString(listBox18.SelectedItem) != "" && Convert.ToString(listBox19.SelectedItem) != "" && Convert.ToString(listBox22.SelectedItem) != "")
             {
-                createPP.Pdf(createPP.P0, createPP.P4, createPP.P6, createPP.P60, createPP.P102, createPP.P7, createPP.P8, createPP.P9, createPP.P10, createPP.P11, createPP.P12, createPP.P101, createPP.P13, createPP.P14, createPP.P15, createPP.P17, createPP.P61, createPP.P103, createPP.P16, createPP.P21, createPP.P24, createPP.P5, createPP.P22, createPP.P104, createPP.P105, createPP.P106, createPP.P107, createPP.P108, createPP.P109, createPP.P110);
+                createPP.Pdf(createPP.P0, createPP.P4, createPP.P6, createPP.P60, createPP.P102, createPP.P7, createPP.P8, createPP.P9, createPP.P10, createPP.P11, createPP.P12, createPP.P101, createPP.P13, createPP.P14, createPP.P15, createPP.P17, createPP.P18, createPP.P61, createPP.P103, createPP.P16, createPP.P21, createPP.P24, createPP.P5, createPP.P22, createPP.P104, createPP.P105, createPP.P106, createPP.P107, createPP.P108, createPP.P109, createPP.P110);
                 //Close();
             }
             else
@@ -859,19 +861,99 @@ namespace WindowsFormsApp2
 
         private void печатьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var path = @"C:\PeredatchikPSBR\pdf\03.04.2020_100.pdf";
-            using (var document = PdfDocument.Load(path))
+
+            if (textBox10.Text != "" && textBox5.Text != "" && textBox24.Text != "" && textBox26.Text != "" && Convert.ToString(listBox14.SelectedItem) != "" && Convert.ToString(listBox15.SelectedItem) != "" && Convert.ToString(listBox10.SelectedItem) != "" && Convert.ToString(listBox18.SelectedItem) != "" && Convert.ToString(listBox19.SelectedItem) != "" && Convert.ToString(listBox22.SelectedItem) != "")
             {
-                using (var printDocument = document.CreatePrintDocument())
+                string newpdf = createPP.Pdf(createPP.P0, createPP.P4, createPP.P6, createPP.P60, createPP.P102, createPP.P7, createPP.P8, createPP.P9, createPP.P10, createPP.P11, createPP.P12, createPP.P101, createPP.P13, createPP.P14, createPP.P15, createPP.P17, createPP.P18, createPP.P61, createPP.P103, createPP.P16, createPP.P21, createPP.P24, createPP.P5, createPP.P22, createPP.P104, createPP.P105, createPP.P106, createPP.P107, createPP.P108, createPP.P109, createPP.P110);
+                var path = newpdf;
+
+
+               
+
+                // using (var document = PdfDocument.Load(path))
+                //{
+                // using (var printDocument = document.CreatePrintDocument())
+                // {
+                // printDocument.PrinterSettings.PrintFileName = "Letter_SkidTags_Report_9ae93aa7-4359-444e-a033-eb5bf17f5ce6.pdf";
+                // printDocument.PrinterSettings.PrinterName = @"printerName";
+                // printDocument.DocumentName = "file.pdf";
+                // printDocument.PrinterSettings.PrintFileName = "file.pdf";
+                // printDocument.PrintController = new StandardPrintController();
+                // printDocument.Print();
+                // }
+                // }
+
+
+            }
+            else
+            {
+                if (textBox10.Text == "")
                 {
-                    printDocument.PrinterSettings.PrintFileName = "Letter_SkidTags_Report_9ae93aa7-4359-444e-a033-eb5bf17f5ce6.pdf";
-                    //printDocument.PrinterSettings.PrinterName = @"printerName";
-                    // printDocument.DocumentName = "file.pdf";
-                    //printDocument.PrinterSettings.PrintFileName = "file.pdf";
-                    printDocument.PrintController = new StandardPrintController();
-                    printDocument.Print();
+                    textBox10.BackColor = Color.Fuchsia;
+
+                }
+
+                if (textBox5.Text == "")
+                {
+                    textBox5.BackColor = Color.Fuchsia;
+
+                }
+
+                if (textBox24.Text == "")
+                {
+                    textBox24.BackColor = Color.Fuchsia;
+
+                }
+
+                if (textBox26.Text == "")
+                {
+                    textBox26.BackColor = Color.Fuchsia;
+
+                }
+
+
+                if (Convert.ToString(listBox14.SelectedItem) == "")
+                {
+                    listBox14.BackColor = Color.Fuchsia;
+
+                }
+
+                if (Convert.ToString(listBox15.SelectedItem) == "")
+                {
+                    listBox15.BackColor = Color.Fuchsia;
+
+                }
+
+                if (Convert.ToString(listBox18.SelectedItem) == "")
+                {
+                    listBox18.BackColor = Color.Fuchsia;
+
+                }
+
+
+                if (Convert.ToString(listBox19.SelectedItem) == "")
+                {
+                    listBox19.BackColor = Color.Fuchsia;
+
+                }
+
+                if (Convert.ToString(listBox22.SelectedItem) == "")
+                {
+                    listBox22.BackColor = Color.Fuchsia;
+
+                }
+
+                if (Convert.ToString(listBox10.SelectedItem) == "")
+                {
+                    listBox10.BackColor = Color.Fuchsia;
+
                 }
             }
+
+
+
+
+           
         }
 
         private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)

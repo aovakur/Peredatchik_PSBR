@@ -203,7 +203,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 98);
+            this.label1.Location = new System.Drawing.Point(23, 98);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(162, 13);
             this.label1.TabIndex = 13;
@@ -241,7 +241,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(14, 204);
+            this.label5.Location = new System.Drawing.Point(23, 204);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(94, 13);
             this.label5.TabIndex = 17;
@@ -555,10 +555,10 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(17, 133);
+            this.textBox4.Location = new System.Drawing.Point(24, 133);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(220, 20);
+            this.textBox4.Size = new System.Drawing.Size(213, 20);
             this.textBox4.TabIndex = 77;
             // 
             // textBox5
@@ -571,10 +571,10 @@
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(114, 204);
+            this.textBox6.Location = new System.Drawing.Point(126, 204);
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(533, 20);
+            this.textBox6.Size = new System.Drawing.Size(521, 20);
             this.textBox6.TabIndex = 79;
             // 
             // textBox7
@@ -623,7 +623,7 @@
             // 
             // textBox11
             // 
-            this.textBox11.Location = new System.Drawing.Point(17, 59);
+            this.textBox11.Location = new System.Drawing.Point(24, 59);
             this.textBox11.Name = "textBox11";
             this.textBox11.ReadOnly = true;
             this.textBox11.Size = new System.Drawing.Size(100, 20);
@@ -700,7 +700,7 @@
             // 
             this.textBox19.Location = new System.Drawing.Point(778, 662);
             this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(75, 20);
+            this.textBox19.Size = new System.Drawing.Size(86, 20);
             this.textBox19.TabIndex = 95;
             this.textBox19.TextChanged += new System.EventHandler(this.textBox19_TextChanged);
             // 
@@ -752,7 +752,7 @@
             // 
             this.textBox26.Location = new System.Drawing.Point(20, 705);
             this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(833, 20);
+            this.textBox26.Size = new System.Drawing.Size(844, 20);
             this.textBox26.TabIndex = 103;
             this.textBox26.TextChanged += new System.EventHandler(this.textBox26_TextChanged);
             // 
@@ -882,7 +882,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.Name = "Form2";
-            this.Text = "Передатчик ПС БР. Создание платежного поручения";
+            this.Text = "Передатчик ПС БР. Создание платежного поручения (автозаполнение)";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form2_FormClosing);
             this.Load += new System.EventHandler(this.Form2_Load);
             this.menuStrip1.ResumeLayout(false);

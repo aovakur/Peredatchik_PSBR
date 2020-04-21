@@ -50,6 +50,7 @@ namespace WindowsFormsApp2
         int p102;
         int p103;
         int p101;
+        int p20;
         string p24;
         string p16;
         string p14;
@@ -68,6 +69,13 @@ namespace WindowsFormsApp2
             get { return p0; }
             set { p0 = value; }
         }
+
+        public int P20
+        {
+            get { return p20; }
+            set { p20 = value; }
+        }
+
 
         public string Status
         {
@@ -537,12 +545,14 @@ namespace WindowsFormsApp2
         }
 
 
-        public string Pdf(string p0, string p4, string p6, string p60, int p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p61, int p103, string p16, int p21, string p24, string p5, string p22, string p104, string p105, string p106, string p107, string p108, string p109, string p110)
+        public string Pdf(string p0, string p4, string p6, string p60, int p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p18, string p61, int p103, string p16, int p21, string p24, string p5, string p22, string p104, string p105, string p106, string p107, string p108, string p109, string p110)
         {
             string b;
             string pathsafe = settings.safepathpdf + p4 + "_" + p0 + ".pdf";
-            BaseFont baseFont = BaseFont.CreateFont(@"C:\PeredatchikPSBR\Template\Tahoma.ttf", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
-            PdfReader template = new PdfReader("C:\\PeredatchikPSBR\\Template\\Template_10.pdf");
+            string pathsafetemplatefont = settings.safepath + "\\Template\\Tahoma.ttf";
+
+            BaseFont baseFont = BaseFont.CreateFont(pathsafetemplatefont, BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
+            PdfReader template = new PdfReader(settings.safepathetemplate);
             PdfStamper stamper = new PdfStamper(template, new FileStream(pathsafe, FileMode.Create));
             AcroFields fields = stamper.AcroFields;
             fields.AddSubstitutionFont(baseFont);
@@ -565,6 +575,7 @@ namespace WindowsFormsApp2
             fields.SetField("p14", p14);
             fields.SetField("p15", p15);
             fields.SetField("p17", p17);
+            fields.SetField("p18", p18);
             fields.SetField("p61", p61);
             fields.SetField("p103", p103.ToString());
             fields.SetField("p16", p16);
@@ -589,9 +600,8 @@ namespace WindowsFormsApp2
             stamper.FormFlattening = false;
             stamper.Close();
 
-            b = "Платежное поручение в pdf сохранено";
-            MessageBox.Show(b);
-            return b;
+            MessageBox.Show("Платежное поручение в pdf сохранено");
+            return pathsafe;
         }
         
 

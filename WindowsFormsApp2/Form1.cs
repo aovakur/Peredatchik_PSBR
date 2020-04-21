@@ -102,8 +102,7 @@ namespace WindowsFormsApp2
         public int a;
         private void button2_Click(object sender, EventArgs e)
         {
-            Form1 f3 = new Form1();
-            //f3.Visible = false;
+            
 
             Form3 newForm3 = new Form3();
             newForm3.Show();
@@ -148,7 +147,7 @@ namespace WindowsFormsApp2
             {
                 if (checkBox1.Checked == true)
                 {
-                    maindb();
+                    Maindb();
                 }
                 else
                 {
@@ -253,7 +252,7 @@ namespace WindowsFormsApp2
 
         }
 
-        public void maindb()
+        public void Maindb()
         {
 
             //DataGridViewWithFilter DG = new DataGridViewWithFilter();
@@ -416,7 +415,7 @@ namespace WindowsFormsApp2
         {
             if (checkBox1.Checked == true)
             {
-                maindb();
+                Maindb();
             }
             else
             {
@@ -462,6 +461,13 @@ namespace WindowsFormsApp2
         {
             Form3 newForm3 = new Form3();
             newForm3.Show();
+        }
+
+        private void ручнойВводToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Form7 newForm7 = new Form7();
+            newForm7.Show();
+            this.Hide();
         }
     }
 }
