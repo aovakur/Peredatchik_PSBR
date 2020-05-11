@@ -47,8 +47,8 @@ namespace WindowsFormsApp2
         string p17;
         string p18;
         int p21;
-        int p102;
-        int p103;
+        string p102;
+        string p103;
         int p101;
         int p20;
         string p24;
@@ -205,13 +205,13 @@ namespace WindowsFormsApp2
         }
 
 
-        public int P102
+        public string P102
         {
             get { return p102; }
             set { p102 = value; }
         }
 
-        public int P103
+        public string P103
         {
             get { return p103; }
             set { p103 = value; }
@@ -518,7 +518,7 @@ namespace WindowsFormsApp2
 
 
 
-        public string Ed101(string fulldate, string currentday, string EDNo, string UIS, string p0, string p4, string p6, string p60, int p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p61, int p103, string p16, int p21, string p24, string p5, string p22, string p104, string p105, string p106, string p107, string p108, string p109, string p110)
+        public string Ed101(string fulldate, string currentday, string EDNo, string UIS, string p0, string p4, string p6, string p60, string p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p61, string p103, string p16, int p21, string p24, string p5, string p22, string p104, string p105, string p106, string p107, string p108, string p109, string p110)
         {
             string a;
 
@@ -545,9 +545,9 @@ namespace WindowsFormsApp2
         }
 
 
-        public string Pdf(string p0, string p4, string p6, string p60, int p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p18, string p61, int p103, string p16, int p21, string p24, string p5, string p22, string p104, string p105, string p106, string p107, string p108, string p109, string p110)
+        public string Pdf(string p0, string p4, string p6, string p60, string p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p18, string p61, string p103, string p16, int p21, string p24, string p5, string p22, string p104, string p105, string p106, string p107, string p108, string p109, string p110)
         {
-            string b;
+            
             string pathsafe = settings.safepathpdf + p4 + "_" + p0 + ".pdf";
             string pathsafetemplatefont = settings.safepath + "\\Template\\Tahoma.ttf";
 
@@ -605,7 +605,7 @@ namespace WindowsFormsApp2
         }
         
 
-        public string insertDB (string p0, string p4, string p6, string p60, int p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p18, string p61, int p103, string p16, int p21, string p24, string p5, string p22, string p104, string p105, string p106, string p107, string p108, string p109, string p110)
+        public string insertDB (string p0, string p4, string p6, string p60, string p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p18, string p61, string p103, string p16, int p21, string p24, string p5, string p22, string p104, string p105, string p106, string p107, string p108, string p109, string p110)
         {
             string b;
 
@@ -657,7 +657,7 @@ namespace WindowsFormsApp2
         }
 
 
-        public string insertDB_brief(string p0, string p4, string p6, string p60, int p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p18, string p61, int p103, string p16, int p21, string p24)
+        public string insertDB_brief(string p0, string p4, string p6, string p60, string p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p18, string p61, string p103, string p16, int p21, string p24)
         {
             string b;
 
@@ -699,7 +699,7 @@ namespace WindowsFormsApp2
         }
 
 
-        public string insertDB_urgency(string p0, string p4, string p6, string p60, int p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p18, string p61, int p103, string p16, int p21, string p24, string p5)
+        public string insertDB_urgency(string p0, string p4, string p6, string p60, string p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p18, string p61, string p103, string p16, int p21, string p24, string p5)
         {
             string b;
 
@@ -747,7 +747,7 @@ namespace WindowsFormsApp2
 
 
 
-        public string Ed501(string CurrentIDED501, string Msgid, string UIS, string p0, string p4, string p6, string p60, int p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p61, int p103, string p16, int p21, string p24, string p5, string p22, string p104, string p105, string p106, string p107, string p108, string p109, string p110)
+        public string Ed501(string CurrentIDED501, string Msgid, string UIS, string p0, string p4, string p6, string p60, string p102, int p7, string p8, string p9, string p10, string p11, string p12, int p101, string p13, string p14, string p15, string p17, string p61, string p103, string p16, int p21, string p24, string p5, string p22, string p104, string p105, string p106, string p107, string p108, string p109, string p110)
         {
             string safe501 = settings.safepathed501 + "12345678" + CurrentIDED501 + ".ed501";
             string b;

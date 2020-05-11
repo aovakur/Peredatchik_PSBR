@@ -369,6 +369,7 @@
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(91, 20);
             this.textBox2.TabIndex = 145;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox1
             // 
@@ -867,6 +868,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Name = "Form7";
             this.Text = "Передатчик ПС БР. Создание платежного поручения";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form2_FormClosing);
             this.Load += new System.EventHandler(this.Form7_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

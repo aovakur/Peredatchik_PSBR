@@ -441,7 +441,7 @@ namespace WindowsFormsApp2
 
             //Генерация КПП
 
-            createPP.P102 = Convert.ToInt32(createPP.GetKPP(createPP.P8));
+            createPP.P102 = Convert.ToString(createPP.GetKPP(createPP.P8));
             textBox9.Text = Convert.ToString(createPP.P102);
 
             //Генерация Поля 101
@@ -518,7 +518,7 @@ namespace WindowsFormsApp2
 
             //Генерация КПП
 
-            createPP.P103 = Convert.ToInt32(createPP.GetKPP(createPP.P16));
+            createPP.P103 = Convert.ToString(createPP.GetKPP(createPP.P16));
             textBox28.Text = Convert.ToString(createPP.P103);
 
             //Выбор банка получателя 
@@ -867,21 +867,18 @@ namespace WindowsFormsApp2
                 string newpdf = createPP.Pdf(createPP.P0, createPP.P4, createPP.P6, createPP.P60, createPP.P102, createPP.P7, createPP.P8, createPP.P9, createPP.P10, createPP.P11, createPP.P12, createPP.P101, createPP.P13, createPP.P14, createPP.P15, createPP.P17, createPP.P18, createPP.P61, createPP.P103, createPP.P16, createPP.P21, createPP.P24, createPP.P5, createPP.P22, createPP.P104, createPP.P105, createPP.P106, createPP.P107, createPP.P108, createPP.P109, createPP.P110);
                 var path = newpdf;
 
-
-               
-
-                // using (var document = PdfDocument.Load(path))
-                //{
-                // using (var printDocument = document.CreatePrintDocument())
-                // {
-                // printDocument.PrinterSettings.PrintFileName = "Letter_SkidTags_Report_9ae93aa7-4359-444e-a033-eb5bf17f5ce6.pdf";
-                // printDocument.PrinterSettings.PrinterName = @"printerName";
-                // printDocument.DocumentName = "file.pdf";
-                // printDocument.PrinterSettings.PrintFileName = "file.pdf";
-                // printDocument.PrintController = new StandardPrintController();
-                // printDocument.Print();
-                // }
-                // }
+                 using (var document = PdfDocument.Load(path))
+                {
+                 using (var printDocument = document.CreatePrintDocument())
+                 {
+                 printDocument.PrinterSettings.PrintFileName = "Letter_SkidTags_Report_9ae93aa7-4359-444e-a033-eb5bf17f5ce6.pdf";
+                printDocument.PrinterSettings.PrinterName = @"printerName";
+               printDocument.DocumentName = "file.pdf";
+               printDocument.PrinterSettings.PrintFileName = "file.pdf";
+                 printDocument.PrintController = new StandardPrintController();
+                printDocument.Print();
+                }
+                }
 
 
             }

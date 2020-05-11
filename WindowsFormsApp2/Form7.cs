@@ -154,7 +154,7 @@ namespace WindowsFormsApp2
 
         private void textBox9_TextChanged(object sender, EventArgs e)
         {
-            createPP.P102 = Convert.ToInt16(textBox9.Text);
+            createPP.P102 = Convert.ToString(textBox9.Text);
         }
 
         private void textBox37_TextChanged(object sender, EventArgs e)
@@ -199,7 +199,7 @@ namespace WindowsFormsApp2
 
         private void textBox32_TextChanged(object sender, EventArgs e)
         {
-            createPP.P15 = Convert.ToString(textBox32.Text);
+            createPP.P17 = Convert.ToString(textBox32.Text);
         }
 
         private void textBox27_TextChanged(object sender, EventArgs e)
@@ -209,7 +209,7 @@ namespace WindowsFormsApp2
 
         private void textBox28_TextChanged(object sender, EventArgs e)
         {
-            createPP.P103 = Convert.ToInt16(textBox28.Text);
+            createPP.P103 = Convert.ToString(textBox28.Text);
         }
 
         private void textBox36_TextChanged(object sender, EventArgs e)
@@ -239,7 +239,56 @@ namespace WindowsFormsApp2
 
         private void textBox24_TextChanged(object sender, EventArgs e)
         {
-            createPP.P21 = Convert.ToInt16(textBox24.Text);
+
+            if (textBox24.Text == "1")
+            {
+                MessageBox.Show("Выплаты, которые происходят по исполнительным актам о возмещении нанесенного вреда здоровью или жизни. Уплата алиментов");
+                textBox24.ForeColor = Color.Black;
+                createPP.P21 = Convert.ToInt16(textBox24.Text);
+                textBox24.ReadOnly = true;
+
+
+            }
+
+            else if (textBox24.Text == "2")
+            {
+                MessageBox.Show("Выплаты, которые происходят по исполнительным актам о возмещении нанесенного вреда здоровью или жизни. Уплата алиментов");
+                textBox24.ForeColor = Color.Black;
+                createPP.P21 = Convert.ToInt16(textBox24.Text);
+                textBox24.ReadOnly = true;
+            }
+
+            else if (textBox24.Text == "3")
+            {
+                MessageBox.Show("Оплата задолженности по налогам, сборам и взносам. Выдача заработной платы сотрудникам");
+                textBox24.ForeColor = Color.Black;
+                createPP.P21 = Convert.ToInt16(textBox24.Text);
+                textBox24.ReadOnly = true;
+            }
+
+            else if (textBox24.Text == "4")
+            {
+                MessageBox.Show("Денежные выплаты по прочим исполнительным актам");
+                textBox24.ForeColor = Color.Black;
+                createPP.P21 = Convert.ToInt16(textBox24.Text);
+                textBox24.ReadOnly = true;
+            }
+
+            else if (textBox24.Text == "5")
+            {
+                MessageBox.Show("Все остальные платежные документы в календарной последовательности их поступления");
+                textBox24.ForeColor = Color.Black;
+                createPP.P21 = Convert.ToInt16(textBox24.Text);
+                textBox24.ReadOnly = true;
+
+            }
+
+            else if (textBox24.Text != "1" || textBox24.Text != "2" || textBox24.Text != "3" || textBox24.Text != "4" || textBox24.Text != "5")
+            {
+                MessageBox.Show("Введите корректную очередность платежа");
+                textBox24.ForeColor = Color.Red;
+            }
+           
         }
 
         private void textBox26_TextChanged(object sender, EventArgs e)
@@ -497,6 +546,18 @@ namespace WindowsFormsApp2
 
 
             }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            createPP.P4 = Convert.ToString(textBox2.Text);
+        }
+
+        private void Form2_FormClosing(Object sender, FormClosingEventArgs e)
+        {
+
+            Form1 f2 = new Form1();
+            f2.Show();
         }
     }
 }
